@@ -3,6 +3,7 @@ import CourseCard from "./CourseCard";
 
 const courses = [
   {
+    id: "digital-pedagogy",
     title: "Digital Pedagogy Fundamentals",
     description: "Master the art of teaching in the digital age with AI-assisted lesson planning and virtual classroom management.",
     category: "Digital Teaching",
@@ -12,6 +13,7 @@ const courses = [
     aiPowered: true,
   },
   {
+    id: "innovative-assessment",
     title: "Innovative Assessment Strategies",
     description: "Design effective assessments that measure 21st-century skills with AI-powered analytics and feedback systems.",
     category: "Assessment",
@@ -21,6 +23,7 @@ const courses = [
     aiPowered: true,
   },
   {
+    id: "classroom-management",
     title: "Classroom Management Excellence",
     description: "Build positive learning environments using evidence-based strategies and behavior management techniques.",
     category: "Management",
@@ -30,6 +33,7 @@ const courses = [
     aiPowered: false,
   },
   {
+    id: "project-based-learning",
     title: "Project-Based Learning Design",
     description: "Create engaging, real-world projects that develop critical thinking and collaboration skills.",
     category: "Curriculum",
@@ -39,6 +43,7 @@ const courses = [
     aiPowered: true,
   },
   {
+    id: "edtech-integration",
     title: "Educational Technology Integration",
     description: "Seamlessly integrate EdTech tools to enhance learning outcomes and student engagement.",
     category: "Technology",
@@ -48,6 +53,7 @@ const courses = [
     aiPowered: true,
   },
   {
+    id: "social-emotional-learning",
     title: "Social-Emotional Learning",
     description: "Foster emotional intelligence and well-being in your classroom with proven SEL frameworks.",
     category: "Wellbeing",

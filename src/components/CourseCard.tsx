@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Star, Sparkles } from "lucide-react";
 
 interface CourseCardProps {
+  id: string;
   title: string;
   description: string;
   category: string;
@@ -13,7 +15,7 @@ interface CourseCardProps {
   aiPowered?: boolean;
 }
 
-const CourseCard = ({ title, description, category, duration, students, rating, aiPowered }: CourseCardProps) => {
+const CourseCard = ({ id, title, description, category, duration, students, rating, aiPowered }: CourseCardProps) => {
   return (
     <Card className="group hover:shadow-[var(--shadow-hover)] transition-all duration-300 border-border bg-card overflow-hidden">
       <div className="h-2 bg-gradient-to-r from-primary via-secondary to-accent" />
@@ -56,8 +58,8 @@ const CourseCard = ({ title, description, category, duration, students, rating, 
       </CardContent>
       
       <CardFooter>
-        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-          Enroll Now
+        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+          <Link to={`/course/${id}`}>Enroll Now</Link>
         </Button>
       </CardFooter>
     </Card>
