@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <GraduationCap className="w-6 h-6 text-primary" />
-              <span className="text-lg font-bold text-foreground">TeachAI</span>
+              <span className="text-lg font-bold text-foreground">Ace CoachX</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Empowering educators with AI-powered training for the 21st century classroom.
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 TeachAI. All rights reserved. Building the future of education.</p>
+          <p>&copy; 2025 Ace CoachX. All rights reserved. Building the future of education.</p>
         </div>
       </div>
     </footer>

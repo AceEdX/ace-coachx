@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <GraduationCap className="w-8 h-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">TeachAI</span>
+            <span className="text-xl font-bold text-foreground">Ace CoachX</span>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
