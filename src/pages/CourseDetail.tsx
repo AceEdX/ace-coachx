@@ -1,13 +1,71 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Users, Star, BookOpen, ArrowLeft } from "lucide-react";
+import { toast } from "sonner";
 
 const CourseDetail = () => {
   const { id } = useParams();
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [enrolled, setEnrolled] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const checkEnrollment = async () => {
+      if (!user || !id) return;
+
+      const { data } = await supabase
+        .from('enrollments')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('course_id', id)
+        .single();
+
+      setEnrolled(!!data);
+    };
+
+    checkEnrollment();
+  }, [user, id]);
+
+  const handleEnroll = async () => {
+    if (!user) {
+      navigate(`/signin?redirect=/course/${id}`);
+      return;
+    }
+
+    if (enrolled) {
+      navigate('/dashboard');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { error } = await supabase
+        .from('enrollments')
+        .insert({
+          user_id: user.id,
+          course_id: id!,
+          progress: 0
+        });
+
+      if (error) throw error;
+
+      setEnrolled(true);
+      toast.success('Successfully enrolled in course!');
+      navigate('/dashboard');
+    } catch (error: any) {
+      toast.error(error.message || 'Failed to enroll in course');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Mock course data - in a real app, this would fetch from an API
   const course = {
@@ -100,8 +158,8 @@ const CourseDetail = () => {
                   <p className="text-sm text-muted-foreground mb-2">Instructor</p>
                   <p className="font-semibold">{course.instructor}</p>
                 </div>
-                <Button className="w-full mb-4" size="lg">
-                  Enroll Now
+                <Button className="w-full mb-4" size="lg" onClick={handleEnroll} disabled={loading}>
+                  {loading ? 'Processing...' : enrolled ? 'Continue Learning' : 'Enroll Now'}
                 </Button>
                 <Button variant="outline" className="w-full">
                   Add to Wishlist

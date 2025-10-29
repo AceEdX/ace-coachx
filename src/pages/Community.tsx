@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageSquare, Users, Calendar, Award } from "lucide-react";
+import { toast } from "sonner";
 
 const Community = () => {
   return (
@@ -28,7 +30,9 @@ const Community = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Join Discussions</Button>
+              <Button className="w-full" onClick={() => toast.info("Discussion forums coming soon!")}>
+                Join Discussions
+              </Button>
             </CardContent>
           </Card>
 
@@ -41,7 +45,9 @@ const Community = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Find a Group</Button>
+              <Button className="w-full" onClick={() => toast.info("Study groups feature coming soon!")}>
+                Find a Group
+              </Button>
             </CardContent>
           </Card>
 
@@ -54,7 +60,9 @@ const Community = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">View Calendar</Button>
+              <Button className="w-full" onClick={() => toast.info("Event calendar coming soon!")}>
+                View Calendar
+              </Button>
             </CardContent>
           </Card>
 
@@ -67,7 +75,9 @@ const Community = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">View Leaderboard</Button>
+              <Button className="w-full" onClick={() => toast.info("Leaderboard coming soon!")}>
+                View Leaderboard
+              </Button>
             </CardContent>
           </Card>
         </div>
@@ -77,8 +87,8 @@ const Community = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Share experiences, ask questions, and grow your professional network
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Get Started Today
+          <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+            <Link to="/signin">Get Started Today</Link>
           </Button>
         </div>
       </main>

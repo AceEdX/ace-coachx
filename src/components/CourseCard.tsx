@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Star, Sparkles } from "lucide-react";
+import { Clock, Users, Star, Sparkles, Check } from "lucide-react";
 
 interface CourseCardProps {
   id: string;
@@ -16,6 +19,35 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ id, title, description, category, duration, students, rating, aiPowered }: CourseCardProps) => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [enrolled, setEnrolled] = useState(false);
+
+  useEffect(() => {
+    const checkEnrollment = async () => {
+      if (!user) return;
+
+      const { data } = await supabase
+        .from('enrollments')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('course_id', id)
+        .single();
+
+      setEnrolled(!!data);
+    };
+
+    checkEnrollment();
+  }, [user, id]);
+
+  const handleClick = () => {
+    if (enrolled) {
+      navigate('/dashboard');
+    } else {
+      navigate(`/course/${id}`);
+    }
+  };
+
   return (
     <Card className="group hover:shadow-[var(--shadow-hover)] transition-all duration-300 border-border bg-card overflow-hidden">
       <div className="h-2 bg-gradient-to-r from-primary via-secondary to-accent" />
@@ -58,8 +90,18 @@ const CourseCard = ({ id, title, description, category, duration, students, rati
       </CardContent>
       
       <CardFooter>
-        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-          <Link to={`/course/${id}`}>Enroll Now</Link>
+        <Button 
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
+          onClick={handleClick}
+        >
+          {enrolled ? (
+            <>
+              <Check className="w-4 h-4 mr-2" />
+              Go to Dashboard
+            </>
+          ) : (
+            'Enroll Now'
+          )}
         </Button>
       </CardFooter>
     </Card>

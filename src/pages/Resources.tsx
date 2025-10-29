@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText, Video, Download, BookOpen } from "lucide-react";
+import { toast } from "sonner";
 
 const Resources = () => {
   const resources = [
@@ -54,7 +56,12 @@ const Resources = () => {
                 <CardDescription>{resource.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full">{resource.buttonText}</Button>
+                <Button 
+                  className="w-full" 
+                  onClick={() => toast.info(`${resource.title} coming soon!`)}
+                >
+                  {resource.buttonText}
+                </Button>
               </CardContent>
             </Card>
           ))}
@@ -66,10 +73,18 @@ const Resources = () => {
             Access our complete documentation library to get the most out of Ace CoachX
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button variant="outline">Getting Started Guide</Button>
-            <Button variant="outline">API Documentation</Button>
-            <Button variant="outline">FAQ</Button>
-            <Button variant="outline">Contact Support</Button>
+            <Button variant="outline" onClick={() => toast.info("Getting Started Guide coming soon!")}>
+              Getting Started Guide
+            </Button>
+            <Button variant="outline" onClick={() => toast.info("API Documentation coming soon!")}>
+              API Documentation
+            </Button>
+            <Button variant="outline" onClick={() => toast.info("FAQ coming soon!")}>
+              FAQ
+            </Button>
+            <Button variant="outline" onClick={() => toast.info("Support available via email!")}>
+              Contact Support
+            </Button>
           </div>
         </div>
       </main>
