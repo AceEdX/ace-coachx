@@ -1,68 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CourseCard from "./CourseCard";
-
-const courses = [
-  {
-    id: "digital-pedagogy",
-    title: "Digital Pedagogy Fundamentals",
-    description: "Master the art of teaching in the digital age with AI-assisted lesson planning and virtual classroom management.",
-    category: "Digital Teaching",
-    duration: "8 weeks",
-    students: 2453,
-    rating: 4.9,
-    aiPowered: true,
-  },
-  {
-    id: "innovative-assessment",
-    title: "Innovative Assessment Strategies",
-    description: "Design effective assessments that measure 21st-century skills with AI-powered analytics and feedback systems.",
-    category: "Assessment",
-    duration: "6 weeks",
-    students: 1876,
-    rating: 4.8,
-    aiPowered: true,
-  },
-  {
-    id: "classroom-management",
-    title: "Classroom Management Excellence",
-    description: "Build positive learning environments using evidence-based strategies and behavior management techniques.",
-    category: "Management",
-    duration: "5 weeks",
-    students: 3201,
-    rating: 4.7,
-    aiPowered: false,
-  },
-  {
-    id: "project-based-learning",
-    title: "Project-Based Learning Design",
-    description: "Create engaging, real-world projects that develop critical thinking and collaboration skills.",
-    category: "Curriculum",
-    duration: "7 weeks",
-    students: 1654,
-    rating: 4.9,
-    aiPowered: true,
-  },
-  {
-    id: "edtech-integration",
-    title: "Educational Technology Integration",
-    description: "Seamlessly integrate EdTech tools to enhance learning outcomes and student engagement.",
-    category: "Technology",
-    duration: "6 weeks",
-    students: 2987,
-    rating: 4.8,
-    aiPowered: true,
-  },
-  {
-    id: "social-emotional-learning",
-    title: "Social-Emotional Learning",
-    description: "Foster emotional intelligence and well-being in your classroom with proven SEL frameworks.",
-    category: "Wellbeing",
-    duration: "5 weeks",
-    students: 2134,
-    rating: 4.9,
-    aiPowered: false,
-  },
-];
+import { coursesData } from "@/data/courseData";
 
 const categories = [
   "All Courses",
@@ -103,10 +41,20 @@ const CourseCatalog = () => {
           {categories.map((category) => (
             <TabsContent key={category} value={category}>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {courses
+                {coursesData
                   .filter((course) => category === "All Courses" || course.category === category)
-                  .map((course, index) => (
-                    <CourseCard key={index} {...course} />
+                  .map((course) => (
+                    <CourseCard 
+                      key={course.id} 
+                      id={course.id}
+                      title={course.title}
+                      description={course.description}
+                      category={course.category}
+                      duration={course.duration}
+                      students={course.students}
+                      rating={course.rating}
+                      aiPowered={course.aiPowered}
+                    />
                   ))}
               </div>
             </TabsContent>
