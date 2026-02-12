@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CourseCatalog from "@/components/CourseCatalog";
 import Footer from "@/components/Footer";
+import FloatingHelp from "@/components/FloatingHelp";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
         <CourseCatalog />
       </section>
       <Footer />
+      <FloatingHelp />
     </div>
   );
 };
