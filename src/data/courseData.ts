@@ -37,425 +37,515 @@ export interface Course {
 
 export const coursesData: Course[] = [
   {
-    id: "digital-pedagogy",
-    title: "Digital Pedagogy Fundamentals",
-    description: "Master the art of teaching in the digital age with AI-assisted lesson planning and virtual classroom management.",
-    longDescription: "This comprehensive course equips educators with essential digital teaching skills. Learn to leverage technology effectively, create engaging online content, and manage virtual classrooms with confidence. You'll gain practical strategies that you can implement immediately in your teaching practice.",
-    category: "Digital Teaching",
-    duration: "8 weeks",
-    students: 2453,
+    id: "ai-augmented-educator",
+    title: "The AI-Augmented Educator",
+    description: "Master prompt engineering for pedagogy, ethical AI integration, and automation hacks for grading, feedback, and parent communication.",
+    longDescription: "This module transforms you into an AI-powered teaching powerhouse. Learn to design lesson plans and rubrics in seconds using prompt engineering, teach students to use AI ethically as a tutor (not a cheater), and automate time-consuming tasks like grading, feedback, and parent communication. Every lesson includes hands-on activities you can implement tomorrow.",
+    category: "AI & Technology",
+    duration: "4 weeks",
+    students: 4820,
     rating: 4.9,
     aiPowered: true,
-    instructor: "Dr. Maria Chen",
-    instructorBio: "EdTech specialist with 15 years of experience in digital education transformation.",
+    instructor: "Dr. Priya Sharma",
+    instructorBio: "AI in Education researcher at Stanford, former high school teacher with 12 years of classroom experience.",
     modules: [
       {
-        id: "dp-m1",
-        title: "Foundations of Digital Teaching",
-        description: "Build a strong foundation in digital pedagogy principles",
+        id: "aie-m1",
+        title: "Prompt Engineering for Pedagogy",
+        description: "Design lesson plans, rubrics, and assessments in seconds using AI",
         lessons: [
           {
-            id: "dp-m1-l1",
-            title: "Understanding Digital Natives",
-            duration: "45 min",
-            description: "Learn how today's students learn differently and adapt your teaching accordingly.",
-            content: `# Understanding Digital Natives
+            id: "aie-m1-l1",
+            title: "Your First AI-Powered Lesson Plan",
+            duration: "8 min",
+            description: "Learn to craft prompts that generate complete, standards-aligned lesson plans.",
+            content: `# Your First AI-Powered Lesson Plan
 
-## Introduction
-Today's students have grown up immersed in technology. They process information differently, prefer visual learning, and expect instant access to knowledge. As educators, understanding these characteristics is crucial for effective teaching.
+## Why Prompt Engineering Matters for Teachers
 
-## Key Characteristics of Digital Natives
+The difference between a mediocre AI output and an excellent one is entirely in the prompt. As an educator, learning to "speak AI" will save you 5-10 hours per week on planning.
 
-### 1. Multitasking Orientation
-Digital natives are comfortable switching between tasks and processing multiple streams of information simultaneously. However, research shows this can impact deep learning.
+## The TEACHER Prompt Framework
 
-### 2. Visual-Spatial Skills
-They excel at interpreting visual information—graphics, videos, and interactive content resonate more than text-heavy materials.
+### T - Target Audience
+Specify grade level, skill level, and any accommodations needed.
 
-### 3. Instant Gratification
-Growing up with search engines and instant answers, they expect immediate feedback and results.
+### E - Educational Standard
+Reference specific curriculum standards (Common Core, NGSS, etc.)
 
-### 4. Collaborative by Nature
-Social media has made them natural collaborators who enjoy peer-to-peer learning.
+### A - Activity Type
+Lecture, discussion, hands-on, group work, assessment, etc.
 
-## Implications for Teaching
+### C - Content Focus
+The specific topic and key vocabulary.
 
-To effectively reach digital natives:
-- **Chunk content** into smaller, digestible segments
-- **Use multimedia** to reinforce concepts
-- **Provide immediate feedback** through quizzes and interactive elements
-- **Incorporate collaboration** through group projects and discussions
-- **Allow choice** in how students demonstrate learning`,
+### H - Higher-Order Thinking
+Bloom's taxonomy level you're targeting.
+
+### E - Evaluation Method
+How you'll assess understanding.
+
+### R - Resources Available
+Technology, materials, time constraints.
+
+## Example Prompt vs. Output
+
+**Weak prompt:** "Make a lesson plan about photosynthesis"
+
+**Strong TEACHER prompt:** "Create a 45-minute lesson plan for 7th-grade biology on photosynthesis. Align to NGSS MS-LS1-6. Include a hands-on activity using simple materials (cups, soil, water, plastic wrap). Target 'Analyze' level on Bloom's taxonomy. End with a formative assessment exit ticket. Assume students have Chromebooks but limited science lab access."
+
+The strong prompt produces a lesson plan you can use immediately with minimal editing.
+
+## Building Your Prompt Library
+
+Start building a personal library of prompt templates:
+- Lesson plan generator
+- Rubric creator
+- Differentiated activity designer
+- Parent communication drafter
+- Assessment question generator`,
             practicalExample: {
-              title: "Redesigning a Traditional Lesson for Digital Natives",
-              scenario: "You're teaching a 45-minute lesson on the water cycle to 5th graders.",
+              title: "Creating a Week's Worth of Lesson Plans in 30 Minutes",
+              scenario: "You need to plan 5 days of 8th-grade English lessons on persuasive writing.",
               steps: [
-                "Break the lesson into 3 segments of 12-15 minutes each",
-                "Start with a 2-minute animated video showing the water cycle in action",
-                "Use an interactive digital diagram where students can click on each stage",
-                "Create a 5-minute collaborative activity using a shared digital whiteboard",
-                "End with a quick 5-question quiz using Kahoot or similar tool for instant feedback",
-                "Assign a creative project: students can make a video, infographic, or podcast"
+                "Open your preferred AI tool (ChatGPT, Claude, Gemini)",
+                "Use the TEACHER framework: 'Create 5 sequential daily lesson plans for 8th-grade English on persuasive writing. Each plan should be 50 minutes. Align to CCSS.ELA-LITERACY.W.8.1. Day 1: Introduction to persuasion techniques. Day 2: Analyzing mentor texts. Day 3: Planning and outlining. Day 4: Drafting. Day 5: Peer revision and editing. Include differentiation for ELL students and gifted learners. Each day should have a warm-up, main activity, and exit ticket.'",
+                "Review the output and adjust any activities that don't fit your classroom context",
+                "Follow up: 'Now create a rubric for the final persuasive essay based on these lessons'",
+                "Follow up: 'Generate 3 mentor text options at different reading levels for Day 2'",
+                "Save your prompts in a document labeled 'Persuasive Writing Unit Prompts' for reuse"
               ],
               tips: [
-                "Keep lecture segments under 10 minutes",
-                "Alternate between passive and active learning every 10-15 minutes",
-                "Use visuals in every lesson segment",
-                "Build in movement or interaction breaks"
+                "Always specify your grade level, time constraints, and available resources",
+                "Use follow-up prompts to refine and expand initial outputs",
+                "Save working prompts as templates—swap out the topic for instant reuse",
+                "Review every AI output critically—you are the expert, AI is your assistant"
               ]
             },
             keyTakeaways: [
-              "Digital natives learn differently—adapt your methods",
-              "Visual and interactive content increases engagement",
-              "Provide immediate feedback whenever possible",
-              "Embrace collaboration as a learning tool"
+              "The TEACHER framework produces dramatically better AI outputs",
+              "Specific prompts save more time than vague ones",
+              "Build a personal prompt library for repeated use",
+              "Always review and customize AI-generated content for your students"
             ]
           },
           {
-            id: "dp-m1-l2",
-            title: "Setting Up Your Digital Classroom",
-            duration: "60 min",
-            description: "Create an effective virtual learning environment with essential tools and organization.",
-            content: `# Setting Up Your Digital Classroom
+            id: "aie-m1-l2",
+            title: "AI-Generated Rubrics & Assessments",
+            duration: "10 min",
+            description: "Create differentiated rubrics and assessment tools using AI in minutes.",
+            content: `# AI-Generated Rubrics & Assessments
 
-## Creating Your Digital Hub
+## The Rubric Revolution
 
-A well-organized digital classroom reduces confusion and increases student engagement. Think of your Learning Management System (LMS) as your classroom's digital home base.
+Creating rubrics manually takes hours. With the right prompts, you can generate professional, standards-aligned rubrics in under 2 minutes.
 
-## Essential Components
+## Rubric Prompt Template
 
-### 1. Clear Navigation Structure
-- Consistent weekly modules
-- Logical content organization
-- Easy-to-find resources
+"Create a [holistic/analytic] rubric for [assignment type] for [grade level]. Include [number] performance levels: [Exemplary, Proficient, Developing, Beginning]. Assess these criteria: [list criteria]. Use student-friendly language. Include specific, observable descriptors for each level."
 
-### 2. Communication Channels
-- Announcements for updates
-- Discussion boards for questions
-- Direct messaging for private concerns
+## Assessment Types You Can Generate
 
-### 3. Resource Library
-- Organized by topic or unit
-- Includes supplementary materials
-- Links to external resources
+### Quick Formative Assessments
+- Exit tickets with 3 levels of questions (recall, apply, analyze)
+- Think-pair-share prompts with discussion guides
+- Self-assessment checklists for students
 
-### 4. Assignment Hub
-- Clear due dates
-- Submission guidelines
-- Rubrics attached to each assignment
+### Summative Assessment Options
+- Project-based rubrics with real-world contexts
+- Portfolio assessment criteria
+- Performance task descriptions with scoring guides
 
-## Best Practices for Organization
+### Differentiated Assessments
+- Same content, multiple format options
+- Tiered questions by Bloom's level
+- Choice boards with assessment criteria
 
-1. **Use consistent naming conventions**: "Week 1 - Topic - Activity Type"
-2. **Create a welcome module** with orientation materials
-3. **Include a FAQ section** for common questions
-4. **Set up a "Start Here" page** for new students`,
+## Quality Control Checklist
+
+After AI generates your assessment:
+- Does it align with your actual learning objectives?
+- Is the language appropriate for your students?
+- Are the criteria specific and observable?
+- Would YOU be able to grade consistently using this?
+- Have you removed any AI bias or assumptions?`,
             practicalExample: {
-              title: "Setting Up a Google Classroom for Your Subject",
-              scenario: "You're creating a new digital classroom for your 7th-grade Science class.",
+              title: "Building a Complete Assessment Package for a Science Unit",
+              scenario: "You're wrapping up a unit on ecosystems with 5th graders.",
               steps: [
-                "Create your Google Classroom with a clear, descriptive name: 'Grade 7 Science - Mrs. Johnson'",
-                "Set up 4 topic categories: 'Weekly Lessons', 'Assignments', 'Resources', 'Extra Help'",
-                "Create a 'Start Here' post with: class expectations, how to submit work, and where to ask questions",
-                "Upload a welcome video introducing yourself and the course",
-                "Create your first week's module with: learning objectives, materials, and assignments",
-                "Set up a recurring 'Weekly Announcements' post for every Monday"
+                "Prompt: 'Create an analytic rubric for a 5th-grade ecosystem diorama project. Criteria: Scientific accuracy, Creativity, Labeling, Oral presentation. 4 levels: Expert, Proficient, Developing, Beginning. Use kid-friendly language.'",
+                "Prompt: 'Now create 5 exit ticket questions for each day of the unit. Day 1: Food chains. Day 2: Food webs. Day 3: Producers/consumers/decomposers. Day 4: Human impact. Day 5: Conservation. Mix question types: multiple choice, short answer, draw-and-label.'",
+                "Prompt: 'Create a student self-assessment checklist they can use before submitting their diorama. Include 8-10 items they should verify.'",
+                "Prompt: 'Generate a differentiated choice board: 6 ways students can demonstrate ecosystem knowledge (diorama, comic strip, podcast script, infographic, letter to a senator, children's book). Include brief rubric for each.'",
+                "Review all outputs, adjust language, and compile into your unit assessment folder",
+                "Share rubrics with students BEFORE they start working"
               ],
               tips: [
-                "Use the same structure every week so students know what to expect",
-                "Pin important posts to the top of the stream",
-                "Enable email notifications for announcements",
-                "Create templates for recurring assignment types"
+                "Always share rubrics before the assignment—they should guide work, not just grade it",
+                "Ask AI to generate student examples at each rubric level for clarity",
+                "Use AI to create modified versions for IEP/504 students",
+                "Prompt: 'Translate this rubric into parent-friendly language for a newsletter'"
               ]
             },
             keyTakeaways: [
-              "Organization is crucial in digital learning",
-              "Consistent structure reduces student confusion",
-              "Communication channels must be clear and accessible",
-              "Create orientation materials for new students"
+              "AI can generate assessment tools in minutes, not hours",
+              "Always customize AI outputs for your specific students",
+              "Share rubrics before assignments to improve student work",
+              "Use AI to differentiate assessments efficiently"
             ]
           },
           {
-            id: "dp-m1-l3",
-            title: "Digital Communication Essentials",
-            duration: "50 min",
-            description: "Master effective online communication with students and parents.",
-            content: `# Digital Communication Essentials
+            id: "aie-m1-l3",
+            title: "Differentiation on Demand",
+            duration: "8 min",
+            description: "Use AI to instantly create differentiated materials for diverse learners.",
+            content: `# Differentiation on Demand
 
-## The Art of Online Communication
+## The Differentiation Challenge
 
-In digital education, communication is everything. Without the ability to read body language or gauge understanding in person, we must be more intentional about how we communicate.
+Every classroom has students at different levels. Traditionally, creating differentiated materials means 3x the work. AI changes that equation entirely.
 
-## Types of Digital Communication
+## Differentiation Prompt Strategies
 
-### Synchronous (Real-time)
-- Video conferencing
-- Live chat
-- Phone calls
+### By Reading Level
+"Rewrite this passage at a [3rd grade / 5th grade / 8th grade] reading level while maintaining all key concepts."
 
-### Asynchronous (Time-delayed)
-- Email
-- Discussion boards
-- Recorded videos
-- Comments on assignments
+### By Learning Style
+"Present this concept about gravity three ways: 1) A visual diagram with labels 2) A step-by-step written explanation 3) A hands-on experiment students can do at their desks"
+
+### By Language
+"Translate these math word problems into [Spanish/Mandarin/Arabic]. Keep the mathematical terms in English with the translated term in parentheses."
+
+### By Complexity
+"Create three versions of this worksheet on fractions: Tier 1 (basic operations), Tier 2 (word problems), Tier 3 (real-world application problems requiring multiple steps)"
+
+## Scaffolding with AI
+
+Use AI to create scaffolds:
+- Graphic organizers pre-filled with starter information
+- Sentence frames for writing assignments
+- Step-by-step guides for complex procedures
+- Vocabulary lists with visual supports
+
+## The Speed Advantage
+
+What used to take an entire prep period now takes 5 minutes:
+1. Paste your original material
+2. Specify the modification needed
+3. Review and adjust
+4. Print or share digitally`,
+            practicalExample: {
+              title: "Differentiating a History Lesson for 3 Tiers in 10 Minutes",
+              scenario: "Tomorrow's lesson covers the causes of World War I. You have struggling readers, on-level students, and advanced learners.",
+              steps: [
+                "Start with your core content and paste it into AI",
+                "Tier 1 prompt: 'Rewrite this passage about WWI causes at a 4th-grade reading level. Add a word bank with definitions. Include a graphic organizer that connects causes to effects with some boxes pre-filled.'",
+                "Tier 2 prompt: 'Keep this passage at grade level. Add 3 discussion questions that require citing evidence from the text. Include a blank cause-and-effect graphic organizer.'",
+                "Tier 3 prompt: 'Enhance this passage with primary source excerpts. Add analysis questions comparing WWI causes to current global tensions. Include a research extension option.'",
+                "Prompt: 'Create a single exit ticket that all three tiers can complete but at different depths: Q1 (recall), Q2 (analyze), Q3 (evaluate)'",
+                "Print the three versions on different colored paper for easy distribution"
+              ],
+              tips: [
+                "Color-code differentiated materials (no student labels needed)",
+                "Let students self-select their tier when appropriate",
+                "Use the same assessment for all tiers to see true understanding",
+                "Save your differentiation prompts—swap topics for instant reuse next unit"
+              ]
+            },
+            keyTakeaways: [
+              "AI eliminates the time barrier to differentiation",
+              "Differentiate by reading level, learning style, language, and complexity",
+              "Create scaffolds rapidly with AI assistance",
+              "Save working prompts as reusable templates"
+            ]
+          }
+        ]
+      },
+      {
+        id: "aie-m2",
+        title: "Ethical AI Integration",
+        description: "Teach students to use AI as a tutor, not a cheater",
+        lessons: [
+          {
+            id: "aie-m2-l1",
+            title: "AI as a Tutor, Not a Cheater",
+            duration: "10 min",
+            description: "Establish classroom norms for ethical AI use that enhance learning.",
+            content: `# AI as a Tutor, Not a Cheater
+
+## The New Reality
+
+AI is here to stay. Banning it is like banning calculators in the 1980s—counterproductive. Instead, teach students to use it ethically and effectively.
+
+## The Tutor vs. Cheater Framework
+
+### AI as Tutor (Encouraged)
+- "Explain this concept to me in simpler terms"
+- "Give me a practice problem similar to this one"
+- "What am I doing wrong in this math problem?"
+- "Help me brainstorm ideas for my essay topic"
+- "Quiz me on this vocabulary"
+
+### AI as Cheater (Not Acceptable)
+- "Write my essay for me"
+- "Give me the answers to these homework questions"
+- "Summarize this book I didn't read"
+- "Do this math problem set for me"
+
+### The Key Distinction
+**Using AI to LEARN = Good. Using AI to AVOID learning = Bad.**
+
+## Classroom AI Policy Template
+
+1. AI use must be disclosed ("I used AI to help me brainstorm")
+2. AI output must be significantly transformed by the student
+3. Students must demonstrate understanding independently
+4. AI should be used for learning support, not task completion
+5. When in doubt, ask the teacher
+
+## Teaching AI Literacy
+
+Students need to understand:
+- AI can be wrong (hallucinations)
+- AI reflects biases in its training data
+- AI output needs human judgment
+- The skill is in the prompting, not the copying`,
+            practicalExample: {
+              title: "Running an 'AI Ethics Day' in Your Classroom",
+              scenario: "You want to establish clear AI norms with your 9th-grade class.",
+              steps: [
+                "Activity 1 (10 min): Show students the same prompt answered by 3 AI tools—point out differences and errors",
+                "Activity 2 (15 min): Give students 5 scenarios and have them sort into 'Tutor Use' vs 'Cheater Use' using a shared document",
+                "Discussion (10 min): Review results—focus on gray areas where students disagree",
+                "Activity 3 (10 min): Students write their own 'AI Use Agreement' with 5 rules they think are fair",
+                "Compile agreements and create a class consensus document",
+                "Post the final agreement in the classroom and have students sign it"
+              ],
+              tips: [
+                "Revisit the agreement monthly—it should evolve as students mature",
+                "Model AI use yourself: 'I used AI to generate these practice problems, then I edited them'",
+                "Celebrate ethical AI use: 'Great job using AI to check your work!'",
+                "Have a clear, fair consequence for AI misuse that focuses on learning, not punishment"
+              ]
+            },
+            keyTakeaways: [
+              "Ban less, teach more—AI literacy is a critical skill",
+              "The tutor vs. cheater framework is easy for students to understand",
+              "Clear policies prevent confusion and build trust",
+              "Model ethical AI use in your own teaching"
+            ]
+          },
+          {
+            id: "aie-m2-l2",
+            title: "Designing AI-Resistant Assessments",
+            duration: "8 min",
+            description: "Create assignments that leverage AI rather than being defeated by it.",
+            content: `# Designing AI-Resistant Assessments
+
+## Rethinking Assessment in the AI Age
+
+Instead of trying to prevent AI use, design assessments where AI is a tool, not a shortcut.
+
+## AI-Resistant Assessment Strategies
+
+### 1. Process Over Product
+Grade the journey, not just the destination:
+- Require documented brainstorming sessions
+- Grade rough drafts and revision history
+- Include in-class components that can't be outsourced
+
+### 2. Personal Connection
+AI can't fake personal experience:
+- "How does this concept relate to YOUR life?"
+- "Interview a family member about..."
+- "Reflect on your learning process"
+
+### 3. Real-Time Demonstration
+Show understanding live:
+- Oral presentations with Q&A
+- In-class debates with rebuttals
+- Live problem-solving on the board
+
+### 4. Creative Synthesis
+Combine multiple concepts uniquely:
+- "Create a children's book explaining cell division to a 5-year-old"
+- "Design a museum exhibit comparing two historical periods"
+- "Write a song that teaches the periodic table trends"
+
+### 5. Iterative AI-Enhanced Work
+Make AI part of the assignment:
+- "Use AI to generate a first draft, then improve it. Submit both versions with annotations explaining your changes."
+- "Evaluate AI's answer to this question. What did it get right? What did it miss?"`,
+            practicalExample: {
+              title: "Converting a Traditional Essay into an AI-Enhanced Assignment",
+              scenario: "Instead of 'Write an essay on climate change,' create an AI-integrated assignment.",
+              steps: [
+                "Step 1: Students generate an AI essay on their topic (submitted as evidence)",
+                "Step 2: Students annotate the AI essay—marking errors, weak arguments, missing perspectives",
+                "Step 3: Students write their OWN essay that improves on the AI version",
+                "Step 4: Students write a reflection: 'How is my essay better than AI's? What did AI teach me?'",
+                "Step 5: In-class presentation of key arguments (can't be faked)",
+                "Grade: Annotation quality (20%), Original essay improvement (40%), Reflection depth (20%), Presentation (20%)"
+              ],
+              tips: [
+                "This teaches critical thinking about AI while ensuring original work",
+                "Students learn to evaluate AI output—a real-world skill",
+                "The comparison process deepens understanding",
+                "Save the best student annotations as examples for future classes"
+              ]
+            },
+            keyTakeaways: [
+              "Design WITH AI, not against it",
+              "Process-based assessment resists AI shortcuts",
+              "Personal connection and live demonstration can't be faked",
+              "Making AI part of the assignment teaches critical evaluation"
+            ]
+          }
+        ]
+      },
+      {
+        id: "aie-m3",
+        title: "Automation Hacks",
+        description: "Automate grading, feedback, and parent communication",
+        lessons: [
+          {
+            id: "aie-m3-l1",
+            title: "Automating Grading & Feedback",
+            duration: "10 min",
+            description: "Reclaim hours each week by automating routine grading and personalized feedback.",
+            content: `# Automating Grading & Feedback
+
+## The Time Crisis
+
+Teachers spend an average of 5-7 hours per week on grading. That's time stolen from planning, relationships, and self-care. Automation can reclaim most of it.
+
+## What Can Be Automated
+
+### Fully Automatable
+- Multiple choice / matching quizzes (Google Forms, Microsoft Forms)
+- Math problem sets with defined answers
+- Vocabulary matching and fill-in-the-blank
+- Attendance and participation tracking
+
+### Semi-Automatable (AI-Assisted)
+- Short-answer responses (AI drafts feedback, you review)
+- Essay grading (AI applies your rubric, you verify)
+- Coding assignments (auto-testing with manual review)
+- Lab reports (AI checks for required elements)
+
+### Still Needs You
+- Creative writing evaluation (voice, style)
+- Complex project assessment
+- Relationship-based feedback
+- IEP-specific accommodations
+
+## Feedback Automation Workflow
+
+1. **Create feedback templates** for common issues
+2. **Use AI to match** student work to template categories
+3. **Personalize** the template with specific examples from their work
+4. **Add a human touch**: one personal comment per student
+
+## Tools for Automation
+- Google Forms with automatic grading
+- Rubric-based AI feedback generators
+- Email merge for parent communication
+- LMS auto-grading features`,
+            practicalExample: {
+              title: "Setting Up Auto-Graded Weekly Quizzes",
+              scenario: "You want to give weekly vocab quizzes in your 6th-grade class without spending hours grading.",
+              steps: [
+                "Create a Google Form with 10 questions: 5 multiple choice, 3 matching, 2 fill-in-the-blank",
+                "Enable 'Make this a quiz' in Form settings—set point values and correct answers",
+                "Turn on 'Release grade immediately after submission' for instant feedback",
+                "Add feedback for wrong answers: 'Review page 42 of your textbook' (this teaches, not just grades)",
+                "Use the 'Response' tab to see class-wide data—which questions were hardest?",
+                "Set up a weekly email to parents using mail merge: 'Your child scored X/10 on this week's vocabulary quiz'",
+                "Time saved: ~2 hours per week on quiz grading alone"
+              ],
+              tips: [
+                "Rotate question order and answer choices to prevent copying",
+                "Add explanations for correct answers so the quiz becomes a learning tool",
+                "Review the hardest questions in class the next day",
+                "Use the data to identify students who need extra vocabulary support"
+              ]
+            },
+            keyTakeaways: [
+              "Automate routine grading to reclaim 5+ hours weekly",
+              "Use AI to draft feedback, then personalize with human touch",
+              "Feedback templates save time while maintaining quality",
+              "Data from auto-grading informs instruction immediately"
+            ]
+          },
+          {
+            id: "aie-m3-l2",
+            title: "Automating Parent Communication",
+            duration: "8 min",
+            description: "Keep parents informed effortlessly with automated, personalized updates.",
+            content: `# Automating Parent Communication
+
+## Why Parent Communication Matters
+
+Research consistently shows that parent involvement increases student achievement by 20-30%. But teachers cite communication as one of their biggest time burdens.
+
+## The Communication Automation Stack
+
+### Weekly Updates (Fully Automated)
+- Template newsletter with class highlights
+- Auto-populated with grades and attendance
+- Sent every Friday at 3 PM
+
+### Progress Alerts (Semi-Automated)
+- Triggered when grade drops below threshold
+- AI drafts the message, you review before sending
+- Includes specific suggestions for support
+
+### Celebration Messages (Template-Based)
+- Student achieves milestone → auto-notification
+- "Your child completed all homework this week!"
+- Builds positive relationship before problems arise
+
+## Communication Templates
+
+### Positive Update Template
+"Dear [Parent], I wanted to share that [Student] [specific positive action] today. This shows [character trait/skill]. Keep encouraging them! - [Teacher]"
+
+### Concern Template
+"Dear [Parent], I've noticed [specific, objective observation] in [Student's] recent work. I'd like to [specific action] to support them. Could we [schedule a call / try this at home]? - [Teacher]"
+
+### Progress Report Template
+"[Student]'s weekly update: Attendance: [X/5]. Assignments completed: [X/X]. Current grade: [X]. Highlight: [one positive]. Focus area: [one growth area]."
 
 ## Best Practices
-
-### For Written Communication
-1. **Be clear and concise**—students skim
-2. **Use formatting** (headers, bullets, bold) to highlight key points
-3. **Include visuals** when explaining complex concepts
-4. **Set response time expectations** and stick to them
-
-### For Video Communication
-1. **Look at the camera**, not the screen
-2. **Keep videos short** (under 10 minutes)
-3. **Use screen sharing** to demonstrate processes
-4. **Enable captions** for accessibility
-
-### For Feedback
-1. **Be specific** about what needs improvement
-2. **Start with positives** (growth mindset)
-3. **Offer actionable next steps**
-4. **Use audio/video feedback** for personal touch`,
+- Lead with positive news
+- Be specific, not vague
+- Suggest actions, not just problems
+- Communicate in the family's preferred language (AI can translate!)`,
             practicalExample: {
-              title: "Creating Effective Feedback on Student Work",
-              scenario: "A student submitted an essay that needs significant improvement.",
+              title: "Setting Up a Complete Parent Communication System",
+              scenario: "You want to communicate weekly with 120+ parents without it consuming your evenings.",
               steps: [
-                "Open the document and identify 2-3 main areas for improvement",
-                "Record a 3-minute video walking through the essay, pointing out specific examples",
-                "Start with something positive: 'I can see you put effort into your introduction...'",
-                "Use screen share to highlight specific passages while explaining",
-                "End with 2-3 concrete action items: 'Focus on these three things in your revision...'",
-                "Include a written summary of key points below the video link"
+                "Create a Google Sheet with columns: Student Name, Parent Email, Current Grade, Attendance, Highlight, Concern",
+                "Update the sheet each Friday using LMS data export (5 min)",
+                "Use AI to generate personalized messages: paste 10 student rows at a time with the template",
+                "Review AI-generated messages for accuracy and tone (10 min for all students)",
+                "Use mail merge (Yet Another Mail Merge or similar) to send personalized emails",
+                "Set up auto-triggers: grade drops below 70% → immediate parent alert",
+                "Monthly: Send a celebration batch for students who improved",
+                "Total time: ~20 minutes/week instead of 3+ hours"
               ],
               tips: [
-                "Video feedback feels more personal and is often better received",
-                "Keep feedback focused—don't try to fix everything at once",
-                "Always include actionable next steps",
-                "Follow up to check if feedback was understood"
+                "Always proofread AI-translated messages with a bilingual colleague if possible",
+                "Send positive messages more often than concern messages (3:1 ratio)",
+                "Include one specific thing a parent can do at home",
+                "Track which parents open/respond to optimize your approach"
               ]
             },
             keyTakeaways: [
-              "Digital communication requires extra intentionality",
-              "Mix synchronous and asynchronous methods",
-              "Video feedback adds a personal touch",
-              "Always be clear, specific, and actionable"
-            ]
-          }
-        ]
-      },
-      {
-        id: "dp-m2",
-        title: "Creating Engaging Digital Content",
-        description: "Learn to create compelling multimedia content for your courses",
-        lessons: [
-          {
-            id: "dp-m2-l1",
-            title: "Designing Visual Learning Materials",
-            duration: "55 min",
-            description: "Create effective presentations, infographics, and visual aids.",
-            content: `# Designing Visual Learning Materials
-
-## Why Visuals Matter
-
-Research shows that people remember:
-- 10% of what they hear
-- 20% of what they read
-- 80% of what they see and do
-
-Visual materials aren't just nice to have—they're essential for learning.
-
-## Principles of Visual Design
-
-### 1. Simplicity
-Less is more. Every element should serve a purpose.
-
-### 2. Contrast
-Use color and size differences to highlight important information.
-
-### 3. Alignment
-Organize elements in a logical, clean layout.
-
-### 4. Repetition
-Use consistent styles, colors, and fonts throughout.
-
-## Types of Visual Materials
-
-### Presentations
-- Maximum 6 words per bullet
-- One concept per slide
-- High-quality, relevant images
-
-### Infographics
-- Great for processes and comparisons
-- Use icons and illustrations
-- Limit text to essential information
-
-### Diagrams
-- Show relationships between concepts
-- Use arrows and connectors
-- Label clearly`,
-            practicalExample: {
-              title: "Creating a Visual Lesson on Photosynthesis",
-              scenario: "You need to explain photosynthesis to 6th graders.",
-              steps: [
-                "Open Canva (free) and search for 'educational infographic' templates",
-                "Create a flowchart showing: Sunlight + Water + CO2 → Glucose + Oxygen",
-                "Use green colors for plants, yellow for sunlight, blue for water",
-                "Add simple icons: sun, water droplet, leaf, arrows",
-                "Include a 'Real World Connection' box: 'This is why we need trees!'",
-                "Create an interactive version using Genially where students can click each element"
-              ],
-              tips: [
-                "Use free tools like Canva, Piktochart, or Google Drawings",
-                "Maintain a consistent color scheme",
-                "Test visuals with a few students before using widely",
-                "Save templates to reuse for similar content"
-              ]
-            },
-            keyTakeaways: [
-              "Visual materials dramatically improve retention",
-              "Follow basic design principles for clarity",
-              "Use free tools to create professional visuals",
-              "Keep visuals simple and focused"
-            ]
-          },
-          {
-            id: "dp-m2-l2",
-            title: "Recording Effective Educational Videos",
-            duration: "60 min",
-            description: "Learn to create engaging instructional videos students will actually watch.",
-            content: `# Recording Effective Educational Videos
-
-## The Power of Video
-
-Video combines visual and auditory learning, making it one of the most effective educational tools. But there's a big difference between a video students skip and one they watch completely.
-
-## Planning Your Video
-
-### Before Recording
-1. **Define the learning objective**—what will students be able to do after watching?
-2. **Script or outline** your content
-3. **Gather visuals** you'll need
-4. **Test your technology**
-
-### Video Length Guidelines
-- Micro-lectures: 3-5 minutes (highest completion rates)
-- Concept explanations: 5-10 minutes
-- Demonstrations: 10-15 minutes
-- Never exceed 20 minutes without breaks
-
-## Recording Tips
-
-### Technical Setup
-- Good lighting (face a window or use a ring light)
-- Clear audio (use an external microphone if possible)
-- Stable camera (use a tripod or stable surface)
-- Clean background
-
-### Presentation Style
-- Speak conversationally, not lecture-style
-- Vary your tone and pace
-- Look at the camera (connection with students)
-- Use gestures naturally`,
-            practicalExample: {
-              title: "Creating a 5-Minute Math Concept Video",
-              scenario: "You're explaining how to solve two-step equations.",
-              steps: [
-                "Write a simple script: Hook (30 sec), Explanation (2 min), Example (2 min), Summary (30 sec)",
-                "Set up Loom or Screencastify (free screen recording)",
-                "Prepare a digital whiteboard or slides with the problem already written",
-                "Record your screen while writing out each step and explaining your thinking",
-                "Edit out long pauses and mistakes (use built-in trimming tools)",
-                "Add captions using YouTube's auto-caption feature (then correct errors)",
-                "Upload to your LMS with a title that starts with the topic: 'Two-Step Equations: Basic Method'"
-              ],
-              tips: [
-                "Practice once before recording",
-                "If you make a mistake, pause, then restart that section",
-                "Speak slower than feels natural—it sounds better on playback",
-                "Add a 'Try This!' problem at the end for students to pause and practice"
-              ]
-            },
-            keyTakeaways: [
-              "Shorter videos have higher completion rates",
-              "Plan before recording to save editing time",
-              "Good audio is more important than perfect video",
-              "Include interactive elements to keep students engaged"
-            ]
-          }
-        ]
-      },
-      {
-        id: "dp-m3",
-        title: "Virtual Classroom Management",
-        description: "Master the art of managing an online learning environment",
-        lessons: [
-          {
-            id: "dp-m3-l1",
-            title: "Engagement Strategies for Online Learning",
-            duration: "50 min",
-            description: "Keep students actively engaged in virtual sessions.",
-            content: `# Engagement Strategies for Online Learning
-
-## The Challenge of Virtual Engagement
-
-In a physical classroom, you can see when students are confused or distracted. Online, engagement requires deliberate, proactive strategies.
-
-## The 10-2-2 Rule
-
-Every 10 minutes of instruction, include:
-- 2 minutes of processing time
-- 2 minutes of engagement activity
-
-## Engagement Techniques
-
-### Quick Polls
-Ask a question, have students respond instantly
-- "On a scale of 1-5, how confident are you about this concept?"
-- "Which example makes more sense, A or B?"
-
-### Chat Waterfall
-Everyone types their answer but waits to hit enter
-- Count down: 3, 2, 1... everyone sends at once
-- Creates excitement and full participation
-
-### Breakout Rooms
-Small group discussions or activities
-- Give clear instructions BEFORE sending to rooms
-- Assign roles: timekeeper, note-taker, presenter
-- Keep brief: 5-10 minutes
-
-### Collaborative Documents
-Everyone contributes to a shared space
-- Google Docs, Jamboard, Padlet
-- Assign sections or colors to individuals`,
-            practicalExample: {
-              title: "Running an Engaging 45-Minute Virtual Class",
-              scenario: "You're teaching a synchronous online lesson on World War II causes.",
-              steps: [
-                "0-3 min: Opening hook—show a dramatic image, ask 'What do you think led to this?'",
-                "3-5 min: Chat Waterfall—'What's one thing you already know about WWI?'",
-                "5-15 min: Direct instruction with visuals (keep talking under 10 min)",
-                "15-17 min: Quick poll—'Which cause do you think was most significant?'",
-                "17-27 min: Breakout rooms—groups analyze one primary source document each",
-                "27-35 min: Groups share back (1 min each)",
-                "35-40 min: Collaborative Jamboard—everyone adds one connection they made",
-                "40-45 min: Exit ticket—'One thing I learned, one question I still have'"
-              ],
-              tips: [
-                "Always have a backup plan if technology fails",
-                "Cold-call students by name to maintain attention",
-                "Use the chat for quieter students who won't speak up",
-                "Record sessions for students who miss class"
-              ]
-            },
-            keyTakeaways: [
-              "Break instruction into 10-minute chunks",
-              "Use multiple engagement techniques per session",
-              "Breakout rooms need clear structure",
-              "Build in processing time for deeper learning"
+              "Parent communication directly impacts student achievement",
+              "Templates + AI + mail merge = personalized communication at scale",
+              "Always lead with positive news to build trust",
+              "20 minutes/week can keep 120+ families informed"
             ]
           }
         ]
@@ -463,1161 +553,404 @@ Everyone contributes to a shared space
     ]
   },
   {
-    id: "innovative-assessment",
-    title: "Innovative Assessment Strategies",
-    description: "Design effective assessments that measure 21st-century skills with AI-powered analytics and feedback systems.",
-    longDescription: "Move beyond traditional testing to create assessments that truly measure student learning and growth. This course covers formative assessment, authentic assessment design, rubric creation, and using data to improve instruction.",
-    category: "Assessment",
-    duration: "6 weeks",
-    students: 1876,
-    rating: 4.8,
-    aiPowered: true,
-    instructor: "Dr. James Parker",
-    instructorBio: "Assessment specialist and former standardized test developer turned education reformer.",
-    modules: [
-      {
-        id: "ia-m1",
-        title: "Rethinking Assessment",
-        description: "Challenge traditional assessment approaches and embrace new methods",
-        lessons: [
-          {
-            id: "ia-m1-l1",
-            title: "Beyond the Test: What Assessment Can Be",
-            duration: "45 min",
-            description: "Explore the full spectrum of assessment possibilities.",
-            content: `# Beyond the Test: What Assessment Can Be
-
-## The Problem with Traditional Testing
-
-Traditional tests often measure:
-- Memorization rather than understanding
-- Performance on a single day
-- Ability to take tests, not real-world skills
-
-## A New Vision for Assessment
-
-Assessment should:
-- **Inform instruction** (not just grade students)
-- **Show growth** over time
-- **Measure real skills** students will use
-- **Motivate learning** rather than create anxiety
-
-## Types of Assessment
-
-### Formative Assessment
-Ongoing assessment during learning
-- Exit tickets, quick checks, observations
-- Used to adjust instruction immediately
-
-### Summative Assessment
-Assessment of learning at the end
-- Tests, projects, performances
-- Used to evaluate and grade
-
-### Authentic Assessment
-Real-world application of knowledge
-- Projects, portfolios, presentations
-- Shows what students can DO with knowledge
-
-## The Assessment Cycle
-
-1. Set clear learning goals
-2. Collect evidence of learning
-3. Interpret the evidence
-4. Take action based on findings
-5. Repeat`,
-            practicalExample: {
-              title: "Replacing a Unit Test with Authentic Assessment",
-              scenario: "Instead of a test on the American Revolution, create an authentic assessment.",
-              steps: [
-                "Identify core skills: analyzing sources, making arguments, understanding cause/effect",
-                "Design the task: 'You are a journalist in 1776. Write a newspaper article explaining why the colonies should/shouldn't declare independence.'",
-                "Create a rubric covering: historical accuracy, use of evidence, argument quality, writing",
-                "Build in checkpoints: source analysis due day 3, outline due day 5, draft due day 7",
-                "Allow student choice: they can write pro- or anti-independence",
-                "Include peer review: students give feedback on drafts before final submission",
-                "Add reflection: 'What was the hardest part? What would you do differently?'"
-              ],
-              tips: [
-                "Authentic assessments take longer but measure more",
-                "Build in scaffolding for struggling students",
-                "Use the same rubric for self-assessment before submission",
-                "Save exemplars to show future classes"
-              ]
-            },
-            keyTakeaways: [
-              "Assessment should drive learning, not just measure it",
-              "Authentic assessments show real-world application",
-              "Mix formative and summative approaches",
-              "Every assessment should inform your teaching"
-            ]
-          },
-          {
-            id: "ia-m1-l2",
-            title: "Formative Assessment Techniques",
-            duration: "55 min",
-            description: "Master quick, effective ways to check understanding during instruction.",
-            content: `# Formative Assessment Techniques
-
-## What is Formative Assessment?
-
-Formative assessment is assessment FOR learning, not OF learning. It happens during instruction and helps both teacher and students understand where learning is and where it needs to go.
-
-## High-Impact Formative Techniques
-
-### Exit Tickets
-End-of-class quick checks
-- "Write one thing you learned and one question you have"
-- "Rate your understanding 1-5 and explain"
-- "Summarize today's lesson in one sentence"
-
-### Think-Pair-Share
-Structured discussion protocol
-1. Students think individually
-2. Share with a partner
-3. Share with the class
-
-### Whiteboard Responses
-Every student responds visibly
-- Digital: Poll Everywhere, Mentimeter
-- Physical: Mini whiteboards, hand signals
-
-### Traffic Light
-Student self-assessment
-- Green: I understand completely
-- Yellow: I'm a bit confused
-- Red: I need help
-
-### One-Minute Paper
-Quick written response
-- "What was the most important concept today?"
-- "What is still confusing?"`,
-            practicalExample: {
-              title: "Implementing Daily Formative Assessment",
-              scenario: "You want to check understanding every day in your 50-minute class.",
-              steps: [
-                "Minutes 1-3: Opening Check—Quick poll: 'How confident are you about yesterday's concept?' (1-5 scale)",
-                "Minutes 15-17: Mid-lesson Check—Think-Pair-Share on a key question",
-                "Minutes 30-32: Understanding Check—'Thumbs up/sideways/down' on the new concept",
-                "Minutes 45-48: Exit Ticket—Digital form with 2 questions",
-                "After class: Review exit tickets and group students by understanding level",
-                "Next day: Start with targeted review based on exit ticket data"
-              ],
-              tips: [
-                "Make formative assessment routine so students expect it",
-                "Respond to data immediately—if 70% are confused, reteach",
-                "Use no-stakes grading so students are honest",
-                "Track patterns over time to identify struggling students early"
-              ]
-            },
-            keyTakeaways: [
-              "Formative assessment should happen daily",
-              "Use data to adjust instruction immediately",
-              "Students should see formative assessment as helpful, not stressful",
-              "Mix techniques to keep assessment engaging"
-            ]
-          },
-          {
-            id: "ia-m1-l3",
-            title: "Creating Effective Rubrics",
-            duration: "60 min",
-            description: "Build clear, useful rubrics that improve student work.",
-            content: `# Creating Effective Rubrics
-
-## Why Rubrics Matter
-
-Good rubrics:
-- Clarify expectations before students begin
-- Guide student work throughout the process
-- Make grading consistent and fair
-- Provide meaningful feedback
-
-## Types of Rubrics
-
-### Holistic Rubrics
-One overall score based on general criteria
-- Faster to use
-- Less specific feedback
-- Good for quick assessments
-
-### Analytic Rubrics
-Separate scores for each criterion
-- More detailed feedback
-- Takes longer to grade
-- Better for complex assignments
-
-## Rubric Components
-
-### Criteria
-What you're assessing (argument, evidence, organization)
-
-### Levels
-Performance descriptions (exceeds, meets, approaching, beginning)
-
-### Descriptors
-Specific descriptions of what each level looks like
-
-## Common Rubric Mistakes
-
-- Too vague ("good," "excellent," "needs work")
-- Too many criteria (focus on 3-5 key areas)
-- No student involvement in creation
-- Only used for grading, not instruction`,
-            practicalExample: {
-              title: "Creating a Rubric with Students",
-              scenario: "Your class is about to write persuasive essays. Create the rubric together.",
-              steps: [
-                "Show 3 sample essays of varying quality (anonymous or from previous years)",
-                "Ask: 'What makes the good one good? What's missing from the weak one?'",
-                "List student observations on the board—group into categories",
-                "Identify 4 key criteria from the list: Thesis, Evidence, Counterargument, Conclusion",
-                "For each criterion, ask: 'What does excellent look like? What does developing look like?'",
-                "Create the rubric together on a shared document",
-                "Have students use the rubric to score one of the sample essays as practice"
-              ],
-              tips: [
-                "When students help create rubrics, they internalize expectations",
-                "Use student-friendly language, not teacher jargon",
-                "Keep rubrics to one page—too long and students won't read them",
-                "Include the rubric in the assignment instructions"
-              ]
-            },
-            keyTakeaways: [
-              "Rubrics should be created before the assignment, not after",
-              "Student involvement increases rubric effectiveness",
-              "Be specific in descriptors—avoid vague language",
-              "Use rubrics for feedback, not just grading"
-            ]
-          }
-        ]
-      },
-      {
-        id: "ia-m2",
-        title: "Data-Driven Instruction",
-        description: "Use assessment data to improve teaching and learning",
-        lessons: [
-          {
-            id: "ia-m2-l1",
-            title: "Analyzing Assessment Data",
-            duration: "50 min",
-            description: "Turn numbers into actionable insights for your classroom.",
-            content: `# Analyzing Assessment Data
-
-## From Numbers to Insights
-
-Assessment data is only valuable if it leads to action. The goal isn't to collect data—it's to improve learning.
-
-## Types of Data Analysis
-
-### Item Analysis
-Looking at individual questions
-- Which questions did most students miss?
-- What does that tell you about understanding?
-
-### Student Grouping
-Identifying patterns across students
-- Who is struggling? Who needs challenge?
-- What do struggling students have in common?
-
-### Trend Analysis
-Looking at patterns over time
-- Is the class improving?
-- Are interventions working?
-
-## Key Questions to Ask
-
-1. What percentage of students mastered each objective?
-2. Which objectives need reteaching?
-3. Which students need additional support?
-4. Which students need enrichment?
-5. Did my instruction work?
-
-## Common Data Mistakes
-
-- Drowning in data without focus
-- Only looking at averages (hides struggling students)
-- Not acting on what data shows
-- Waiting too long to analyze`,
-            practicalExample: {
-              title: "Running a Post-Assessment Data Meeting with Yourself",
-              scenario: "You just gave a quiz on fractions to your 4th-grade class.",
-              steps: [
-                "Export quiz results to a spreadsheet or use your LMS analytics",
-                "Calculate percentage correct for each question—highlight any below 70%",
-                "For low-performing questions, ask: Was the question bad or was learning incomplete?",
-                "List students below 70% overall—what do they have in common?",
-                "List students at 90%+—how can they be challenged?",
-                "Create 3 groups: Reteach (below 60%), Reinforce (60-80%), Extend (above 80%)",
-                "Plan differentiated follow-up: reteach group gets small-group instruction, extend group gets challenge problems"
-              ],
-              tips: [
-                "Do this analysis within 24-48 hours while it's fresh",
-                "Focus on 2-3 key takeaways, not everything",
-                "Share data with students: 'Here's where we are and what we're doing about it'",
-                "Track data over time to show growth"
-              ]
-            },
-            keyTakeaways: [
-              "Data should lead to immediate action",
-              "Look beyond averages to see individual needs",
-              "Use data to group students for differentiation",
-              "Regular analysis catches problems early"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "classroom-management",
-    title: "Classroom Management Excellence",
-    description: "Build positive learning environments using evidence-based strategies and behavior management techniques.",
-    longDescription: "Learn to create a classroom where every student can thrive. This course covers building relationships, establishing procedures, managing behavior proactively, and creating inclusive learning environments.",
-    category: "Management",
+    id: "future-ready-pedagogy",
+    title: "Future-Ready Pedagogy",
+    description: "Transform your teaching with Project-Based Learning, the Flipped Classroom 2.0, and gamification strategies.",
+    longDescription: "Move from memorization to creation with cutting-edge pedagogical approaches. Master Project-Based Learning that produces real-world outcomes, leverage the flipped classroom model with digital assets, and use game mechanics to drive unprecedented engagement and retention in your classroom.",
+    category: "Pedagogy",
     duration: "5 weeks",
-    students: 3201,
-    rating: 4.7,
-    aiPowered: false,
-    instructor: "Dr. Linda Martinez",
-    instructorBio: "Former principal and behavior specialist with expertise in restorative practices.",
-    modules: [
-      {
-        id: "cm-m1",
-        title: "Building Classroom Community",
-        description: "Create a positive, inclusive classroom culture from day one",
-        lessons: [
-          {
-            id: "cm-m1-l1",
-            title: "The First Days: Setting the Tone",
-            duration: "50 min",
-            description: "Establish expectations and relationships in the crucial first days.",
-            content: `# The First Days: Setting the Tone
-
-## Why First Days Matter
-
-Research shows that patterns established in the first two weeks persist all year. Students are watching to see:
-- Who is this teacher?
-- What will be expected of me?
-- Am I safe here?
-- Will this class be interesting?
-
-## Key Goals for the First Week
-
-### 1. Establish Relationships
-- Learn every student's name by day 3
-- Show genuine interest in students as people
-- Share appropriate things about yourself
-
-### 2. Teach Procedures
-- Don't assume students know how things work
-- Practice procedures until automatic
-- Be consistent from day one
-
-### 3. Set Expectations
-- Be clear about what you expect
-- Explain the WHY behind rules
-- Let students see consequences are fair
-
-### 4. Communicate Care
-- Your classroom should feel safe
-- Students should feel respected
-- Academic challenge shows you believe in them
-
-## Common First-Week Mistakes
-
-- Jumping into content too fast
-- Being too friendly (or too strict)
-- Not practicing procedures enough
-- Making empty threats`,
-            practicalExample: {
-              title: "Planning Your First Three Days",
-              scenario: "You're starting a new school year with 6th graders.",
-              steps: [
-                "Day 1 Morning: Name game activity—students share name + something unique",
-                "Day 1: Create class expectations TOGETHER—'What do you need to learn well?'",
-                "Day 1: End with exit ticket: 'What's one thing you want me to know about you?'",
-                "Day 2: Teach and practice 3 key procedures (entering class, getting materials, asking questions)",
-                "Day 2: Community builder activity—'Find someone who...' bingo",
-                "Day 3: Practice procedures again with debrief—'What went well? What do we need to work on?'",
-                "Day 3: Introduce first content but keep it low-stakes and engaging",
-                "All 3 days: Greet every student at the door by name"
-              ],
-              tips: [
-                "Overplan—it's better to have too much than run out",
-                "Use name tents until you've memorized names",
-                "Document your procedures so you can reteach consistently",
-                "Follow through on every expectation from day one"
-              ]
-            },
-            keyTakeaways: [
-              "Invest heavily in the first week—it pays off all year",
-              "Relationships come first, but procedures are crucial",
-              "Practice procedures until they're automatic",
-              "Be the teacher you want to be from day one"
-            ]
-          },
-          {
-            id: "cm-m1-l2",
-            title: "Establishing Routines and Procedures",
-            duration: "55 min",
-            description: "Create smooth-running systems that save instructional time.",
-            content: `# Establishing Routines and Procedures
-
-## Why Procedures Matter
-
-Every minute spent managing logistics is a minute lost to learning. Well-established procedures:
-- Save hundreds of hours over the year
-- Reduce behavioral issues
-- Create a sense of security for students
-- Free you to focus on teaching
-
-## Key Procedure Categories
-
-### Entering the Classroom
-- Where do students go?
-- What do they do first?
-- How do you take attendance?
-
-### Transitions
-- How do students move between activities?
-- What signals do you use?
-- What's the expected noise level?
-
-### Materials Management
-- How are supplies distributed?
-- How are papers collected?
-- What if a student doesn't have materials?
-
-### Asking for Help
-- How do students signal they need help?
-- What do they do while waiting?
-- Can they ask peers?
-
-### Ending Class
-- How is homework assigned?
-- How is cleanup handled?
-- How are students dismissed?
-
-## Teaching Procedures
-
-1. **Explain**: What is the procedure and why?
-2. **Demonstrate**: Show what it looks like
-3. **Practice**: Have students try it
-4. **Feedback**: Correct and praise
-5. **Repeat**: Practice until automatic`,
-            practicalExample: {
-              title: "Teaching the 'Entry Routine'",
-              scenario: "You want students to come in, get started, and be ready in 3 minutes.",
-              steps: [
-                "Design the routine: Enter → Get materials from shelf → Read bell work from board → Start working quietly",
-                "Create a visual poster showing these steps with images",
-                "Day 1: Explain each step and WHY it helps learning",
-                "Day 1: Model the entire routine yourself—walk through it as a student would",
-                "Day 1: Have 2-3 students model it while others observe",
-                "Day 1: Entire class practices—time them, give specific feedback",
-                "Day 2-5: Practice daily. Celebrate when done in under 3 minutes",
-                "Week 2+: Reset if routine slips. 'Let's practice our entry routine again.'"
-              ],
-              tips: [
-                "Post procedures visually—students can self-correct",
-                "Be specific: 'Materials means your notebook, pencil, and textbook'",
-                "Use positive framing: 'Walk' not 'Don't run'",
-                "Acknowledge students who follow procedures: 'I see Maria is ready'"
-              ]
-            },
-            keyTakeaways: [
-              "Every recurring activity needs a procedure",
-              "Teach procedures as carefully as content",
-              "Practice until procedures are automatic",
-              "Reteach when procedures slip"
-            ]
-          },
-          {
-            id: "cm-m1-l3",
-            title: "Building Positive Relationships",
-            duration: "45 min",
-            description: "Connect with every student, including the challenging ones.",
-            content: `# Building Positive Relationships
-
-## The Research on Relationships
-
-Students don't learn from teachers they don't like or trust. Studies show:
-- Positive teacher-student relationships improve achievement
-- They reduce behavioral issues by up to 50%
-- They increase student engagement and motivation
-- They make teaching more enjoyable for everyone
-
-## Relationship-Building Strategies
-
-### The 2x10 Strategy
-Spend 2 minutes for 10 consecutive days having a personal conversation with a challenging student.
-- Not about academics or behavior
-- About their interests, life, thoughts
-- Dramatically improves relationships
-
-### Positive Contacts
-Reach out to families with good news
-- "I wanted to share something great about your child..."
-- Aim for 5 positive contacts per week
-- Build goodwill before issues arise
-
-### Greeting at the Door
-Meet every student at the entrance
-- Use their name
-- Make eye contact
-- Brief positive interaction
-
-### Interest Inventories
-Learn what students care about
-- Favorite activities, hobbies, music
-- Reference their interests in instruction
-- Shows you see them as individuals
-
-## Connecting with Difficult Students
-
-The students who need relationships most often push us away. For these students:
-- Be persistent and patient
-- Look for any positive to acknowledge
-- Avoid power struggles
-- Separate behavior from identity ("You made a choice" not "You are...")`,
-            practicalExample: {
-              title: "Implementing the 2x10 Strategy",
-              scenario: "You have a student who is constantly off-task and confrontational.",
-              steps: [
-                "Commit to 2 minutes of personal conversation for 10 consecutive school days",
-                "Day 1: 'Hey Marcus, I noticed your shoes. Are you into basketball?'",
-                "Day 2: 'Did you catch any games this weekend?'",
-                "Day 3: 'Who's your favorite player? What do you like about them?'",
-                "Days 4-10: Continue with genuine follow-up questions",
-                "After 10 days: Notice the change in how the student responds to you",
-                "Maintenance: Continue periodic check-ins about their interests",
-                "Track: Note any changes in behavior and engagement"
-              ],
-              tips: [
-                "Be genuinely curious—students know when you're faking",
-                "Don't mention behavior or academics during these conversations",
-                "Find something you actually find interesting about them",
-                "If you miss a day, pick up the next day—don't give up"
-              ]
-            },
-            keyTakeaways: [
-              "Relationships are the foundation of classroom management",
-              "Invest extra time in challenging students",
-              "Small, consistent interactions build trust",
-              "Positive family contact builds partnership"
-            ]
-          }
-        ]
-      },
-      {
-        id: "cm-m2",
-        title: "Proactive Behavior Management",
-        description: "Prevent problems before they start",
-        lessons: [
-          {
-            id: "cm-m2-l1",
-            title: "Preventing Misbehavior Before It Starts",
-            duration: "50 min",
-            description: "Design your environment and instruction to minimize disruptions.",
-            content: `# Preventing Misbehavior Before It Starts
-
-## The 80/20 Rule of Behavior
-
-80% of behavior management is prevention:
-- Clear expectations
-- Engaging instruction
-- Positive relationships
-- Well-designed environment
-
-Only 20% is responding to misbehavior.
-
-## Environmental Design
-
-### Seating Arrangement
-- Can you see all students?
-- Can students see you and the board?
-- Are high-need students near you?
-- Are easily distracted students away from distractions?
-
-### Traffic Patterns
-- Can students move without crowding?
-- Are high-use areas accessible?
-- Is there space for you to circulate?
-
-### Visibility
-- Can you see the whole room from anywhere?
-- Are there blind spots?
-
-## Instructional Prevention
-
-### Engagement Matters
-- Bored students find other things to do
-- Engaged students don't have time for misbehavior
-
-### Appropriate Challenge
-- Too easy = boredom
-- Too hard = frustration
-- Both lead to behavior issues
-
-### Pacing
-- Dead time invites problems
-- Keep momentum but allow processing
-- Have backup activities ready`,
-            practicalExample: {
-              title: "Redesigning Your Room to Prevent Problems",
-              scenario: "You're having issues with students off-task in certain areas.",
-              steps: [
-                "Draw your current classroom layout and mark problem spots",
-                "Identify patterns: Are issues near windows? Friends seated together? Far from you?",
-                "Redesign: Move your desk to see the whole room, not face a wall",
-                "Create a 'runway' so you can circulate to all areas quickly",
-                "Seat high-need students in your 'action zone' (front and center)",
-                "Separate students who trigger each other's behavior",
-                "Remove or minimize visual distractions from walls",
-                "Test the new layout for one week and adjust as needed"
-              ],
-              tips: [
-                "Change seating arrangements periodically to prevent problems",
-                "Position yourself to move easily during instruction",
-                "Remove items that invite play (fidgets become distractions)",
-                "Ask a colleague to observe and identify blind spots"
-              ]
-            },
-            keyTakeaways: [
-              "Prevention is far more effective than intervention",
-              "Environmental design impacts behavior",
-              "Engagement is your best behavior tool",
-              "Scan constantly to catch issues early"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "project-based-learning",
-    title: "Project-Based Learning Design",
-    description: "Create engaging, real-world projects that develop critical thinking and collaboration skills.",
-    longDescription: "Transform your classroom with authentic project-based learning. Learn to design meaningful projects, facilitate student-driven inquiry, and assess both process and product effectively.",
-    category: "Curriculum",
-    duration: "7 weeks",
-    students: 1654,
-    rating: 4.9,
-    aiPowered: true,
-    instructor: "Dr. Robert Kim",
-    instructorBio: "PBL expert who has helped over 200 schools implement project-based learning.",
-    modules: [
-      {
-        id: "pbl-m1",
-        title: "PBL Foundations",
-        description: "Understand the research and principles behind effective PBL",
-        lessons: [
-          {
-            id: "pbl-m1-l1",
-            title: "What Makes PBL Different",
-            duration: "45 min",
-            description: "Understand true PBL versus projects attached to traditional teaching.",
-            content: `# What Makes PBL Different
-
-## Dessert Projects vs. Main Course PBL
-
-### Dessert Projects
-- Added at the end of a unit
-- "Now make a poster about what you learned"
-- Fun but not central to learning
-- Process is secondary to product
-
-### Main Course PBL
-- Project IS the unit
-- Learning happens THROUGH the project
-- Inquiry drives instruction
-- Process is as important as product
-
-## Gold Standard PBL Elements
-
-### 1. Challenging Problem or Question
-- Open-ended, not easily Googled
-- Meaningful to students
-- Connected to real-world issues
-
-### 2. Sustained Inquiry
-- Deep investigation over time
-- Multiple sources and perspectives
-- Student-driven questions
-
-### 3. Authenticity
-- Real-world relevance
-- Real audience beyond the teacher
-- Real impact when possible
-
-### 4. Student Voice and Choice
-- Students make key decisions
-- Multiple paths to success
-- Ownership of learning
-
-### 5. Reflection
-- Regular check-ins on process
-- Learning from mistakes
-- Setting goals for improvement
-
-### 6. Critique and Revision
-- Feedback from peers and experts
-- Multiple drafts
-- Focus on improvement, not just grade
-
-### 7. Public Product
-- Shared beyond the classroom
-- High-quality expectation
-- Genuine audience`,
-            practicalExample: {
-              title: "Transforming a Dessert into Main Course PBL",
-              scenario: "Your current unit on ecosystems ends with students making posters. Turn it into PBL.",
-              steps: [
-                "Start with an engaging question: 'How can we protect our local watershed from pollution?'",
-                "Frame as real: Partner with a local environmental group as the 'client'",
-                "Build in inquiry: Students research local water quality, interview experts, collect data",
-                "Add voice and choice: Groups choose specific pollution sources to address",
-                "Design authentic products: Presentation to city council, community action plan, public awareness campaign",
-                "Include reflection checkpoints: Weekly journal entries on 'What I learned, what's challenging'",
-                "Build in critique: Draft presentations get feedback from partner organization",
-                "Present publicly: Community event where students share findings and recommendations"
-              ],
-              tips: [
-                "Don't start with the product—start with the question",
-                "Real clients add urgency and meaning",
-                "Allow productive struggle—resist rescuing too quickly",
-                "Build content instruction into the project, not before it"
-              ]
-            },
-            keyTakeaways: [
-              "True PBL is how students learn, not what they do after learning",
-              "The driving question is crucial—spend time crafting it",
-              "Authenticity motivates more than grades",
-              "Process skills matter as much as content"
-            ]
-          },
-          {
-            id: "pbl-m1-l2",
-            title: "Designing Driving Questions",
-            duration: "50 min",
-            description: "Create questions that drive deep inquiry and engagement.",
-            content: `# Designing Driving Questions
-
-## What is a Driving Question?
-
-A driving question:
-- Launches the project
-- Focuses the inquiry
-- Is open-ended (not Googleable)
-- Connects to standards without being obvious
-- Is engaging and provocative
-
-## Types of Driving Questions
-
-### Abstract Questions
-"What is justice?" / "What is a hero?"
-- Philosophical, debatable
-- Requires taking a position
-
-### Role-Based Questions
-"How can we, as city planners, design a more walkable neighborhood?"
-- Students take on professional roles
-- Authentic perspective
-
-### Problem-Based Questions
-"How can we reduce food waste in our cafeteria?"
-- Real problem to solve
-- Tangible outcome
-
-### Product-Based Questions
-"How can we create a podcast that explains climate change to middle schoolers?"
-- Clear deliverable
-- Audience defined
-
-## Crafting Good Driving Questions
-
-### Start with Standards
-What do students need to learn?
-
-### Find Real-World Connection
-Where does this matter in the real world?
-
-### Make it Debatable
-Add "how" or "to what extent" to create discussion
-
-### Test It
-- Is it open-ended?
-- Does it lead to multiple learning pathways?
-- Will students care?`,
-            practicalExample: {
-              title: "Creating a Driving Question for Your Unit",
-              scenario: "Your unit covers the American Revolution (standard: causes and effects of the Revolution).",
-              steps: [
-                "Identify the core understanding: What caused colonists to rebel, and what were the consequences?",
-                "Find current relevance: When is it right to challenge authority? Revolution happening today?",
-                "Draft initial questions: 'Was the American Revolution justified?', 'When should people rebel?'",
-                "Add authenticity: 'As historians, how should we remember the Revolution?'",
-                "Test with students: Share 3 options and see which generates the most interest",
-                "Refine: 'The American Revolution: Freedom fighters or treasonous rebels—how should history judge them?'",
-                "Connect to product: Students create museum exhibits taking different perspectives"
-              ],
-              tips: [
-                "Avoid questions with single right answers",
-                "Questions that start with 'To what extent...' encourage nuance",
-                "Good questions make students disagree productively",
-                "Revise questions as the project evolves if needed"
-              ]
-            },
-            keyTakeaways: [
-              "The driving question makes or breaks the project",
-              "Good questions are open, engaging, and connected to standards",
-              "Test questions with students before committing",
-              "Questions should lead to authentic inquiry"
-            ]
-          }
-        ]
-      },
-      {
-        id: "pbl-m2",
-        title: "Facilitating Student-Driven Learning",
-        description: "Guide students through inquiry without taking over",
-        lessons: [
-          {
-            id: "pbl-m2-l1",
-            title: "The Teacher's Role in PBL",
-            duration: "45 min",
-            description: "Shift from sage on the stage to guide on the side.",
-            content: `# The Teacher's Role in PBL
-
-## From Director to Coach
-
-Traditional teaching is like being a movie director:
-- You control the script
-- You tell actors where to stand
-- You decide when to cut
-
-PBL teaching is like being a coach:
-- Athletes play the game
-- You prepare them, guide them, support them
-- They make decisions in the moment
-
-## Key Teacher Moves
-
-### Front-Loading
-Teach skills before students need them:
-- Research skills before research phase
-- Collaboration skills before group work
-- Presentation skills before public products
-
-### Workshop-Style Instruction
-Mini-lessons when students need them:
-- "I notice many groups are struggling with X. Let me show you..."
-- Just-in-time teaching
-- Keep it brief (10 min max)
-
-### Conferring
-One-on-one or small group check-ins:
-- "Tell me about your progress"
-- "What's your next step?"
-- "What do you need from me?"
-
-### Managing Energy
-Projects have emotional rhythms:
-- Initial excitement
-- Messy middle (frustration)
-- Final push
-- Celebrate completion`,
-            practicalExample: {
-              title: "Managing the 'Messy Middle' of a Project",
-              scenario: "You're two weeks into a four-week project and energy is flagging.",
-              steps: [
-                "Acknowledge the feeling: 'We're in the hard part—this is normal and expected'",
-                "Check individual progress: Brief conferences with each group to identify blockers",
-                "Provide targeted instruction: If many groups are stuck on research, run a mini-lesson",
-                "Adjust timeline if needed: 'I'm giving everyone an extra day on this phase'",
-                "Inject variety: A gallery walk, expert visit, or change of location",
-                "Celebrate small wins: 'Look how far we've come' mid-project reflection",
-                "Reframe: 'Remember why this matters—our presentation is in two weeks'",
-                "Model struggle: Share your own examples of pushing through difficult work"
-              ],
-              tips: [
-                "The messy middle is where real learning happens",
-                "Don't rescue too quickly—productive struggle is valuable",
-                "Regular check-ins catch problems before they derail projects",
-                "Energy management is part of your job"
-              ]
-            },
-            keyTakeaways: [
-              "Your role shifts from lecturer to facilitator",
-              "Front-load skills, teach on demand, confer regularly",
-              "The messy middle is expected—help students push through",
-              "Prepare students for independence, then let them struggle productively"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "edtech-integration",
-    title: "Educational Technology Integration",
-    description: "Seamlessly integrate EdTech tools to enhance learning outcomes and student engagement.",
-    longDescription: "Move beyond using technology for technology's sake. Learn to choose the right tools, integrate them meaningfully, and measure their impact on student learning.",
-    category: "Technology",
-    duration: "6 weeks",
-    students: 2987,
+    students: 3654,
     rating: 4.8,
     aiPowered: true,
-    instructor: "Dr. Emily Watson",
-    instructorBio: "EdTech consultant who has trained over 10,000 teachers on technology integration.",
+    instructor: "Prof. Michael Torres",
+    instructorBio: "Author of 'The Gamified Classroom' and PBL curriculum designer for 200+ schools worldwide.",
     modules: [
       {
-        id: "et-m1",
-        title: "Purposeful Technology Selection",
-        description: "Choose the right tools for the right purposes",
+        id: "frp-m1",
+        title: "Project-Based Learning (PBL)",
+        description: "Moving from memorization to creation",
         lessons: [
           {
-            id: "et-m1-l1",
-            title: "The SAMR Model for Technology Integration",
-            duration: "45 min",
-            description: "Understand levels of technology integration to move beyond substitution.",
-            content: `# The SAMR Model for Technology Integration
+            id: "frp-m1-l1",
+            title: "PBL Fundamentals: From Textbook to Real World",
+            duration: "10 min",
+            description: "Design projects that connect classroom learning to real-world problems.",
+            content: `# PBL Fundamentals: From Textbook to Real World
 
-## What is SAMR?
+## What Makes PBL Different
 
-SAMR is a framework for thinking about how technology is used in education:
+Traditional instruction: Learn content → Take test → Forget
+PBL: Encounter problem → Learn content to solve it → Apply → Remember
 
-### Substitution
-Technology directly replaces paper-based activities
-- Reading a PDF instead of a printed article
-- Typing an essay instead of handwriting
-- **No functional change**
+## The Gold Standard PBL Framework
 
-### Augmentation
-Technology adds functional improvement
-- Students can use spell-check in word processor
-- Digital texts have hyperlinks for definitions
-- **Some improvement**
+### 7 Essential Elements
+1. **Challenging Problem or Question** - Meaningful, open-ended
+2. **Sustained Inquiry** - Deep investigation over time
+3. **Authenticity** - Real-world connection
+4. **Student Voice & Choice** - Agency in the process
+5. **Reflection** - Ongoing metacognition
+6. **Critique & Revision** - Feedback loops
+7. **Public Product** - Shared beyond the classroom
 
-### Modification
-Technology allows significant task redesign
-- Students collaborate on a shared document in real-time
-- Students create multimedia presentations instead of reports
-- **Significant change**
+## PBL vs. "Doing Projects"
 
-### Redefinition
-Technology allows previously inconceivable tasks
-- Students connect with classrooms globally
-- Students publish work for real audiences
-- Create VR experiences
-- **Transformative**
+A project AT THE END of a unit ≠ PBL
+PBL means the project IS the unit. Students learn content BECAUSE they need it to complete the project.
 
-## Moving Up the SAMR Ladder
+## Driving Questions
 
-### Ask Yourself:
-- Could students do this without technology? (If yes, you're at Substitution)
-- Does technology add new capabilities? (Moving toward Augmentation)
-- Is the task fundamentally different? (Moving toward Modification)
-- Was this task impossible before? (Redefinition)
+The heart of PBL is a compelling driving question:
+- "How can we reduce food waste in our school cafeteria?" (Science + Math)
+- "Should our city build a new park or affordable housing on the empty lot?" (Social Studies + Math)
+- "How can we create a guide that helps immigrants navigate our community?" (ELA + Social Studies)
 
-## SAMR Misconceptions
+## Common PBL Concerns
 
-- Higher isn't always better—Substitution has its place
-- It's a spectrum, not a ladder
-- The goal is thoughtful integration, not transformation for its own sake`,
+**"I don't have time"** → PBL covers content more efficiently because it's contextualized
+**"My students aren't ready"** → Start small with mini-projects (1-2 weeks)
+**"How do I grade it?"** → Multiple checkpoints, rubrics, and process + product grading`,
             practicalExample: {
-              title: "Elevating a Lesson Through SAMR Levels",
-              scenario: "Students currently read a chapter and answer questions on paper.",
+              title: "Designing Your First PBL Unit",
+              scenario: "You teach 7th-grade math and want to try PBL for your geometry unit.",
               steps: [
-                "Substitution: Students read the chapter as a PDF and type answers",
-                "Augmentation: Digital text includes videos, links, and built-in dictionary",
-                "Modification: Students annotate collaboratively on shared document, seeing peers' thoughts",
-                "Redefinition: Students create a podcast interviewing experts on the topic, published for public audience",
-                "Decide which level fits: For this objective, does Modification add value? Is Redefinition worth the time?",
-                "Plan backwards: If aiming for Modification, what scaffolding do students need?",
-                "Assess impact: Did the technology use improve learning outcomes?"
+                "Start with a driving question: 'How can we redesign our school's outdoor space to maximize both green area and usable space?'",
+                "Map content standards to the project: area, perimeter, scale drawings, ratios, geometry vocabulary",
+                "Plan the project timeline: Week 1—Survey the space and learn measurement. Week 2—Scale drawings and area calculations. Week 3—Design proposals. Week 4—Presentations to principal",
+                "Build in checkpoints: Day 3 (measurements), Day 7 (calculations), Day 12 (draft design), Day 16 (final presentation)",
+                "Create a rubric covering: Mathematical accuracy (30%), Design creativity (20%), Presentation quality (20%), Teamwork (15%), Reflection (15%)",
+                "Arrange for the principal or a landscaper to attend final presentations (authentic audience!)"
               ],
               tips: [
-                "Start with learning objectives, not technology",
-                "Move up SAMR levels gradually—don't jump to Redefinition immediately",
-                "Sometimes Substitution is the right choice",
-                "Redefinition projects need significant time investment"
+                "Start with a mini-PBL (1 week) before attempting a full unit",
+                "Build in explicit skill lessons when students need them",
+                "Use 'Need to Know' lists—students identify what they need to learn",
+                "Let students struggle productively before intervening"
               ]
             },
             keyTakeaways: [
-              "SAMR helps evaluate technology use",
-              "The goal isn't always transformation",
-              "Start with learning goals, then choose technology",
-              "Move up SAMR levels as you build capacity"
+              "PBL makes learning contextual and memorable",
+              "The driving question is the most important element",
+              "Start small and build your PBL confidence",
+              "Authentic audiences dramatically increase student motivation"
             ]
           },
           {
-            id: "et-m1-l2",
-            title: "Evaluating EdTech Tools",
-            duration: "50 min",
-            description: "Make informed decisions about which tools to adopt.",
-            content: `# Evaluating EdTech Tools
+            id: "frp-m1-l2",
+            title: "Managing PBL Chaos (Productively)",
+            duration: "8 min",
+            description: "Keep PBL organized with clear structures while maintaining creative freedom.",
+            content: `# Managing PBL Chaos (Productively)
 
-## The Problem: Too Many Tools
+## Structured Freedom
 
-There are over 10,000 EdTech products available. Teachers are overwhelmed with options, and many tools:
-- Promise more than they deliver
-- Add work without adding value
-- Create security or privacy concerns
-- Become abandoned when companies fail
+PBL looks chaotic to observers, but the best PBL classrooms have invisible structure. Think of it as "controlled chaos."
 
-## Evaluation Framework: ACTIONS
+## Project Management for Students
 
-### A - Accessibility
-- Works on school devices?
-- Accessible for students with disabilities?
-- Available offline if needed?
+### Project Boards
+Teach students to use simple project boards:
+- To Do | In Progress | Done
+- Tools: physical sticky notes, Trello, or Google Sheets
 
-### C - Cost
-- Free? Freemium? Paid?
-- Hidden costs (time, training, upgrades)?
-- District approval needed?
+### Team Roles
+Assign rotating roles:
+- **Project Manager**: Keeps timeline, runs check-ins
+- **Researcher**: Finds and organizes information
+- **Designer**: Creates visual elements
+- **Presenter**: Prepares for sharing
 
-### T - Technical Requirements
-- What devices are supported?
-- What bandwidth is needed?
-- How reliable is the platform?
+### Daily Stand-ups (5 minutes)
+Each team answers:
+1. What did we accomplish yesterday?
+2. What are we working on today?
+3. What obstacles are we facing?
 
-### I - Impact on Learning
-- What problem does this solve?
-- Is there evidence it works?
-- How will you measure impact?
+## Teacher's Role During PBL
 
-### O - Organizational Fit
-- Aligns with school/district goals?
-- Integrates with existing tools?
-- Sustainable long-term?
+You shift from "Sage on the Stage" to "Guide on the Side":
+- **Facilitate** don't dictate
+- **Ask questions** don't give answers
+- **Monitor progress** through checkpoints
+- **Provide resources** when students identify needs
+- **Redirect** when teams go off track
 
-### N - Network Effects
-- Are others at your school using it?
-- Is there a community for support?
-- Will students use it elsewhere?
+## Handling Common Problems
 
-### S - Security & Privacy
-- What data is collected?
-- Where is data stored?
-- Compliant with FERPA/COPPA?`,
+### "We don't know what to do"
+→ Refer them to the driving question and their Need to Know list
+
+### "Our group isn't working well"
+→ Check role assignments, facilitate a team meeting
+
+### "We're behind schedule"
+→ Help prioritize what's essential vs. nice-to-have`,
             practicalExample: {
-              title: "Evaluating Whether to Adopt Kahoot for Formative Assessment",
-              scenario: "You're considering using Kahoot for quick checks in class.",
+              title: "Setting Up Project Management on Day 1 of PBL",
+              scenario: "You're launching a 3-week PBL unit with groups of 4 students.",
               steps: [
-                "Accessibility: Works on any device with a browser ✓",
-                "Cost: Free basic version, paid for advanced features—start free ✓",
-                "Technical: Needs internet and devices—check computer lab availability ✓",
-                "Impact: Increases engagement in review—but does it improve learning? (Need to test)",
-                "Organizational: Many teachers already use it—easy to get support ✓",
-                "Network: Students may know it from other classes ✓",
-                "Security: Review privacy policy—what student data is collected?",
-                "Decision: Try for one unit, measure engagement and quiz scores before/after",
-                "Evaluate after trial: Did it improve outcomes enough to justify continued use?"
+                "Day 1: Present the driving question with a compelling hook (video, guest speaker, field trip photo)",
+                "Create a 'Need to Know' list as a class—students brainstorm what they need to learn",
+                "Form teams of 4 (mix ability levels intentionally)",
+                "Give each team a Project Folder (physical or digital) with: Timeline, Role Descriptions, Daily Log Sheet, Rubric",
+                "Model a 5-minute 'Daily Stand-up' with a volunteer group in front of the class",
+                "Set expectations: 'Every day starts with a 5-min stand-up. Every Friday is a checkpoint where I review your progress.'",
+                "Post the project timeline visibly in the classroom with checkpoint dates highlighted"
               ],
               tips: [
-                "Pilot before committing—never adopt school-wide without testing",
-                "Talk to teachers who've used it before",
-                "Check if similar tools are already approved by your district",
-                "New tools = learning curve; factor in time investment"
+                "Front-load structure in week 1 so students can work independently by week 2",
+                "Use a 'Parking Lot' wall for questions teams can't solve themselves",
+                "Check in with every group daily, even briefly (2-3 minutes each)",
+                "Celebrate progress publicly: 'Team 3 solved their measurement problem creatively today!'"
               ]
             },
             keyTakeaways: [
-              "Not every new tool is worth adopting",
-              "Use a framework to evaluate objectively",
-              "Pilot before committing",
-              "Learning impact should drive decisions, not novelty"
+              "Structure enables creative freedom—don't skip it",
+              "Student project management skills transfer to every subject",
+              "Daily stand-ups keep teams accountable in 5 minutes",
+              "Your role shifts from instructor to facilitator"
             ]
           }
         ]
       },
       {
-        id: "et-m2",
-        title: "AI Tools in Education",
-        description: "Understand and leverage AI tools effectively",
+        id: "frp-m2",
+        title: "The Flipped Classroom 2.0",
+        description: "Leverage video and digital assets for home prep",
         lessons: [
           {
-            id: "et-m2-l1",
-            title: "AI Tools for Teachers",
-            duration: "55 min",
-            description: "Use AI to save time and enhance your teaching.",
-            content: `# AI Tools for Teachers
+            id: "frp-m2-l1",
+            title: "Flipping Your Classroom with Digital Assets",
+            duration: "10 min",
+            description: "Move lectures to homework and make class time active and engaging.",
+            content: `# Flipping Your Classroom with Digital Assets
 
-## AI as Teaching Assistant
+## The Flipped Model
 
-AI tools can help teachers:
-- Save time on routine tasks
-- Generate ideas and resources
-- Differentiate materials
-- Provide feedback at scale
+**Traditional:** Lecture in class → Practice at home (alone, stuck)
+**Flipped:** Learn content at home (video, reading) → Practice in class (with teacher support)
 
-## Teacher Use Cases
+## Why Flipping Works
 
-### Lesson Planning
-- Generate lesson plan outlines
-- Create multiple versions for different levels
-- Brainstorm activities and assessments
+- Students can pause, rewind, and rewatch explanations
+- Class time is used for the hardest part: application
+- Teacher is available when students need help most
+- Students learn at their own pace
 
-### Creating Materials
-- Generate practice problems
-- Create reading passages at specific levels
-- Write quiz questions
-- Develop rubrics
+## Creating Effective Flip Content
 
-### Communication
-- Draft parent emails
-- Create newsletters
-- Write feedback comments
+### Video Lessons (5-10 minutes max)
+- Focus on ONE concept per video
+- Use screen recording + webcam (personal connection)
+- Include embedded questions (Edpuzzle, PlayPosit)
+- Provide captions for accessibility
 
-### Administrative Tasks
-- Summarize meeting notes
-- Create schedules
-- Organize information
+### Interactive Reading
+- Annotated articles with guiding questions
+- Interactive simulations students explore
+- Podcast episodes with reflection prompts
 
-## Using AI Effectively
+### Digital Practice
+- Low-stakes online practice with instant feedback
+- Adaptive platforms that adjust difficulty
+- Self-check activities before class
 
-### Prompting Tips
-- Be specific about what you want
-- Include context (grade level, subject, etc.)
-- Specify format and length
-- Ask for multiple options
+## The In-Class Flip Day
 
-### Always Review Output
-- AI makes mistakes
-- Check for accuracy
-- Ensure appropriateness for your context
-- Personalize before using
-
-### Ethical Considerations
-- Don't share student data with AI
-- Be transparent about AI use
-- Model responsible AI use for students`,
+Your class time becomes a workshop:
+1. **Quick Check (5 min):** Clarify misunderstandings from video
+2. **Application Activity (25 min):** Practice, problem-solving, projects
+3. **Deep Dive (15 min):** Extension, discussion, collaboration
+4. **Exit Check (5 min):** What do you still need?`,
             practicalExample: {
-              title: "Using AI to Differentiate Reading Materials",
-              scenario: "You have one reading passage but students at varying reading levels.",
+              title: "Flipping Your First Lesson",
+              scenario: "You want to flip your 10th-grade chemistry lesson on balancing equations.",
               steps: [
-                "Take your original passage and paste into an AI tool like ChatGPT",
-                "Prompt: 'Rewrite this passage at a 3rd-grade reading level, keeping the same main ideas'",
-                "Prompt again: 'Now rewrite at a 7th-grade level with more complex vocabulary'",
-                "Review both versions for accuracy and appropriateness",
-                "Create comprehension questions for each version: 'Create 5 questions about this passage at Bloom's levels 1-3'",
-                "Format for student use with consistent layout",
-                "Use the appropriate version for each student or group",
-                "Assess: Did differentiation improve comprehension?"
+                "Record a 7-minute video: First 2 min reviewing what an equation is, then 5 min demonstrating how to balance step-by-step with 2 examples",
+                "Upload to Edpuzzle and embed 3 check-for-understanding questions at key moments",
+                "Set the video as homework, due before class. Track who watched (Edpuzzle shows completion data)",
+                "In class: Start with a 3-min 'muddy point' discussion—what was confusing in the video?",
+                "Main activity (30 min): Students work in pairs on increasingly difficult equations. You circulate and help stuck pairs.",
+                "Extension (10 min): Challenge problems for those who finish early; reteach group for those who struggled",
+                "Exit ticket: Balance one equation independently to check understanding"
               ],
               tips: [
-                "Start with tasks that aren't high-stakes",
-                "Always fact-check AI output, especially for content knowledge",
-                "Use AI as a starting point, not a finished product",
-                "Keep records of prompts that work well"
+                "Start by flipping 1 lesson per week, not every day",
+                "Provide an alternative for students without home internet (school library time, printed notes)",
+                "Use video analytics to see where students pause or rewatch—that's where confusion lives",
+                "Don't just lecture on video—add annotations, highlights, and 'pause and try' moments"
               ]
             },
             keyTakeaways: [
-              "AI can save significant teacher time",
-              "Use AI for first drafts, not final products",
-              "Always review and personalize AI output",
-              "Protect student privacy—don't share student data"
+              "Flipping moves the hardest work to class time where you can help",
+              "Keep videos short, focused, and interactive",
+              "Use viewing data to inform your in-class instruction",
+              "Start small—flip one lesson per week and build from there"
+            ]
+          }
+        ]
+      },
+      {
+        id: "frp-m3",
+        title: "Gamification in Education",
+        description: "Using game mechanics to drive engagement and retention",
+        lessons: [
+          {
+            id: "frp-m3-l1",
+            title: "Game Mechanics That Drive Learning",
+            duration: "10 min",
+            description: "Apply proven game design principles to make your classroom irresistibly engaging.",
+            content: `# Game Mechanics That Drive Learning
+
+## Why Gamification Works
+
+Games tap into fundamental human motivations:
+- **Autonomy**: Players make meaningful choices
+- **Mastery**: Clear progression and skill growth
+- **Purpose**: Goals that feel meaningful
+- **Social connection**: Collaboration and competition
+
+## Core Game Mechanics for the Classroom
+
+### XP (Experience Points)
+Replace traditional grades with XP that accumulate:
+- Complete homework: +50 XP
+- Ace a quiz: +100 XP
+- Help a classmate: +25 XP
+- Perfect attendance week: +75 XP
+- Levels unlock at 500, 1500, 3000, 5000 XP
+
+### Badges & Achievements
+Recognize specific accomplishments:
+- "First Try": Got 100% on first attempt
+- "Comeback Kid": Improved score by 20%+
+- "Team Player": Led a group project
+- "Knowledge Seeker": Asked 10 thoughtful questions
+
+### Quests (not assignments)
+Rename assignments as quests with narrative:
+- "Main Quest": Required core assignments
+- "Side Quest": Optional enrichment activities
+- "Boss Battle": Unit assessments
+- "Daily Challenge": Warm-up activities
+
+### Leaderboards (Use Carefully)
+- Show top 10 without bottom rankings
+- Use team leaderboards to encourage collaboration
+- Reset periodically to give everyone a fresh start
+- Celebrate growth, not just achievement
+
+## The Streak System
+Daily engagement tracking:
+- Day 1-7: Building a streak 🔥
+- Day 7: Bronze streak badge
+- Day 14: Silver streak badge
+- Day 30: Gold streak badge
+- If you miss a day, you can "earn back" your streak with extra effort`,
+            practicalExample: {
+              title: "Gamifying Your Classroom in One Weekend",
+              scenario: "You want to launch a gamified system on Monday morning.",
+              steps: [
+                "Saturday: Design your XP system on paper. Map existing grades to XP values (A = 100 XP, B = 80 XP, etc.)",
+                "Create 10 badges using Canva: 5 academic (Quiz Master, Essay Expert) and 5 character (Helping Hand, Persistent Learner)",
+                "Design a simple 'Level Up' chart: Level 1 (0-500 XP), Level 2 (500-1500), etc. with small perks at each level (choose your seat, homework pass, etc.)",
+                "Sunday: Create a class leaderboard in Google Sheets. Use conditional formatting for team colors.",
+                "Monday: Launch with excitement! Present the system as 'We're upgrading our classroom experience.'",
+                "First week: Award XP generously to build momentum. Give out 2-3 badges to create excitement.",
+                "Track engagement: Are students more excited? Is participation up? Adjust point values as needed."
+              ],
+              tips: [
+                "Start simple—you can always add more game elements later",
+                "Make sure EVERYONE can earn XP, not just top students",
+                "Celebrate streaks publicly: 'Maria is on a 15-day learning streak!'",
+                "Never use gamification to punish—only to reward and motivate"
+              ]
+            },
+            keyTakeaways: [
+              "Game mechanics tap into intrinsic human motivations",
+              "XP systems make progress visible and rewarding",
+              "Badges recognize diverse achievements beyond test scores",
+              "Start simple and expand based on student response"
+            ]
+          },
+          {
+            id: "frp-m3-l2",
+            title: "Building Classroom Quests & Narratives",
+            duration: "8 min",
+            description: "Transform your curriculum into an epic adventure students can't wait to continue.",
+            content: `# Building Classroom Quests & Narratives
+
+## The Power of Story
+
+Humans are wired for narrative. When learning is embedded in a story, retention increases by up to 65%.
+
+## Creating Your Classroom Narrative
+
+### Choose a Theme
+Pick a theme that fits your subject:
+- Science: "Space Explorer Academy" or "Lab Scientists Saving the Planet"
+- History: "Time Traveler's Guild"
+- Math: "The Code Breakers Society"
+- English: "The Storytellers' League"
+
+### Build a Semester Arc
+Create an overarching story that unfolds through the curriculum:
+- Beginning: Introduction to the world, establish the challenge
+- Middle: Increasingly complex quests that build skills
+- End: A final "boss battle" that requires everything they've learned
+
+## Quest Design
+
+### Main Quests (Required)
+Map to your core curriculum:
+- Clear objectives tied to standards
+- Multiple steps with checkpoints
+- Narrative wrapper that makes it feel meaningful
+
+### Side Quests (Optional)
+Enrichment and extension:
+- Extra credit opportunities
+- Cross-curricular connections
+- Community service tie-ins
+- Creative expression options
+
+### Daily Challenges
+Quick engagement boosters:
+- "Mystery Question of the Day"
+- "Speed Round" warm-up activities
+- "Bonus XP" for going above and beyond
+
+## Making It Sustainable
+
+You don't need to reinvent every lesson:
+- Add a quest title to existing assignments
+- Include a brief narrative intro (30 seconds)
+- Track progress on a visible quest map
+- Celebrate completions dramatically`,
+            practicalExample: {
+              title: "Creating a Semester-Long Quest Narrative",
+              scenario: "You teach 8th-grade science and want to gamify the entire year.",
+              steps: [
+                "Theme: 'Planetary Defense Academy' — Students are recruits learning to protect Earth",
+                "Unit 1 (Cells/Biology): 'Mission: Understand Life' — Students study cells to fight a fictional bio-threat",
+                "Unit 2 (Chemistry): 'Mission: Decode Matter' — Students learn chemistry to develop a protective formula",
+                "Unit 3 (Physics): 'Mission: Master Energy' — Students learn energy concepts to build defense systems",
+                "Unit 4 (Earth Science): 'Mission: Save the Planet' — Students apply all knowledge to solve environmental challenges",
+                "Each unit has: 3 Main Quests (assignments), 2 Side Quests (optional), 1 Boss Battle (test), Daily Challenges",
+                "Create a visual 'Mission Map' on the classroom wall showing progress through the story"
+              ],
+              tips: [
+                "You don't need to write a novel—2-3 sentences of narrative per quest is enough",
+                "Let students name their teams and create team identities",
+                "The story should enhance learning, not distract from it",
+                "Adjust the narrative based on what excites your students"
+              ]
+            },
+            keyTakeaways: [
+              "Narrative context increases retention by up to 65%",
+              "Choose a theme that naturally fits your subject",
+              "Quest design maps directly to your existing curriculum",
+              "Keep it sustainable—narrative wrappers, not complete rewrites"
             ]
           }
         ]
@@ -1625,376 +958,696 @@ AI tools can help teachers:
     ]
   },
   {
-    id: "social-emotional-learning",
-    title: "Social-Emotional Learning",
-    description: "Foster emotional intelligence and well-being in your classroom with proven SEL frameworks.",
-    longDescription: "Learn to integrate social-emotional learning into your daily practice. This course covers SEL competencies, implementation strategies, and creating a classroom culture that supports the whole child.",
+    id: "sel-leadership",
+    title: "Social-Emotional Leadership (SEL)",
+    description: "Master mental health first aid, neurodiversity strategies, and growth mindset cultivation for the digital age.",
+    longDescription: "This critical module equips educators to be emotional leaders in their classrooms. Learn to identify burnout in students and yourself, implement strategies for neurodiverse learners (ADHD, Autism, diverse learning styles), and build resilience and growth mindsets in a high-pressure digital world. These skills are the foundation of zero dropout engagement.",
     category: "Wellbeing",
-    duration: "5 weeks",
-    students: 2134,
+    duration: "4 weeks",
+    students: 5102,
     rating: 4.9,
     aiPowered: false,
-    instructor: "Dr. Angela Williams",
-    instructorBio: "School psychologist and SEL curriculum developer with expertise in trauma-informed practices.",
+    instructor: "Dr. Amara Johnson",
+    instructorBio: "Licensed school psychologist, author of 'The Emotionally Intelligent Classroom,' TEDx speaker on teacher wellbeing.",
     modules: [
       {
         id: "sel-m1",
-        title: "SEL Foundations",
-        description: "Understand what SEL is and why it matters",
+        title: "Mental Health First Aid",
+        description: "Identifying burnout in students and self",
         lessons: [
           {
             id: "sel-m1-l1",
-            title: "The CASEL Framework",
-            duration: "45 min",
-            description: "Explore the five core SEL competencies.",
-            content: `# The CASEL Framework
+            title: "Recognizing Student Distress Signals",
+            duration: "10 min",
+            description: "Learn to identify early warning signs of student mental health struggles.",
+            content: `# Recognizing Student Distress Signals
 
-## What is SEL?
+## Why This Matters
 
-Social-Emotional Learning (SEL) is the process through which all young people and adults acquire and apply the knowledge, skills, and attitudes to:
-- Develop healthy identities
-- Manage emotions
-- Achieve personal and collective goals
-- Feel and show empathy
-- Establish and maintain supportive relationships
-- Make responsible and caring decisions
+1 in 5 students experiences a mental health challenge in any given year. Teachers are often the first adults to notice changes. Early identification can be life-changing.
 
-## The Five Core Competencies
+## Behavioral Warning Signs
 
-### 1. Self-Awareness
-Recognizing one's own emotions, thoughts, and values
-- Identifying emotions
-- Accurate self-perception
-- Recognizing strengths
-- Self-confidence
-- Self-efficacy
+### Academic Changes
+- Sudden grade drops
+- Missed assignments (from a previously reliable student)
+- Declining participation
+- Inability to concentrate
 
-### 2. Self-Management
-Regulating one's emotions, thoughts, and behaviors
-- Impulse control
-- Stress management
-- Self-discipline
-- Self-motivation
-- Goal-setting
+### Social Changes
+- Withdrawal from friends
+- Increased irritability or aggression
+- Avoiding group work
+- Spending break time alone (new behavior)
 
-### 3. Social Awareness
-Understanding the perspectives of others
-- Perspective-taking
-- Empathy
-- Appreciating diversity
-- Respect for others
+### Physical Signs
+- Changes in appearance or hygiene
+- Fatigue or sleeping in class
+- Frequent complaints of headaches/stomachaches
+- Changes in eating habits
 
-### 4. Relationship Skills
-Establishing and maintaining healthy relationships
-- Communication
-- Social engagement
-- Teamwork
-- Conflict resolution
+### Digital Warning Signs
+- Dark or concerning social media posts
+- Cyberbullying involvement
+- Excessive screen time as escape
+- Online persona dramatically different from in-person
 
-### 5. Responsible Decision-Making
-Making constructive choices about behavior and social interactions
-- Identifying problems
-- Analyzing situations
-- Solving problems
-- Evaluating
-- Reflecting
-- Ethical responsibility
+## The NOTICE Framework
 
-## Why SEL Matters
+### N - Note the change
+Document what you observe (behavior, not diagnosis)
 
-Research shows SEL:
-- Improves academic achievement by 11 percentile points
-- Reduces conduct problems and emotional distress
-- Improves attitudes toward school
-- Benefits persist for years`,
+### O - Open a conversation
+"I've noticed you seem [specific observation]. I want to check in."
+
+### T - Talk and listen
+Let them share. Don't fix, just listen.
+
+### I - Identify support
+"Would it help if we talked to the counselor together?"
+
+### C - Connect to resources
+Provide information about school and community resources
+
+### E - Evaluate and follow up
+Check back in. Don't assume one conversation fixes things.`,
             practicalExample: {
-              title: "Mapping SEL Competencies to Your Classroom",
-              scenario: "You want to intentionally address each SEL competency in your teaching.",
+              title: "Having a Check-In Conversation with a Struggling Student",
+              scenario: "A normally engaged student has been withdrawn for 2 weeks. Grades are dropping.",
               steps: [
-                "Self-Awareness: Start class with emotion check-ins ('Rate your energy 1-5')",
-                "Self-Management: Teach a calming strategy (belly breathing, grounding)",
-                "Social Awareness: Use perspective-taking prompts ('How might ___ be feeling?')",
-                "Relationship Skills: Include structured partner work with communication norms",
-                "Responsible Decision-Making: When problems arise, use a decision-making protocol",
-                "Create a weekly map: Monday focuses on self-awareness, Tuesday on relationship skills, etc.",
-                "Integrate into content: In literature, discuss characters' emotions and decisions",
-                "Assess: Weekly reflection: 'Which skill did you practice most this week?'"
+                "Find a private, non-threatening moment (not in front of peers). 'Hey, can you stay for 2 minutes after class?'",
+                "Start with genuine care, not accusation: 'I've noticed you've seemed quieter lately, and I wanted to check in because I care about how you're doing.'",
+                "Use open-ended questions: 'How are things going for you right now?' (not 'What's wrong?')",
+                "LISTEN. Resist the urge to offer solutions immediately. Nod. 'That sounds really hard.'",
+                "Ask permission to help: 'Would it be okay if I shared this with our school counselor? They're really good at helping with this kind of thing.'",
+                "End with commitment: 'I'm glad you told me. I'm going to check in with you on Friday. You matter to me.'",
+                "Document the conversation privately. Follow your school's reporting protocol if needed."
               ],
               tips: [
-                "SEL should be integrated, not an add-on",
-                "Model SEL skills yourself—students watch how you handle stress",
-                "Connect SEL to academic content naturally",
-                "Build classroom culture that reinforces SEL norms"
+                "Never promise to keep a secret if there's a safety concern",
+                "You don't need to be a therapist—just a caring, attentive adult",
+                "Document observations factually (dates, behaviors, not interpretations)",
+                "Know your school's crisis protocol before you need it"
               ]
             },
             keyTakeaways: [
-              "SEL includes five interconnected competencies",
-              "SEL improves both behavior and academics",
-              "All competencies can be taught and practiced",
-              "Integration into daily practice is more effective than isolated lessons"
+              "Teachers are often the first to notice student mental health changes",
+              "Look for CHANGES in behavior, not specific behaviors",
+              "The NOTICE framework provides a clear conversation path",
+              "You don't need to fix it—you need to see it and connect them to support"
             ]
           },
           {
             id: "sel-m1-l2",
-            title: "Creating SEL-Supportive Classroom Culture",
-            duration: "50 min",
-            description: "Build an environment where SEL thrives.",
-            content: `# Creating SEL-Supportive Classroom Culture
+            title: "Teacher Burnout: Prevention & Recovery",
+            duration: "10 min",
+            description: "Identify your own burnout signals and implement sustainable self-care.",
+            content: `# Teacher Burnout: Prevention & Recovery
 
-## Culture vs. Curriculum
+## The Burnout Epidemic
 
-You can have the best SEL curriculum in the world, but if your classroom culture doesn't support it, skills won't transfer. Culture is:
-- How you and students interact daily
-- The unwritten rules everyone follows
-- What gets celebrated vs. corrected
-- Whether students feel safe taking risks
+44% of teachers report feeling burned out. Teacher burnout doesn't just affect you—it directly impacts your students' learning, behavior, and emotional safety.
 
-## Key Elements of SEL Culture
+## The Three Dimensions of Burnout
 
-### Emotional Safety
-Students feel safe to:
-- Express emotions
-- Make mistakes
-- Ask questions
-- Be themselves
+### 1. Emotional Exhaustion
+- Feeling drained before the day begins
+- Dreading Monday on Sunday afternoon
+- Unable to muster enthusiasm for activities you used to love
 
-### Belonging
-Every student feels:
-- Known by the teacher
-- Connected to classmates
-- Part of the community
-- Valued for who they are
+### 2. Depersonalization
+- Becoming cynical about students or education
+- Emotional detachment from your work
+- "Going through the motions"
 
-### High Expectations with High Support
-Students experience:
-- Belief in their potential
-- Challenging work
-- Help when struggling
-- Recognition of effort
+### 3. Reduced Personal Accomplishment
+- Feeling like nothing you do matters
+- Questioning whether you're making a difference
+- Imposter syndrome intensifying
 
-## Practical Culture Builders
+## The Burnout Assessment
 
-### Morning Meetings / Class Circles
-- Daily gathering ritual
-- Greeting, sharing, activity
-- Builds community
+Rate yourself 1-5 on each:
+- I feel emotionally drained by my work
+- I feel used up at the end of the workday
+- I dread getting up in the morning to face another day
+- Working with students all day is a real strain
+- I feel I'm working too hard
 
-### Classroom Agreements (not rules)
-- Created together
-- Focused on how we treat each other
-- Regularly referenced
+Score 20-25: Severe burnout risk — seek support immediately
+Score 15-19: Moderate burnout — implement changes now
+Score 10-14: Mild burnout — preventive measures recommended
+Score 5-9: Healthy — maintain current practices
 
-### Restorative Practices
-- Focus on repairing harm
-- Not just punishment
-- Building accountability`,
+## Prevention Strategies
+
+### Boundaries
+- No email after 7 PM
+- One screen-free evening per week
+- Say no to one extra commitment this month
+
+### Recovery Rituals
+- 5-minute mindfulness before first class
+- Lunch break AWAY from your desk
+- A physical transition between school and home (walk, gym, music in the car)
+
+### Connection
+- One meaningful conversation with a colleague per day
+- Celebrate small wins with your team
+- Ask for help when overwhelmed`,
             practicalExample: {
-              title: "Implementing Daily Morning Meetings",
-              scenario: "You want to start each day with an SEL-focused community builder.",
+              title: "Creating Your Personal Anti-Burnout Plan",
+              scenario: "You're feeling exhausted and want to create sustainable habits before burnout hits.",
               steps: [
-                "Set up: Arrange desks in a circle or have students sit on the floor",
-                "Greeting (2 min): Students greet each other by name ('Good morning, Maria!')",
-                "Sharing (3-5 min): One student shares something; others practice listening and responding",
-                "Activity (5 min): A quick game that builds community (e.g., 'Would you rather...?')",
-                "Message (1 min): Preview the day and connect to SEL ('Today we'll practice perseverance')",
-                "Start simple: Just greeting for Week 1, add components gradually",
-                "Use a talking piece to manage sharing turns",
-                "Keep it consistent: Same time, same format, every day"
+                "Take the burnout assessment above honestly. Write your score and date it.",
+                "Identify your #1 burnout trigger: Is it grading? Parent emails? Meetings? Behavior management?",
+                "For your #1 trigger, set ONE boundary this week: 'I will not grade after 8 PM' or 'I will batch parent emails to 30 minutes on Tuesday/Thursday'",
+                "Schedule 3 recovery rituals into your weekly calendar (treat them like meetings you can't cancel): Walk Monday/Wednesday, Read during lunch Tuesday, No-screen evening Friday",
+                "Find one 'burnout buddy'—a colleague you trust. Agree to check in weekly: 'How are you REALLY doing?'",
+                "Retake the burnout assessment in 4 weeks. Track your score over time.",
+                "If your score stays high after implementing changes, consider talking to a counselor—it's not weakness, it's wisdom."
               ],
               tips: [
-                "Morning Meeting takes time but saves time later through better behavior",
-                "If pressed for time, even 5 minutes of greeting is valuable",
-                "Participate as a member, not just facilitator",
-                "Let students lead components as they gain comfort"
+                "Self-care is not selfish—burned-out teachers can't serve students well",
+                "Start with ONE change, not ten. Sustainable beats dramatic.",
+                "Your boundaries teach students healthy behavior too",
+                "If your school culture punishes boundaries, that's a systemic issue—not a personal failure"
               ]
             },
             keyTakeaways: [
-              "Culture enables or undermines SEL curriculum",
-              "Safety and belonging are foundational",
-              "Daily rituals build community",
-              "Invest time early—it pays off in behavior and engagement"
-            ]
-          },
-          {
-            id: "sel-m1-l3",
-            title: "Teaching Emotional Regulation",
-            duration: "55 min",
-            description: "Help students manage big emotions effectively.",
-            content: `# Teaching Emotional Regulation
-
-## What is Emotional Regulation?
-
-Emotional regulation is the ability to:
-- Recognize emotions as they occur
-- Accept emotions without judgment
-- Choose how to respond (not react)
-- Use strategies to manage intense emotions
-
-## The Brain Science (Simplified)
-
-### The Amygdala (Alarm System)
-- Detects threats
-- Triggers fight/flight/freeze
-- Fast but not always accurate
-
-### The Prefrontal Cortex (Control Center)
-- Logical thinking
-- Decision-making
-- Takes longer to activate
-
-### The Flip (Dan Siegel's Hand Model)
-When overwhelmed, the "lid flips"—the prefrontal cortex goes offline and the amygdala takes over. No learning can happen in this state.
-
-## Regulation Strategies
-
-### Prevention Strategies
-- Regular mindfulness practice
-- Physical movement
-- Adequate sleep and nutrition
-- Predictable routines
-
-### In-the-Moment Strategies
-- Deep breathing (4-7-8 method)
-- Grounding (5-4-3-2-1 senses)
-- Movement (walk, stretch)
-- Positive self-talk
-
-### Recovery Strategies
-- Reflection after the emotion passes
-- Problem-solving when calm
-- Repair relationships if needed
-
-## Teaching Regulation to Students
-
-1. **Teach when calm**—not during a crisis
-2. **Model explicitly**—"I'm feeling frustrated, so I'm going to take three breaths"
-3. **Practice regularly**—make strategies automatic
-4. **Provide space**—calm-down corners, breaks as needed`,
-            practicalExample: {
-              title: "Creating a Calm-Down Corner and Protocol",
-              scenario: "You want to provide a space for students to regulate without leaving class.",
-              steps: [
-                "Choose a corner: Away from traffic, somewhat private but visible to you",
-                "Stock it: Stress balls, fidgets, noise-canceling headphones, visual calming prompts",
-                "Add strategy cards: 'Breathe', 'Ground yourself', 'Think of a safe place'",
-                "Teach the protocol: 'When you're overwhelmed, sign to me and go to the corner'",
-                "Set expectations: 'You can be there for 5 minutes, then rejoin or talk to me'",
-                "Practice when calm: Have every student visit and practice a strategy",
-                "Debrief after use: 'What helped? What do you need next time?'",
-                "Normalize: 'Using the calm-down corner shows good self-awareness'"
-              ],
-              tips: [
-                "This is not a punishment—frame it as a self-care tool",
-                "Keep it stocked with items students actually find calming",
-                "Teach that leaving the classroom isn't usually necessary",
-                "Some students may overuse—address privately"
-              ]
-            },
-            keyTakeaways: [
-              "Emotional regulation is a learnable skill",
-              "Teach strategies when students are calm",
-              "Provide physical spaces and tools for regulation",
-              "Model your own regulation explicitly"
+              "Burnout affects 44% of teachers—you are not alone",
+              "Emotional exhaustion, depersonalization, and reduced accomplishment are the three dimensions",
+              "Prevention is easier than recovery—set boundaries early",
+              "One small sustainable change beats dramatic unsustainable ones"
             ]
           }
         ]
       },
       {
         id: "sel-m2",
-        title: "Addressing Trauma and Difficult Emotions",
-        description: "Support students with trauma while maintaining boundaries",
+        title: "Neurodiversity in the Classroom",
+        description: "Strategies for ADHD, Autism, and diverse learning styles",
         lessons: [
           {
             id: "sel-m2-l1",
-            title: "Trauma-Informed Classroom Practices",
-            duration: "60 min",
-            description: "Create safety for students who have experienced trauma.",
-            content: `# Trauma-Informed Classroom Practices
+            title: "Understanding Neurodiverse Learners",
+            duration: "10 min",
+            description: "Build a classroom that works for ADHD, autistic, and all types of learners.",
+            content: `# Understanding Neurodiverse Learners
 
-## Understanding Trauma
+## What is Neurodiversity?
 
-Trauma is when an event (or series of events) overwhelms a person's ability to cope. For children, this can include:
-- Abuse or neglect
-- Family instability
-- Community violence
-- Poverty
-- Natural disasters
-- Medical trauma
+Neurodiversity means that brains work differently—and that's normal. It includes ADHD, autism, dyslexia, dyscalculia, and other neurological variations. These are not deficits—they are differences.
 
-## Impact on Learning
+## ADHD in the Classroom
 
-Trauma affects:
-- **Brain development**: Constant stress impacts the developing brain
-- **Behavior**: Fight, flight, freeze responses may appear as defiance, withdrawal, or shutting down
-- **Relationships**: Difficulty trusting adults
-- **Learning**: Impaired concentration and memory
-- **Regulation**: Difficulty managing emotions
+### What It Looks Like
+- Difficulty sustaining attention (but can hyperfocus on interests)
+- Impulsive responses
+- Physical restlessness
+- Trouble with organization and time management
 
-## Trauma-Informed Principles
+### What Works
+- Movement breaks every 15-20 minutes
+- Visual timers for transitions
+- Fidget tools (quietly)
+- Chunked instructions (3 steps max at a time)
+- Seating near the teacher, away from distractions
+- Written AND verbal instructions
 
-### Safety
-Both physical and emotional safety are essential
-- Predictable routines reduce anxiety
-- Clear expectations create security
-- Calm adult presence provides stability
+## Autism Spectrum in the Classroom
 
-### Trustworthiness
-Build trust through consistency
-- Do what you say you'll do
-- Be predictable
-- Maintain boundaries
+### What It Looks Like
+- Difficulty with social cues and group work
+- Strong preference for routine and predictability
+- Intense focus on specific interests
+- Sensory sensitivities (noise, light, texture)
+- May struggle with open-ended assignments
 
-### Choice
-Restore sense of control
-- Offer choices when possible
-- Avoid power struggles
-- Respect student autonomy
+### What Works
+- Clear, predictable routines
+- Visual schedules posted in the classroom
+- Explicit social instruction for group work
+- Offering quiet spaces or noise-canceling headphones
+- Leveraging special interests when possible
+- Concrete instructions with examples
 
-### Collaboration
-Work with students, not on them
-- Include students in solutions
-- Value their input
-- Build on strengths
+## Universal Design for Learning (UDL)
 
-### Empowerment
-Focus on strengths and resilience
-- Recognize what students do well
-- Build self-efficacy
-- Celebrate growth
-
-## What This Looks Like in Practice
-
-- Greeting students warmly at the door
-- Warning before transitions
-- Offering choices ("Would you like to work alone or with a partner?")
-- Responding to behavior with curiosity, not judgment
-- Maintaining calm when students are dysregulated`,
+Design for neurodiversity, and EVERYONE benefits:
+- **Multiple means of representation**: Present info visually, auditorily, and kinesthetically
+- **Multiple means of action/expression**: Let students show learning in different ways
+- **Multiple means of engagement**: Offer choice in how and what students learn`,
             practicalExample: {
-              title: "Responding to a Student in Crisis",
-              scenario: "A student suddenly becomes very agitated after something triggers them.",
+              title: "Redesigning a Lesson for Neurodiverse Learners",
+              scenario: "You're teaching a 40-minute lesson on the solar system to a class that includes students with ADHD and autism.",
               steps: [
-                "Stay calm: Your nervous system affects theirs—breathe, lower your voice",
-                "Create safety: Move calmly toward them, reduce audience (other students continue working)",
-                "Offer presence: 'I'm here. You're safe. I'm not going to leave.'",
-                "Don't demand: Avoid 'Look at me' or 'Stop that'—their thinking brain is offline",
-                "Reduce stimulation: Lower lights if possible, move to quieter area if they can",
-                "Offer regulation: 'Would you like to squeeze this stress ball? Let's breathe together.'",
-                "Wait: It takes 20+ minutes for stress chemicals to clear—don't rush",
-                "Debrief later: When calm: 'What happened? What can we do next time?'",
-                "Document: Note what triggered, what helped, to inform future responses"
+                "Post the lesson agenda on the board with times: 'Today: 1) Quick quiz (5 min) 2) Planet exploration (15 min) 3) Create your guide (15 min) 4) Share (5 min)'",
+                "Start with a movement-based warm-up: students physically walk to labels on the wall (Mercury = closest, Neptune = farthest)",
+                "Main content: Stations model (students rotate every 7 minutes between 3 stations—video, reading, hands-on model)",
+                "For the creative portion, offer 3 options: Draw a poster, Write a travel brochure, Record a 1-min audio guide",
+                "Provide fidget tools at every table. Allow standing desks or floor seating for those who need it.",
+                "Use a visual timer projected on the screen so everyone knows how much time remains",
+                "Closing: Structured share protocol (30 seconds each, using sentence starters)"
               ],
               tips: [
-                "You can't reason with someone in crisis—co-regulate first",
-                "Never back a student into a corner (literally or figuratively)",
-                "Have a plan for the rest of the class during incidents",
-                "Take care of yourself—trauma responses are draining for teachers too"
+                "What works for neurodiverse learners works for ALL learners",
+                "Routine and predictability reduce anxiety for everyone",
+                "Choice doesn't mean chaos—give structured choices (this OR that, not 'whatever you want')",
+                "Check in privately with neurodiverse students before demanding public participation"
               ]
             },
             keyTakeaways: [
-              "Many students have experienced trauma—assume it's in your room",
-              "Behavior often communicates unmet needs",
-              "Trauma-informed practices benefit all students",
-              "Focus on relationships, safety, and regulation"
+              "Neurodiversity is normal—1 in 5 people are neurodiverse",
+              "ADHD, autism, and dyslexia require different (not lesser) strategies",
+              "Universal Design for Learning benefits ALL students",
+              "Routine, choice, and sensory awareness are your best tools"
+            ]
+          }
+        ]
+      },
+      {
+        id: "sel-m3",
+        title: "Cultivating Growth Mindsets",
+        description: "Building resilience in a high-pressure digital age",
+        lessons: [
+          {
+            id: "sel-m3-l1",
+            title: "From Fixed to Growth: Rewiring Student Beliefs",
+            duration: "10 min",
+            description: "Transform how students think about intelligence, effort, and failure.",
+            content: `# From Fixed to Growth: Rewiring Student Beliefs
+
+## Fixed vs. Growth Mindset
+
+### Fixed Mindset Beliefs
+- "I'm just not a math person"
+- "Smart people don't need to try hard"
+- "If I fail, it means I'm not good enough"
+- "Feedback is criticism"
+
+### Growth Mindset Beliefs
+- "I can improve at math with practice and support"
+- "Effort and strategy lead to mastery"
+- "Failure is data about what to try next"
+- "Feedback is a gift that helps me grow"
+
+## The Science Behind It
+
+Research by Carol Dweck shows that students who believe intelligence is malleable:
+- Try harder after failure
+- Use more effective strategies
+- Seek challenge instead of avoiding it
+- Achieve more over time
+
+## Practical Mindset Shifts in the Classroom
+
+### Language Changes
+- Instead of "You're so smart!" → "You worked really hard on that strategy!"
+- Instead of "This is easy!" → "This will challenge you, and that's good!"
+- Instead of "You got it wrong" → "You haven't gotten it YET. What can you try differently?"
+
+### Grading for Growth
+- Allow retakes and revisions (learning isn't one-shot)
+- Grade improvement, not just achievement
+- Use portfolios to show growth over time
+- Replace "F" with "Not Yet"
+
+### Celebrating Productive Struggle
+- "Mistake of the Week": Share and learn from errors
+- "Stuck and Unstuck" journals: What was hard? How did you push through?
+- Growth Mindset Wall: Student quotes about overcoming challenges
+
+## The Teacher's Own Mindset
+
+You can't teach what you don't model:
+- Share your own mistakes openly
+- Talk about skills you're still learning
+- Show vulnerability when trying new teaching methods
+- Celebrate your own growth publicly`,
+            practicalExample: {
+              title: "Launching a Growth Mindset Culture in Your Classroom",
+              scenario: "It's the beginning of the year and you want to establish a growth mindset culture.",
+              steps: [
+                "Week 1, Day 1: Show a short video about brain neuroplasticity (2 min). Discuss: 'Your brain literally grows new connections when you struggle and learn.'",
+                "Week 1: Introduce 'The Power of Yet'—add the word 'yet' to every 'I can't' statement. Create a classroom poster.",
+                "Week 2: Start 'Mistake Monday'—every Monday, share a mistake and what you learned. Teacher goes first!",
+                "Week 3: Implement revision opportunities for all major assignments. Message: 'First attempts are drafts, not finals.'",
+                "Week 4: Create a Growth Mindset Journal—5 min weekly reflection: 'What was hard this week? What did I learn from the struggle?'",
+                "Ongoing: Change your praise language. Track yourself for one week—how often do you praise effort vs. intelligence?",
+                "End of quarter: Students write letters to their beginning-of-year selves about what they've learned about learning."
+              ],
+              tips: [
+                "Growth mindset isn't about blind positivity—it's about valuing the PROCESS of learning",
+                "Don't praise effort that isn't productive—help students find BETTER strategies",
+                "Parents need the message too—send home a 'Growth Mindset at Home' guide",
+                "Be patient—mindset shifts take time, especially for students with years of fixed mindset messaging"
+              ]
+            },
+            keyTakeaways: [
+              "Growth mindset is teachable and transformative",
+              "Language changes are the simplest, most powerful tool",
+              "Allowing revision normalizes the learning process",
+              "Teachers must model growth mindset, not just teach it"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "digital-literacy-data",
+    title: "Digital Literacy & Data",
+    description: "Master data-driven instruction using analytics, and teach cyber-safety and digital citizenship to protect students.",
+    longDescription: "In a world driven by data, educators must understand how to use platform analytics to personalize student learning paths and protect student privacy. This module covers data-driven instruction techniques and comprehensive digital citizenship education to prepare students for responsible digital lives.",
+    category: "Digital Teaching",
+    duration: "3 weeks",
+    students: 2987,
+    rating: 4.7,
+    aiPowered: true,
+    instructor: "Dr. Kevin O'Brien",
+    instructorBio: "Former Chief Data Officer for a school district, cybersecurity educator, and author of 'Data-Literate Schools.'",
+    modules: [
+      {
+        id: "dld-m1",
+        title: "Data-Driven Instruction",
+        description: "Using platform analytics to personalize student paths",
+        lessons: [
+          {
+            id: "dld-m1-l1",
+            title: "Reading Your Data Dashboard",
+            duration: "10 min",
+            description: "Turn raw student data into actionable teaching decisions.",
+            content: `# Reading Your Data Dashboard
+
+## Data is Your Teaching Superpower
+
+Every digital tool your students use generates data. The question isn't whether you have data—it's whether you're using it effectively.
+
+## Types of Student Data
+
+### Engagement Data
+- Time on task
+- Login frequency
+- Resource access patterns
+- Video completion rates
+
+### Performance Data
+- Quiz/test scores
+- Assignment completion rates
+- Error patterns
+- Growth trajectories
+
+### Behavioral Data
+- Participation frequency
+- Collaboration patterns
+- Help-seeking behavior
+- Self-regulation indicators
+
+## The Data-to-Action Cycle
+
+### 1. Collect
+Choose 2-3 key metrics per week (not everything!)
+
+### 2. Analyze
+Look for patterns, not individual data points:
+- Are most students struggling with the same concept?
+- Is one group progressing faster than others?
+- Are engagement levels dropping at a specific point?
+
+### 3. Act
+Turn insights into instructional decisions:
+- Low quiz scores on Topic 3 → Reteach with different approach
+- 60% didn't watch the video past minute 4 → Video too long, split into two
+- Group A is ahead → Provide enrichment activities
+
+### 4. Reflect
+Did your changes work? Check the data again.
+
+## Common Data Pitfalls
+
+- **Analysis paralysis**: Too much data, no action
+- **Confirmation bias**: Only seeing data that confirms your beliefs
+- **Ignoring context**: Data without understanding student circumstances
+- **Surveillance feeling**: Students feeling watched, not supported`,
+            practicalExample: {
+              title: "Running a Weekly Data Review Routine",
+              scenario: "You have access to your LMS dashboard data for 90 students across 3 classes.",
+              steps: [
+                "Every Friday (15 min): Pull up your LMS analytics dashboard",
+                "Check 3 key metrics: 1) Assignment completion rate, 2) Average quiz score, 3) Student engagement (logins/time on platform)",
+                "Identify 'Red Flag' students: Who hasn't submitted work this week? Who scored below 60%? Who hasn't logged in?",
+                "Identify 'Green Light' students: Who improved? Who exceeded expectations? Who demonstrated growth?",
+                "Create 3 action items for next week: 1 reteach topic, 1 student check-in, 1 enrichment opportunity",
+                "Send a quick parent update for any Red Flag students (use your communication templates!)",
+                "Track these metrics over time in a simple spreadsheet to see trends across weeks"
+              ],
+              tips: [
+                "Set a timer—15 minutes is enough for a weekly review",
+                "Focus on trends, not single data points",
+                "Share positive data with students: 'As a class, you improved 12% on this topic!'",
+                "Never use data to shame students publicly"
+              ]
+            },
+            keyTakeaways: [
+              "Data should drive decisions, not drown you",
+              "Focus on 2-3 key metrics per week",
+              "The data-to-action cycle keeps teaching responsive",
+              "Always pair data with context and human judgment"
+            ]
+          },
+          {
+            id: "dld-m1-l2",
+            title: "Personalizing Learning Paths with Data",
+            duration: "8 min",
+            description: "Use student performance data to create individualized learning experiences.",
+            content: `# Personalizing Learning Paths with Data
+
+## Why Personalization Matters
+
+One-size-fits-all instruction leaves struggling students behind and advanced students bored. Data enables you to meet every student where they are.
+
+## Creating Data-Informed Learning Paths
+
+### Flexible Grouping
+Use data to create fluid groups:
+- **Skill-based groups**: Students at similar mastery levels (change weekly!)
+- **Interest groups**: Students choose topics within the same standard
+- **Mixed groups**: Strategic pairing of stronger and developing students
+
+### Adaptive Pacing
+Not every student needs the same timeline:
+- Must-do activities (core content)
+- Should-do activities (reinforcement)
+- Could-do activities (extension)
+- Students self-pace through with check-in milestones
+
+### Choice Boards
+Data tells you what students need; choice lets them decide HOW:
+- 9 activities aligned to the same standard
+- Students choose 3 that match their learning style
+- Activities range from basic recall to creative synthesis
+
+## Simple Personalization Strategies
+
+### The 3-2-1 Approach
+Based on pre-assessment data:
+- 3 activities for students who need foundation building
+- 2 activities for on-level students
+- 1 challenge activity for advanced students
+- All assess the same standard
+
+### Learning Playlists
+Student self-directed learning menus:
+- "Watch this video, then complete this practice"
+- "Read this article, then respond to these questions"
+- "Try this interactive simulation, then journal your findings"
+- Students check off completed items and reflect`,
+            practicalExample: {
+              title: "Creating Personalized Learning Paths for a Math Unit",
+              scenario: "You're teaching fractions and your pre-test data shows 3 distinct groups.",
+              steps: [
+                "Give a 10-question pre-test on fractions. Sort results into: Below Level (0-4), On Level (5-7), Above Level (8-10)",
+                "Below Level path: Concrete manipulatives → Visual models → Practice problems with scaffolding → Re-assessment",
+                "On Level path: Brief review → Word problems → Real-world application → Peer teaching opportunity",
+                "Above Level path: Brief diagnostic → Complex multi-step problems → Create tutorial video for peers → Extension to decimals",
+                "All paths lead to the SAME end-of-unit assessment (this proves the differentiation worked)",
+                "Build this as a 'Learning Playlist' in your LMS: students check off completed items at their own pace",
+                "Weekly check-in: Review progress data and move students between groups if needed (groups are FLUID, not fixed)"
+              ],
+              tips: [
+                "Never label groups by ability to students ('low group' destroys motivation)",
+                "Use color names, table numbers, or creative names instead",
+                "Groups should change frequently—nobody is 'stuck' in a group",
+                "Celebrate when students are ready to move to the next level"
+              ]
+            },
+            keyTakeaways: [
+              "Personalization isn't optional—it's how we reach every student",
+              "Data-informed groups should be flexible, not permanent",
+              "Choice within structure keeps students engaged and autonomous",
+              "All paths should lead to the same learning goals"
+            ]
+          }
+        ]
+      },
+      {
+        id: "dld-m2",
+        title: "Cyber-Safety & Digital Citizenship",
+        description: "Protecting student privacy and digital footprints",
+        lessons: [
+          {
+            id: "dld-m2-l1",
+            title: "Teaching Digital Citizenship",
+            duration: "10 min",
+            description: "Equip students with the skills to navigate the digital world safely and responsibly.",
+            content: `# Teaching Digital Citizenship
+
+## The 5 Pillars of Digital Citizenship
+
+### 1. Digital Footprint
+Everything online is permanent:
+- What you post, comment, like, and share builds your digital identity
+- Future employers, colleges, and relationships may see it
+- Even "deleted" content may persist in screenshots and caches
+
+### 2. Online Safety
+Protecting yourself in digital spaces:
+- Strong, unique passwords for every account
+- Two-factor authentication everywhere
+- Recognizing phishing and social engineering
+- Privacy settings on all social media
+
+### 3. Cyberbullying Awareness
+Understanding and preventing digital harm:
+- What counts as cyberbullying (it's not just mean messages)
+- Bystander vs. upstander behavior online
+- How to report and seek help
+- The real psychological impact of online harassment
+
+### 4. Information Literacy
+Evaluating what's real and what's not:
+- Identifying misinformation and deepfakes
+- Lateral reading (checking sources, not just the source)
+- Understanding algorithmic bias
+- The SIFT method: Stop, Investigate, Find better coverage, Trace claims
+
+### 5. Digital Balance
+Healthy relationships with technology:
+- Screen time awareness
+- Digital vs. in-person relationships
+- Sleep and technology
+- The attention economy and how apps are designed to be addictive
+
+## Teaching Approach
+
+Don't lecture about digital citizenship—let students discover and discuss:
+- Case studies of real situations
+- Role-playing scenarios
+- Student-led investigations
+- Creating digital citizenship content for younger students`,
+            practicalExample: {
+              title: "Running a Digital Citizenship Week",
+              scenario: "Your school has designated a week for digital citizenship education.",
+              steps: [
+                "Monday (Digital Footprint): Students Google themselves and discuss what they find. Create a 'Digital Footprint Audit' checklist.",
+                "Tuesday (Online Safety): Password strength contest—who can create the strongest password? Demonstrate a (safe) phishing example.",
+                "Wednesday (Cyberbullying): Read anonymous real scenarios and discuss as a class. Students create an 'Upstander Pledge' poster.",
+                "Thursday (Information Literacy): Give students 5 news articles—3 real, 2 fake. Can they identify which is which? Teach the SIFT method.",
+                "Friday (Digital Balance): Students track their screen time for the day. Create a 'Digital Wellness Plan' for themselves.",
+                "Culminating project: Each student creates a 1-minute PSA video on one pillar to share with younger students"
+              ],
+              tips: [
+                "Use real, age-appropriate examples—hypothetical scenarios don't resonate as well",
+                "Invite a school resource officer or IT professional to discuss cyber-safety",
+                "Create a classroom 'Digital Citizenship Contract' that students sign",
+                "Integrate digital citizenship throughout the year, not just one week"
+              ]
+            },
+            keyTakeaways: [
+              "Digital citizenship is as important as any academic subject",
+              "Students need practice, not just lectures",
+              "The SIFT method gives students a practical framework for evaluating information",
+              "Digital balance should be modeled by teachers too"
+            ]
+          },
+          {
+            id: "dld-m2-l2",
+            title: "Student Data Privacy & Protection",
+            duration: "8 min",
+            description: "Understand your legal obligations and best practices for protecting student data.",
+            content: `# Student Data Privacy & Protection
+
+## Your Legal Obligations
+
+### FERPA (Family Educational Rights and Privacy Act)
+- Student education records are confidential
+- Parents have the right to access their child's records
+- Schools need consent before sharing student information
+- Applies to any educational institution receiving federal funds
+
+### COPPA (Children's Online Privacy Protection Act)
+- Applies to students under 13
+- Websites/apps must get parental consent to collect data
+- Teachers need to verify tools are COPPA-compliant before using them
+
+### State Laws
+Many states have additional student privacy laws. Know your state's requirements.
+
+## Practical Data Protection
+
+### Before Using a New Digital Tool
+Ask these questions:
+1. What student data does this tool collect?
+2. Where is the data stored? (US servers vs. international)
+3. Does the tool sell or share student data?
+4. Is there a data deletion policy?
+5. Is the tool on my district's approved list?
+
+### Daily Practices
+- Never share student grades publicly
+- Don't use student photos without permission
+- Avoid using personal email for student communication
+- Lock your computer when you leave the room
+- Use school-approved tools for storing student information
+
+### Red Flags to Watch For
+- "Free" tools that make money by selling data
+- Tools that require unnecessary personal information
+- No clear privacy policy on the website
+- Tools not on your district's approved list
+
+## Teaching Students About Their Own Privacy
+
+Students should understand:
+- What data they're sharing when they use apps
+- How to read (basic) privacy policies
+- Their rights to their own data
+- How to limit data collection`,
+            practicalExample: {
+              title: "Conducting a Privacy Audit of Your Classroom Tools",
+              scenario: "You want to make sure all the digital tools you use are safe for students.",
+              steps: [
+                "List every digital tool you use with students (LMS, quiz tools, video platforms, communication tools, etc.)",
+                "For each tool, check: 1) Is it on the district-approved list? 2) Does it have a clear privacy policy? 3) Is it COPPA-compliant (if students under 13)?",
+                "For non-approved tools: Submit for approval or find an approved alternative",
+                "Review your photo/video consent forms—do you have permission for every student?",
+                "Check: Are any student names or grades visible in shared documents, screen shares, or photos?",
+                "Create a 'Privacy Checklist' for yourself to review before adopting any new tool",
+                "Share your findings with your team—they may be using the same risky tools"
+              ],
+              tips: [
+                "When in doubt, ask your IT department before using a new tool",
+                "Free tools often have hidden data costs—read the fine print",
+                "Update consent forms annually—circumstances change",
+                "Document everything: what tools you use, what data they collect, what permissions you have"
+              ]
+            },
+            keyTakeaways: [
+              "Student data privacy is a legal obligation, not optional",
+              "Audit your tools regularly for privacy compliance",
+              "Teach students to be aware of their own data",
+              "When in doubt, ask before sharing student information"
             ]
           }
         ]
@@ -2003,19 +1656,20 @@ Focus on strengths and resilience
   }
 ];
 
-export function getCourseById(id: string): Course | undefined {
+export const getCourseById = (id: string): Course | undefined => {
   return coursesData.find(course => course.id === id);
-}
+};
 
-export function getLessonById(courseId: string, lessonId: string): { course: Course; module: Module; lesson: Lesson } | undefined {
+export const getLessonById = (courseId: string, lessonId: string): { lesson: Lesson; module: Module } | undefined => {
   const course = getCourseById(courseId);
   if (!course) return undefined;
 
   for (const module of course.modules) {
-    const lesson = module.lessons.find(l => l.id === lessonId);
-    if (lesson) {
-      return { course, module, lesson };
+    for (const lesson of module.lessons) {
+      if (lesson.id === lessonId) {
+        return { lesson, module };
+      }
     }
   }
   return undefined;
-}
+};

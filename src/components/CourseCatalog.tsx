@@ -4,12 +4,10 @@ import { coursesData } from "@/data/courseData";
 
 const categories = [
   "All Courses",
-  "Digital Teaching",
-  "Assessment",
-  "Management",
-  "Curriculum",
-  "Technology",
+  "AI & Technology",
+  "Pedagogy",
   "Wellbeing",
+  "Digital Teaching",
 ];
 
 const CourseCatalog = () => {
@@ -18,10 +16,10 @@ const CourseCatalog = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Explore Our Courses
+            The Ace Coach X Curriculum
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive training programs designed for modern educators
+            Micro-learning modules designed for zero dropouts — 5-10 minute lessons with practical classroom applications
           </p>
         </div>
 
@@ -40,7 +38,7 @@ const CourseCatalog = () => {
 
           {categories.map((category) => (
             <TabsContent key={category} value={category}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {coursesData
                   .filter((course) => category === "All Courses" || course.category === category)
                   .map((course) => (
