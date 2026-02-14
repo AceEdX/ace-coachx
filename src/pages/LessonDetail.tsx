@@ -19,7 +19,8 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { getLessonById, getCourseById, Lesson, Module, Course } from "@/data/courseData";
+import { Lesson, Module, Course } from "@/data/courseData";
+import { useLessonById, useCourseById } from "@/hooks/useDynamicCourses";
 import { toast } from "sonner";
 import CertificateModal from "@/components/CertificateModal";
 
@@ -32,8 +33,9 @@ const LessonDetail = () => {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [showCertificate, setShowCertificate] = useState(false);
 
-  const lessonData = getLessonById(courseId || '', lessonId || '');
-  const course = getCourseById(courseId || '');
+  const lessonResult = useLessonById(courseId || '', lessonId || '');
+  const { course } = useCourseById(courseId || '');
+  const lessonData = lessonResult.lesson ? { lesson: lessonResult.lesson, module: lessonResult.module! } : undefined;
 
   useEffect(() => {
     const checkEnrollment = async () => {
