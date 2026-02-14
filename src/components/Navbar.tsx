@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Menu, LayoutDashboard, LogOut, Shield } from "lucide-react";
+import { GraduationCap, Menu, LayoutDashboard, LogOut, Shield, Bookmark, StickyNote, Bell } from "lucide-react";
 import { useAdminRole } from "@/hooks/useAdminRole";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -21,7 +21,8 @@ const Navbar = () => {
     { name: "Courses", path: "/courses" },
     { name: "About", path: "/about" },
     { name: "Community", path: "/community" },
-    { name: "Resources", path: "/resources" }
+    { name: "Resources", path: "/resources" },
+    { name: "Announcements", path: "/announcements" }
   ];
 
   const getInitials = (name?: string) => {
@@ -79,6 +80,18 @@ const Navbar = () => {
                     <Link to="/dashboard" className="cursor-pointer">
                       <LayoutDashboard className="mr-2 h-4 w-4" />
                       Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/bookmarks" className="cursor-pointer">
+                      <Bookmark className="mr-2 h-4 w-4" />
+                      Bookmarks
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/notes" className="cursor-pointer">
+                      <StickyNote className="mr-2 h-4 w-4" />
+                      My Notes
                     </Link>
                   </DropdownMenuItem>
                   {isAdmin && (

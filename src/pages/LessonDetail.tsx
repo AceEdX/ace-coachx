@@ -17,8 +17,12 @@ import {
   Lightbulb,
   Target,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Bookmark,
+  BookmarkCheck,
+  StickyNote
 } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 import { Lesson, Module, Course } from "@/data/courseData";
 import { useLessonById, useCourseById } from "@/hooks/useDynamicCourses";
 import { toast } from "sonner";
@@ -32,6 +36,9 @@ const LessonDetail = () => {
   const [lessonCompleted, setLessonCompleted] = useState(false);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [showCertificate, setShowCertificate] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [noteText, setNoteText] = useState("");
+  const [showNoteInput, setShowNoteInput] = useState(false);
 
   const lessonResult = useLessonById(courseId || '', lessonId || '');
   const { course } = useCourseById(courseId || '');
@@ -73,6 +80,57 @@ const LessonDetail = () => {
       setLessonCompleted(false);
     }
   }, [lessonId, completedLessons]);
+
+  // Check bookmark status
+  useEffect(() => {
+    if (user && lessonId) {
+      const bookmarks = JSON.parse(localStorage.getItem(`bookmarks_${user.id}`) || "[]");
+      setIsBookmarked(bookmarks.some((b: any) => b.lessonId === lessonId));
+    }
+  }, [user, lessonId]);
+
+  const toggleBookmark = () => {
+    if (!user || !course || !lessonData) return;
+    const key = `bookmarks_${user.id}`;
+    const bookmarks = JSON.parse(localStorage.getItem(key) || "[]");
+    if (isBookmarked) {
+      const updated = bookmarks.filter((b: any) => b.lessonId !== lessonId);
+      localStorage.setItem(key, JSON.stringify(updated));
+      setIsBookmarked(false);
+      toast.success("Bookmark removed");
+    } else {
+      bookmarks.push({
+        courseId: courseId,
+        courseTitle: course.title,
+        lessonId: lessonId,
+        lessonTitle: lessonData.lesson.title,
+        savedAt: new Date().toISOString(),
+      });
+      localStorage.setItem(key, JSON.stringify(bookmarks));
+      setIsBookmarked(true);
+      toast.success("Lesson bookmarked!");
+    }
+  };
+
+  const saveNote = () => {
+    if (!user || !noteText.trim() || !course || !lessonData) return;
+    const key = `notes_${user.id}`;
+    const notes = JSON.parse(localStorage.getItem(key) || "[]");
+    notes.push({
+      id: crypto.randomUUID(),
+      courseId: courseId,
+      courseTitle: course.title,
+      lessonId: lessonId,
+      lessonTitle: lessonData.lesson.title,
+      content: noteText.trim(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    });
+    localStorage.setItem(key, JSON.stringify(notes));
+    setNoteText("");
+    setShowNoteInput(false);
+    toast.success("Note saved!");
+  };
 
   if (!lessonData || !course) {
     return (
@@ -268,7 +326,33 @@ const LessonDetail = () => {
                   <BookOpen className="w-4 h-4" />
                   <span>Lesson {currentIndex + 1} of {allLessons.length}</span>
                 </div>
+                {user && (
+                  <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="sm" onClick={toggleBookmark} className="gap-1">
+                      {isBookmarked ? <BookmarkCheck className="w-4 h-4 text-secondary" /> : <Bookmark className="w-4 h-4" />}
+                      {isBookmarked ? "Bookmarked" : "Bookmark"}
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={() => setShowNoteInput(!showNoteInput)} className="gap-1">
+                      <StickyNote className="w-4 h-4" />
+                      Add Note
+                    </Button>
+                  </div>
+                )}
               </div>
+              {showNoteInput && (
+                <div className="mt-4 space-y-2">
+                  <Textarea
+                    placeholder="Write your note about this lesson..."
+                    value={noteText}
+                    onChange={(e) => setNoteText(e.target.value)}
+                    className="min-h-[80px]"
+                  />
+                  <div className="flex gap-2">
+                    <Button size="sm" onClick={saveNote} disabled={!noteText.trim()}>Save Note</Button>
+                    <Button size="sm" variant="outline" onClick={() => setShowNoteInput(false)}>Cancel</Button>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Lesson Content */}

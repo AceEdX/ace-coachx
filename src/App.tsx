@@ -16,6 +16,9 @@ import CourseDetail from "./pages/CourseDetail";
 import LessonDetail from "./pages/LessonDetail";
 import NotFound from "./pages/NotFound";
 import AdminCourses from "./pages/AdminCourses";
+import Bookmarks from "./pages/Bookmarks";
+import MyNotes from "./pages/MyNotes";
+import Announcements from "./pages/Announcements";
 
 const queryClient = new QueryClient();
 
@@ -34,12 +37,29 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/community" element={<Community />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/announcements" element={<Announcements />} />
             <Route path="/signin" element={<SignIn />} />
             <Route
               path="/dashboard"
               element={
                 <ProtectedRoute>
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/bookmarks"
+              element={
+                <ProtectedRoute>
+                  <Bookmarks />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notes"
+              element={
+                <ProtectedRoute>
+                  <MyNotes />
                 </ProtectedRoute>
               }
             />

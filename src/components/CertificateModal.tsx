@@ -43,11 +43,11 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
     ctx.strokeRect(60, 60, 1080, 730);
     ctx.strokeRect(55, 55, 1090, 740);
 
-    // Header - ACE COACH X × ACE EDX
+    // Header - ACE COACH X × ACE EDX (shifted down for logo)
     ctx.fillStyle = "#002366";
     ctx.font = "bold 18px Georgia";
     ctx.textAlign = "center";
-    ctx.fillText("ACE COACH X  ×  ACE EDX", 600, 120);
+    ctx.fillText("ACE COACH X  ×  ACE EDX", 600, 150);
 
     // Title
     ctx.fillStyle = "#D4AF37";
@@ -119,11 +119,11 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
     ctx.font = "bold 14px Georgia";
     ctx.fillText("Ace EdX — An EdTech Company", 600, 775);
 
-    // Load and draw logo
+    // Load and draw logo at top
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
-      ctx.drawImage(img, 530, 640, 60, 60);
+      ctx.drawImage(img, 570, 70, 60, 60);
       downloadCanvas(canvas);
     };
     img.onerror = () => {
