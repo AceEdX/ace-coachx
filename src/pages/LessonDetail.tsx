@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { getLessonById, getCourseById, Lesson, Module, Course } from "@/data/courseData";
 import { toast } from "sonner";
+import CertificateModal from "@/components/CertificateModal";
 
 const LessonDetail = () => {
   const { courseId, lessonId } = useParams();
@@ -28,6 +29,8 @@ const LessonDetail = () => {
   const navigate = useNavigate();
   const [enrolled, setEnrolled] = useState(false);
   const [lessonCompleted, setLessonCompleted] = useState(false);
+  const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
+  const [showCertificate, setShowCertificate] = useState(false);
 
   const lessonData = getLessonById(courseId || '', lessonId || '');
   const course = getCourseById(courseId || '');
@@ -48,6 +51,26 @@ const LessonDetail = () => {
 
     checkEnrollment();
   }, [user, courseId]);
+
+  // Load completed lessons from localStorage
+  useEffect(() => {
+    if (user && courseId) {
+      const key = `completed_lessons_${user.id}_${courseId}`;
+      const saved = localStorage.getItem(key);
+      if (saved) {
+        setCompletedLessons(new Set(JSON.parse(saved)));
+      }
+    }
+  }, [user, courseId]);
+
+  // Check if current lesson is already completed
+  useEffect(() => {
+    if (lessonId && completedLessons.has(lessonId)) {
+      setLessonCompleted(true);
+    } else {
+      setLessonCompleted(false);
+    }
+  }, [lessonId, completedLessons]);
 
   if (!lessonData || !course) {
     return (
@@ -77,10 +100,49 @@ const LessonDetail = () => {
   const currentIndex = allLessons.findIndex(l => l.lesson.id === lessonId);
   const prevLesson = currentIndex > 0 ? allLessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null;
+  const isLastLesson = currentIndex === allLessons.length - 1;
 
-  const handleMarkComplete = () => {
+  const handleMarkComplete = async () => {
     setLessonCompleted(true);
+    
+    // Save to localStorage
+    const newCompleted = new Set(completedLessons);
+    newCompleted.add(lessonId!);
+    setCompletedLessons(newCompleted);
+    
+    if (user && courseId) {
+      const key = `completed_lessons_${user.id}_${courseId}`;
+      localStorage.setItem(key, JSON.stringify([...newCompleted]));
+
+      // Update enrollment progress
+      const totalLessons = allLessons.length;
+      const completedCount = newCompleted.size;
+      const progress = Math.round((completedCount / totalLessons) * 100);
+
+      const updateData: { progress: number; completed_at?: string } = { progress };
+      
+      // If all lessons complete, mark course as completed
+      if (completedCount >= totalLessons) {
+        updateData.completed_at = new Date().toISOString();
+      }
+
+      await supabase
+        .from('enrollments')
+        .update(updateData)
+        .eq('user_id', user.id)
+        .eq('course_id', courseId);
+    }
+
     toast.success('Lesson marked as complete!');
+
+    // If this is the last lesson and all lessons are completed, show certificate
+    const newCompleted2 = new Set(completedLessons);
+    newCompleted2.add(lessonId!);
+    if (newCompleted2.size >= allLessons.length) {
+      setTimeout(() => {
+        setShowCertificate(true);
+      }, 1000);
+    }
   };
 
   const handleEnroll = async () => {
@@ -159,7 +221,6 @@ const LessonDetail = () => {
         flushList();
       } else {
         flushList();
-        // Handle bold text
         const processedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         elements.push(
           <p 
@@ -256,7 +317,7 @@ const LessonDetail = () => {
                 <ul className="space-y-3">
                   {lesson.keyTakeaways.map((takeaway, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{takeaway}</span>
                     </li>
                   ))}
@@ -289,10 +350,16 @@ const LessonDetail = () => {
                 </Button>
               ) : (
                 <Button
-                  onClick={() => navigate(`/course/${courseId}`)}
-                  className="flex items-center gap-2"
+                  onClick={() => {
+                    if (!lessonCompleted) {
+                      handleMarkComplete();
+                    } else {
+                      setShowCertificate(true);
+                    }
+                  }}
+                  className="flex items-center gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 >
-                  Complete Course
+                  🎓 Get Certificate
                   <CheckCircle2 className="w-4 h-4" />
                 </Button>
               )}
@@ -326,6 +393,9 @@ const LessonDetail = () => {
                   </div>
                 ) : (
                   <div className="space-y-4">
+                    <div className="text-sm text-muted-foreground mb-2">
+                      {completedLessons.size} of {allLessons.length} lessons completed
+                    </div>
                     <Button
                       className="w-full"
                       variant={lessonCompleted ? "secondary" : "default"}
@@ -364,11 +434,16 @@ const LessonDetail = () => {
                         <button
                           key={les.id}
                           onClick={() => navigate(`/course/${courseId}/lesson/${les.id}`)}
-                          className={`w-full text-left text-sm p-2 rounded hover:bg-muted transition-colors ${
+                          className={`w-full text-left text-sm p-2 rounded hover:bg-muted transition-colors flex items-center gap-2 ${
                             les.id === lessonId ? 'bg-primary/10 text-primary font-medium' : 'text-muted-foreground'
                           }`}
                         >
-                          {les.title}
+                          {completedLessons.has(les.id) && (
+                            <CheckCircle2 className="w-3 h-3 text-success flex-shrink-0" />
+                          )}
+                          <span className={completedLessons.has(les.id) ? 'line-through opacity-70' : ''}>
+                            {les.title}
+                          </span>
                         </button>
                       ))}
                     </div>
@@ -380,6 +455,13 @@ const LessonDetail = () => {
         </div>
       </main>
       <Footer />
+
+      {/* Certificate Modal */}
+      <CertificateModal
+        open={showCertificate}
+        onOpenChange={setShowCertificate}
+        courseTitle={course.title}
+      />
     </div>
   );
 };
