@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Menu, LayoutDashboard, LogOut } from "lucide-react";
+import { GraduationCap, Menu, LayoutDashboard, LogOut, Shield } from "lucide-react";
+import { useAdminRole } from "@/hooks/useAdminRole";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
@@ -15,6 +16,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const Navbar = () => {
   const { user, signOut } = useAuth();
+  const { isAdmin } = useAdminRole();
   const navLinks = [
     { name: "Courses", path: "/courses" },
     { name: "About", path: "/about" },
@@ -79,6 +81,14 @@ const Navbar = () => {
                       Dashboard
                     </Link>
                   </DropdownMenuItem>
+                  {isAdmin && (
+                    <DropdownMenuItem asChild>
+                      <Link to="/admin/courses" className="cursor-pointer">
+                        <Shield className="mr-2 h-4 w-4" />
+                        Admin: Courses
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                   <DropdownMenuItem onClick={signOut} className="cursor-pointer">
                     <LogOut className="mr-2 h-4 w-4" />
                     Sign Out

@@ -19,7 +19,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { toast } from "sonner";
-import { getCourseById } from "@/data/courseData";
+import { useCourseById } from "@/hooks/useDynamicCourses";
 import {
   Collapsible,
   CollapsibleContent,
@@ -34,7 +34,7 @@ const CourseDetail = () => {
   const [loading, setLoading] = useState(false);
   const [expandedModules, setExpandedModules] = useState<string[]>([]);
 
-  const course = getCourseById(id || '');
+  const { course } = useCourseById(id || '');
 
   useEffect(() => {
     const checkEnrollment = async () => {

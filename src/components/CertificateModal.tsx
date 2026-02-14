@@ -29,7 +29,7 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Background
+    // Background - Deep Navy
     ctx.fillStyle = "#002366";
     ctx.fillRect(0, 0, 1200, 850);
 
@@ -43,7 +43,7 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
     ctx.strokeRect(60, 60, 1080, 730);
     ctx.strokeRect(55, 55, 1090, 740);
 
-    // Header
+    // Header - ACE COACH X × ACE EDX
     ctx.fillStyle = "#002366";
     ctx.font = "bold 18px Georgia";
     ctx.textAlign = "center";
@@ -90,24 +90,49 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
     ctx.font = "bold 28px Georgia";
     ctx.fillText(courseTitle, 600, 480);
 
+    // "from AceEdX" line
+    ctx.fillStyle = "#D4AF37";
+    ctx.font = "bold 20px Georgia";
+    ctx.fillText("from AceEdX", 600, 515);
+
     // Description
     ctx.fillStyle = "#666666";
     ctx.font = "16px Georgia";
-    ctx.fillText("demonstrating exceptional dedication to professional development", 600, 530);
-    ctx.fillText("and commitment to educational excellence.", 600, 555);
+    ctx.fillText("demonstrating exceptional dedication to professional development", 600, 560);
+    ctx.fillText("and commitment to educational excellence.", 600, 585);
 
     // Date
     const date = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     ctx.fillStyle = "#333333";
     ctx.font = "16px Georgia";
-    ctx.fillText(date, 600, 620);
+    ctx.fillText(date, 600, 640);
 
     // Footer
     ctx.fillStyle = "#D4AF37";
     ctx.font = "bold 14px Georgia";
     ctx.fillText("★  Professional Development  ★  Innovation  ★  Excellence  ★", 600, 720);
 
-    // Download
+    // AceEdX branding bar at bottom
+    ctx.fillStyle = "#002366";
+    ctx.fillRect(55, 750, 1090, 40);
+    ctx.fillStyle = "#D4AF37";
+    ctx.font = "bold 14px Georgia";
+    ctx.fillText("Ace EdX — An EdTech Company", 600, 775);
+
+    // Load and draw logo
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      ctx.drawImage(img, 530, 640, 60, 60);
+      downloadCanvas(canvas);
+    };
+    img.onerror = () => {
+      downloadCanvas(canvas);
+    };
+    img.src = "/images/aceedx-logo.png";
+  };
+
+  const downloadCanvas = (canvas: HTMLCanvasElement) => {
     const link = document.createElement("a");
     link.download = `Certificate-${name.replace(/\s+/g, "-")}-${courseTitle.replace(/\s+/g, "-")}.png`;
     link.href = canvas.toDataURL();
@@ -164,6 +189,9 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
               className="border-4 border-secondary rounded-lg p-8 bg-card text-center space-y-4"
             >
               <div className="border-2 border-secondary/50 rounded p-6">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <img src="/images/aceedx-logo.png" alt="AceEdX Logo" className="w-10 h-10" />
+                </div>
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold">
                   Ace Coach X × Ace EdX
                 </p>
@@ -184,6 +212,9 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
                 <p className="text-lg font-semibold text-primary mt-1">
                   {courseTitle}
                 </p>
+                <p className="text-sm font-semibold text-secondary mt-1">
+                  from AceEdX
+                </p>
                 <p className="text-xs text-muted-foreground mt-4">
                   {new Date().toLocaleDateString("en-US", {
                     year: "numeric",
@@ -194,6 +225,11 @@ const CertificateModal = ({ open, onOpenChange, courseTitle }: CertificateModalP
                 <p className="text-xs text-secondary mt-4 tracking-wider">
                   ★ Professional Development ★ Innovation ★ Excellence ★
                 </p>
+                <div className="mt-3 py-2 bg-primary rounded">
+                  <p className="text-xs font-semibold text-secondary">
+                    Ace EdX — An EdTech Company
+                  </p>
+                </div>
               </div>
             </div>
 

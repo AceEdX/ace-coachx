@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CourseCard from "./CourseCard";
-import { coursesData } from "@/data/courseData";
+import { useAllCourses } from "@/hooks/useDynamicCourses";
 
 const categories = [
   "All Courses",
@@ -8,9 +8,11 @@ const categories = [
   "Pedagogy",
   "Wellbeing",
   "Digital Teaching",
+  "General",
 ];
 
 const CourseCatalog = () => {
+  const { courses } = useAllCourses();
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -39,7 +41,7 @@ const CourseCatalog = () => {
           {categories.map((category) => (
             <TabsContent key={category} value={category}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {coursesData
+                {courses
                   .filter((course) => category === "All Courses" || course.category === category)
                   .map((course) => (
                     <CourseCard 
