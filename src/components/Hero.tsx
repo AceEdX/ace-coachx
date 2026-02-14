@@ -14,6 +14,8 @@ const Hero = () => {
             <span className="text-sm font-medium">Zero Dropout • Micro-Learning • Real Results</span>
           </div>
           
+          <img src="/images/aceedx-logo.png" alt="AceEdX Logo" className="w-20 h-20 mx-auto mb-4 rounded-xl shadow-lg" />
+          
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
             The <span className="text-secondary">Educator's</span> Lifeline
           </h1>

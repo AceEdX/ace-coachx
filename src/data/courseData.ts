@@ -1656,6 +1656,10 @@ Students should understand:
   }
 ];
 
+// Import and merge additional courses
+import { additionalCourses } from "./additionalCourses";
+coursesData.push(...additionalCourses);
+
 export const getCourseById = (id: string): Course | undefined => {
   return coursesData.find(course => course.id === id);
 };
