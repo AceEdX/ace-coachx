@@ -27,6 +27,8 @@ import { Lesson, Module, Course } from "@/data/courseData";
 import { useLessonById, useCourseById } from "@/hooks/useDynamicCourses";
 import { toast } from "sonner";
 import CertificateModal from "@/components/CertificateModal";
+import LessonQuiz from "@/components/LessonQuiz";
+import { lessonQuizzes } from "@/data/quizData";
 
 const LessonDetail = () => {
   const { courseId, lessonId } = useParams();
@@ -410,6 +412,13 @@ const LessonDetail = () => {
                 </ul>
               </CardContent>
             </Card>
+
+            {/* Quiz Section */}
+            {lessonId && lessonQuizzes[lessonId] && (
+              <div className="mb-8">
+                <LessonQuiz questions={lessonQuizzes[lessonId]} />
+              </div>
+            )}
 
             {/* Navigation */}
             <div className="flex flex-col sm:flex-row justify-between gap-4 pt-6 border-t">

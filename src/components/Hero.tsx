@@ -23,6 +23,11 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
             Premium micro-learning for Gen Next teaching. Master AI, gamification, SEL, and future-ready pedagogy — 5-10 minute lessons you can implement tomorrow.
           </p>
+
+          <a href="https://www.aceedx.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors text-lg font-medium">
+            www.aceedx.com
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg text-lg px-8 font-semibold" asChild>

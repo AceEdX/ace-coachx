@@ -4,243 +4,347 @@ export const additionalCourses: Course[] = [
   {
     id: "classroom-tech-tools",
     title: "Classroom Tech Tools Mastery",
-    description: "Master essential edtech tools — from interactive whiteboards to student response systems, LMS platforms, and digital collaboration suites.",
-    longDescription: "This hands-on course transforms you into a classroom technology expert. Learn to leverage interactive whiteboards, student response systems (Kahoot, Mentimeter), LMS platforms, and collaboration tools (Padlet, Jamboard, Miro) to create engaging, interactive lessons. Every lesson includes setup guides you can implement the same day.",
-    category: "Technology",
+    description: "Master essential edtech tools for Indian classrooms — interactive whiteboards, projector-based activities, teacher-led digital tools, and offline-friendly strategies where students don't have personal devices.",
+    longDescription: "This hands-on course is designed specifically for Indian school teachers working in classrooms where students may not have smartphones or personal devices. Learn to leverage projectors, interactive whiteboards, teacher-controlled digital tools, and offline activities to create engaging, interactive lessons. Every lesson includes setup guides aligned with CBSE/ICSE/state board curricula that you can implement the same day.",
+    category: "Digital Teaching",
     duration: "3 weeks",
     students: 3210,
     rating: 4.7,
     aiPowered: false,
-    instructor: "Sarah Chen",
-    instructorBio: "Former Google for Education trainer, 15 years of K-12 edtech integration experience.",
+    instructor: "Meera Krishnan",
+    instructorBio: "Former CBSE master trainer, 18 years of edtech integration in Indian schools across urban and rural settings.",
     modules: [
       {
         id: "ctt-m1",
-        title: "Interactive Presentation Tools",
-        description: "Transform passive lectures into interactive experiences",
+        title: "Teacher-Led Interactive Presentations",
+        description: "Transform passive lectures into interactive experiences using your projector and whiteboard",
         lessons: [
           {
             id: "ctt-m1-l1",
-            title: "Beyond PowerPoint: Interactive Presentations",
+            title: "Beyond Chalk and Talk: Interactive Projector-Based Teaching",
             duration: "8 min",
-            description: "Use Mentimeter, Nearpod, and Pear Deck to make every slide interactive.",
-            content: `# Beyond PowerPoint: Interactive Presentations
+            description: "Use your classroom projector and free tools to make every lesson interactive — no student devices needed.",
+            content: `# Beyond Chalk and Talk: Interactive Projector-Based Teaching
 
-## The Problem with Traditional Slides
+## The Indian Classroom Reality
 
-Students zone out after 10 minutes of passive slides. Interactive presentation tools keep every student engaged because they PARTICIPATE in every slide.
+Most Indian classrooms have a projector or smart board, but students don't carry phones or laptops. The teacher's device (laptop/tablet) is the only digital tool. This is actually an ADVANTAGE — you control the pace, minimize distractions, and ensure every student is engaged.
 
-## Top Interactive Presentation Tools
+## Tools That Work Without Student Devices
 
-### Mentimeter
-- Live polls, word clouds, and quizzes embedded in slides
-- Students respond on their phones — anonymous = more honest answers
-- Free tier: 2 questions per presentation
+### Google Slides + Live Interaction
+- Project slides on the board, pause for class-wide responses
+- Use "raise your hand" signals, mini whiteboards, or coloured cards (Red/Yellow/Green)
+- Students write answers on slates or notebooks, hold up for teacher to scan
 
-### Nearpod
-- Teacher-paced or student-paced modes
-- Embed VR field trips, simulations, and collaborative boards
-- Real-time student responses visible to teacher
+### DIKSHA App (Government of India)
+- Free digital content aligned to NCERT/CBSE curriculum
+- Video lessons, interactive content, and assessments
+- Teachers can project content and facilitate discussions
+- Works offline after initial download
 
-### Pear Deck (Google Slides add-on)
-- Transforms existing Google Slides into interactive lessons
-- Draggable, drawing, and text response slides
-- Teacher dashboard shows all student responses live
+### PhET Simulations (Free, Offline-capable)
+- Science and math simulations you project for the whole class
+- Students predict → teacher demonstrates → class discusses
+- Download simulations for offline use
+- Cover topics from Class 6-12 physics, chemistry, biology, math
 
-## Best Practices
+### Canva for Education (Free for Teachers)
+- Create stunning visual aids, posters, and infographics
+- Design worksheets and activity cards
+- Templates for Indian festivals, historical events, and cultural contexts
 
-### The 3-Minute Rule
-No more than 3 minutes of passive content before an interaction:
-- Slide 1-2: Content delivery
-- Slide 3: Poll, question, or activity
+## The 3-Minute Interaction Rule
+No more than 3 minutes of passive content before a class-wide interaction:
+- Slides 1-2: Content delivery via projector
+- Slide 3: "Show me your answer!" (slates/notebooks/hand signals)
 - Repeat
 
-### Question Types That Work
-- "Rate your understanding 1-5" (quick check)
-- "What's one thing you learned?" (word cloud)
-- "Which example best shows X?" (multiple choice)
-- "Draw what you think happens next" (creative)
+## Response Methods Without Phones
+- **Mini whiteboards/slates**: Students write answers, hold up simultaneously
+- **Coloured cards**: Red = disagree/confused, Yellow = unsure, Green = agree/understand
+- **Hand signals**: Thumbs up/down, show 1-5 fingers for rating
+- **Stand up/Sit down**: Binary choice questions
+- **Corner method**: Students move to labeled corners of the room for their answer choice
 
 ## Getting Started Today
 1. Pick ONE tool and create ONE interactive slide
-2. Use it in your next lesson
-3. Notice the difference in engagement
-4. Gradually add more interactive slides`,
+2. Prepare 30 mini whiteboards (laminated A4 sheets + dry-erase markers)
+3. Use it in your next period
+4. Notice the difference in engagement`,
             practicalExample: {
-              title: "Converting a Boring Lecture into an Interactive Session",
-              scenario: "You have a 30-minute lecture on the water cycle for 5th graders.",
+              title: "Converting a CBSE Science Lecture into an Interactive Session",
+              scenario: "You have a 40-minute period on the Water Cycle for Class 5 EVS (NCERT Chapter).",
               steps: [
-                "Open Mentimeter and create a new presentation",
-                "Slide 1: Word cloud — 'What words come to mind when you think about water?'",
-                "Slides 2-3: Content about evaporation (keep it to 2 minutes)",
-                "Slide 4: Poll — 'Where does evaporation happen fastest? Ocean / Lake / Puddle / All equally'",
-                "Slides 5-6: Content about condensation and precipitation",
-                "Slide 7: Open-ended — 'Explain the water cycle to a 3-year-old in one sentence'",
-                "Slide 8: Quiz — 3 quick multiple choice questions as exit ticket",
-                "Total prep time: 20 minutes. Student engagement: dramatically higher."
+                "Prepare 5 Google Slides with diagrams from NCERT textbook",
+                "Slide 1: Show a picture of rain — ask students to write on their slates 'Where does rain come from?' (2 minutes)",
+                "Slides 2-3: Explain evaporation and condensation with animated diagrams projected on board (3 minutes)",
+                "Slide 4: 'True or False on your slates' — 3 quick questions about evaporation. Students hold up slates simultaneously",
+                "Slide 5: Project a PhET simulation of the water cycle — class predicts what happens next before you click",
+                "Activity: Students draw the water cycle in their notebooks with labels (10 minutes)",
+                "Exit check: Coloured cards — 'Green if you can explain the water cycle to your family tonight, Yellow if you need help, Red if you're confused'",
+                "Total prep time: 15 minutes. Zero student devices needed."
               ],
               tips: [
-                "Test the student link on your phone before class",
-                "Have a backup plan if WiFi fails (printed handout with QR codes)",
-                "Show the word cloud results live — students love seeing their answers appear",
-                "Save response data to track understanding over time"
+                "Laminated A4 sheets make perfect reusable mini whiteboards — ₹5 each",
+                "Download DIKSHA content the night before on school WiFi",
+                "Keep a backup plan with textbook activities if projector fails",
+                "The coloured card system works even in classes of 50+ students"
               ]
             },
             keyTakeaways: [
-              "Interactive tools keep students engaged every 3 minutes",
-              "Anonymous responses encourage honest participation",
-              "Start with one tool and one interactive slide",
-              "Response data doubles as formative assessment"
+              "No student devices ≠ no interactivity — teacher-projected tools + class response systems work brilliantly",
+              "Mini whiteboards and coloured cards give instant formative assessment data",
+              "DIKSHA and PhET provide free, curriculum-aligned digital content",
+              "The 3-minute interaction rule keeps even large classes engaged"
             ]
           },
           {
             id: "ctt-m1-l2",
-            title: "Student Response Systems (Kahoot, Quizizz, Blooket)",
+            title: "Game-Based Review Without Student Phones",
             duration: "10 min",
-            description: "Turn review sessions into exciting game shows that students beg to play.",
-            content: `# Student Response Systems
+            description: "Turn revision sessions into exciting whole-class games that work without any student devices.",
+            content: `# Game-Based Review Without Student Phones
 
-## Why Game-Based Review Works
+## Why Game-Based Review Works in Indian Classrooms
 
-Students retain 40% more when review is game-based vs. traditional worksheets. The competition, time pressure, and immediate feedback create optimal learning conditions.
+Students retain 40% more when review is game-based vs. traditional revision. In Indian schools with 40-60 students per class, whole-class games create energy and participation that individual worksheets never can.
 
-## Tool Comparison
+## Whole-Class Games (Teacher Device Only)
 
-### Kahoot
-- Best for: Quick, energetic whole-class review
-- Format: Teacher-paced, everyone answers simultaneously
-- Strength: Music, countdown timer, podium creates excitement
-- Limitation: Speed rewards can frustrate slower processors
+### Quiz Show Format
+- Teacher projects questions one at a time
+- Students write answers on slates/paper
+- Reveal answer — students with correct answers stand up
+- Track team scores on the board (Row 1 vs Row 2 vs Row 3)
+- Last question: "Jackpot round" worth double points
 
-### Quizizz
-- Best for: Self-paced review and homework
-- Format: Student-paced, everyone works at their own speed
-- Strength: Memes, power-ups, no time pressure option
-- Limitation: Less whole-class energy
+### Rapid Fire Round
+- Project 10 questions, 30 seconds each
+- Students write all answers on a numbered sheet
+- Swap papers with neighbor for peer-checking
+- Teacher reveals answers one by one — class calls out scores
+- Creates excitement AND teaches peer assessment
 
-### Blooket
-- Best for: Extended engagement with variety
-- Format: Multiple game modes (Tower Defense, Gold Quest, etc.)
-- Strength: Same question set, different games = replayability
-- Limitation: Can be distracting if not managed well
+### Pictionary/Dumb Charades (Academic Edition)
+- One student comes to the board and draws/acts out a concept
+- Class guesses the scientific term, historical event, or mathematical concept
+- No technology needed — pure engagement
+- Perfect for revision before exams
 
-## Creating Effective Questions
+### "Galli Cricket" Quiz Format
+- Batting team answers questions — correct answer = 1 run
+- Wrong answer = wicket (out)
+- 3 wickets = innings over, next team bats
+- Students LOVE this format — connects academics to their favorite sport
+- Works for any subject, any class
+
+## Creating Effective Questions for Indian Classrooms
 
 ### DO
-- Mix question types (multiple choice, true/false, image-based)
-- Include "trick" answers that address common misconceptions
-- Add image-based questions for visual learners
-- Write clear, unambiguous questions
+- Align questions to NCERT/textbook content
+- Include HOTS (Higher Order Thinking Skills) questions
+- Mix Hindi and English for bilingual classrooms
+- Use local examples (Indian rivers, festivals, scientists)
 
 ### DON'T
-- Make all questions too easy (no learning happens)
-- Make all questions too hard (frustration kills engagement)
-- Use more than 20 questions (fatigue sets in)
-- Forget to discuss wrong answers after the game`,
+- Make all questions from one chapter only
+- Use only MCQs — mix with fill-in-the-blanks, true/false, one-word answers
+- Forget to discuss wrong answers after the game
+- Skip the "Why is this the correct answer?" discussion`,
             practicalExample: {
-              title: "Running a Perfect Kahoot Session",
-              scenario: "You want to review for tomorrow's history test with your 7th graders.",
+              title: "Running a 'Galli Cricket' Quiz for Class 8 History Revision",
+              scenario: "Class 8 History exam is next week. You want to review 4 chapters in one exciting period.",
               steps: [
-                "Create a 15-question Kahoot the night before (takes ~15 min)",
-                "Mix difficulty: 5 easy (confidence builders), 7 medium, 3 hard (challenge)",
-                "Add images to at least 5 questions for visual engagement",
-                "In class: Project the game pin. Students join on their devices.",
-                "After each question: PAUSE and discuss why the right answer is right",
-                "At the halfway point: 'Everyone who got that right, help someone near you who didn't'",
-                "Final podium: Celebrate top 3, then ask 'What question surprised you most?'",
-                "Assign the same questions as a Quizizz homework for self-paced review"
+                "Divide class into 4 teams (one per row). Each team picks a captain.",
+                "Prepare 40 questions: 10 per chapter, mix of easy (1 run), medium (2 runs), hard (4 runs/six!)",
+                "Draw a cricket scoreboard on the blackboard with team names",
+                "Team 1 bats first: Captain chooses difficulty level for each question",
+                "Correct answer = runs scored. Wrong answer = wicket. 3 wickets = innings over.",
+                "Between innings: 2-minute discussion of most-missed questions",
+                "Final over: 'Super Over' — one question per team, entire team must agree on answer",
+                "Winning team gets to leave class first (simple but effective reward!)"
               ],
               tips: [
-                "Play the Kahoot yourself first to check for errors",
-                "Allow team mode for students without devices",
-                "Focus on LEARNING, not just winning",
-                "Use the Kahoot reports to identify weak areas for re-teaching"
+                "Prepare questions on paper, not just projector — ensures you can continue if power goes out",
+                "Let the weakest students bat first (easier questions build confidence)",
+                "Take photos of the scoreboard — share with parents on WhatsApp group",
+                "This format works for ANY subject — Science, Math, Geography, Hindi"
               ]
             },
             keyTakeaways: [
-              "Game-based review increases retention by 40%",
-              "Choose the right tool for the right context",
-              "Discussion between questions is where learning happens",
-              "Use response data to guide your re-teaching"
+              "Game-based review increases retention by 40% — no devices needed",
+              "Indian students respond incredibly well to cricket-format quizzes",
+              "Team-based games ensure even shy students participate through their team",
+              "Discussion between questions is where the real learning happens"
             ]
           }
         ]
       },
       {
         id: "ctt-m2",
-        title: "Digital Collaboration Tools",
-        description: "Enable real-time student collaboration with digital tools",
+        title: "Digital Collaboration Without Student Devices",
+        description: "Enable meaningful collaboration using teacher-led digital tools and offline methods",
         lessons: [
           {
             id: "ctt-m2-l1",
-            title: "Padlet, Jamboard & Collaborative Workspaces",
+            title: "Collaborative Learning in Large Indian Classrooms",
             duration: "8 min",
-            description: "Create shared digital spaces where students collaborate in real-time.",
-            content: `# Collaborative Digital Workspaces
+            description: "Create structured group activities that work in classrooms of 40-60 students without individual devices.",
+            content: `# Collaborative Learning in Large Indian Classrooms
 
-## Why Digital Collaboration Matters
+## The Indian Classroom Challenge
 
-The future workplace is collaborative and digital. Teaching students to work together in shared digital spaces builds skills they'll use for decades.
+With 40-60 students, limited space, and no individual devices, collaboration seems impossible. But it's not — you just need the right structures.
 
-## Top Collaboration Tools
+## Collaboration Strategies for Indian Classrooms
 
-### Padlet
-- Digital bulletin board with multiple layouts (wall, canvas, timeline, map)
-- Students post text, images, videos, links, drawings
-- Real-time updates visible to everyone
-- Moderation options for teacher control
+### Gallery Walk (Physical)
+- Each group creates a poster/chart paper presentation on their assigned topic
+- Posts go up around the classroom walls
+- Groups rotate with a feedback sheet: "2 Stars and 1 Suggestion"
+- Teacher photographs posters for digital record (WhatsApp to parents!)
 
-### Google Jamboard / FigJam
-- Digital whiteboard for brainstorming
-- Sticky notes, drawing, image placement
-- Great for mind mapping and visual thinking
-- Multiple pages for different activities
+### Jigsaw Method
+- Divide class into 'Home Groups' of 5 students each
+- Each member becomes an expert on one sub-topic
+- Expert groups meet → study their topic together
+- Return to home group → each expert teaches their topic
+- Assessment: Everyone must answer questions on ALL topics
+- Perfect for NCERT chapters with clear sub-sections
 
-### Shared Google Docs/Slides
-- Real-time collaborative editing
-- Comment and suggestion modes
-- Version history tracks contributions
-- Familiar interface for most students
+### Think-Pair-Share (Desi Edition)
+- Think: 1 minute silent thinking, write on slate
+- Pair: Turn to your bench partner, share answers (2 minutes)
+- Share: Teacher calls on 3-4 pairs to share with class
+- Works even in fixed-bench Indian classrooms!
 
-## Collaboration Protocols
+### WhatsApp Group Projects (Homework Extension)
+- Most Indian families have at least one smartphone at home
+- Create class WhatsApp group for parents
+- Assign group research topics — students submit via parents' WhatsApp
+- Teacher compiles and projects best submissions next class
+- Bridges the digital divide without requiring classroom devices
 
-### Silent Discussion (Padlet)
-Students respond to a prompt and each other's posts — in writing only. Introverts shine.
-
-### Gallery Walk (Digital)
-Teams post their work on Padlet. Other teams visit and leave feedback using a structured protocol.
-
-### Jigsaw (Google Slides)
-Each student becomes an expert on one slide/topic, then teaches their group.
-
-## Managing Digital Chaos
-- Set clear expectations BEFORE opening the tool
-- Use moderation features when needed
-- Assign specific roles within groups
-- Time-box activities with visible timers`,
+## Managing 50+ Students in Group Work
+- **Assign clear roles**: Leader, Writer, Presenter, Timekeeper
+- **Use a bell/clap pattern** for attention (e.g., clap-clap-clap → students respond clap-clap)
+- **Number each group** and display timer on projector
+- **Noise meter**: Draw a volume bar on the board — if class gets too loud, marker moves up
+- **Exit ticket**: Each group submits ONE written output before leaving`,
             practicalExample: {
-              title: "Running a Digital Gallery Walk",
-              scenario: "After a group research project, you want students to give feedback to other groups.",
+              title: "Running a Jigsaw Activity for Class 7 Geography",
+              scenario: "NCERT Chapter on 'Our Changing Earth' has 4 key topics: Lithospheric Plates, Earthquakes, Volcanoes, and Weathering.",
               steps: [
-                "Each group posts their project summary on a class Padlet (wall layout)",
-                "Set up feedback rules: '2 Stars (things they did well) and 1 Wish (suggestion for improvement)'",
-                "Groups rotate through other posts, leaving feedback comments (5 min per station)",
-                "Timer on screen for each rotation",
-                "After all rotations: groups read their feedback and identify one change they'll make",
-                "Debrief: 'What was the most useful feedback you received?'"
+                "Form 10 Home Groups of 5 students each (assign by bench proximity to minimize movement)",
+                "Assign each member a number 1-5, each number = one topic (Member 5 gets 'Human Impact')",
+                "Expert Groups: All 1s sit together, all 2s together, etc. Give them 10 minutes to read their section and prepare 3 key points on chart paper",
+                "Home Groups reconvene: Each expert teaches their topic to the group (2 minutes each = 10 minutes)",
+                "Assessment: Quick 5-question quiz (one from each topic) — students answer individually on paper",
+                "Debrief: Teacher projects key diagrams and clarifies misconceptions (5 minutes)"
               ],
               tips: [
-                "Model good feedback before starting: show a '2 Stars and a Wish' example",
-                "Use Padlet's moderation feature if students post inappropriate content",
-                "Save the Padlet as a PDF for student portfolios",
-                "This activity teaches giving AND receiving constructive criticism"
+                "Assign roles the day before so students come prepared",
+                "Give expert groups a structured note-taking template",
+                "Walk around and listen during expert teaching — identify who needs support",
+                "For classes of 50+, use 'Double Jigsaw' — two parallel sets of groups"
               ]
             },
             keyTakeaways: [
-              "Digital collaboration tools build future-ready skills",
-              "Structured protocols prevent collaboration chaos",
-              "Silent discussions amplify quieter voices",
-              "Always model expectations before launching collaborative activities"
+              "Large class size is manageable with clear structures and roles",
+              "Physical collaboration methods work better than digital in device-free classrooms",
+              "WhatsApp bridges school and home learning effectively",
+              "The Jigsaw method ensures every student is both a learner and a teacher"
+            ]
+          }
+        ]
+      },
+      {
+        id: "ctt-m3",
+        title: "Free EdTech Tools for Indian Teachers",
+        description: "Master free platforms aligned with Indian curriculum standards",
+        lessons: [
+          {
+            id: "ctt-m3-l1",
+            title: "DIKSHA, SWAYAM & Government EdTech Platforms",
+            duration: "8 min",
+            description: "Leverage India's free government edtech platforms to enhance your teaching with curriculum-aligned content.",
+            content: `# DIKSHA, SWAYAM & Government EdTech Platforms
+
+## India's Free EdTech Ecosystem
+
+India has invested heavily in free digital education platforms. As a teacher, you have access to a treasure trove of content — most teachers just don't know how to use it effectively.
+
+## DIKSHA (Digital Infrastructure for Knowledge Sharing)
+
+### What It Offers
+- Free textbook-linked content for Classes 1-12
+- Video lessons, interactive content, practice questions
+- Available in 36 languages including Hindi, Tamil, Telugu, Marathi, Bengali
+- QR codes in NCERT textbooks link directly to digital content
+- Offline access after download
+
+### How to Use It in Class
+1. Scan QR codes from NCERT textbook on your phone
+2. Project the content via USB/HDMI to classroom projector
+3. Use videos as lesson starters (2-3 minutes)
+4. Pause and discuss — "What did you notice? What questions do you have?"
+5. Follow up with textbook activity
+
+## SWAYAM (Study Webs of Active-Learning for Young Aspiring Minds)
+
+### For Teacher Professional Development
+- Free courses from IITs, IIMs, and top universities
+- Certificate courses recognized by AICTE
+- Topics: Pedagogy, Subject expertise, ICT in education
+- Self-paced — study on weekends or during vacation
+
+## National Digital Library of India (NDL)
+- 90 million+ free learning resources
+- Textbooks, videos, articles, simulations
+- Filter by class, subject, and board (CBSE/ICSE/State)
+
+## Practical Integration Framework
+
+### Before Class (5 minutes prep)
+- Search DIKSHA for tomorrow's topic
+- Download 1-2 short videos or simulations
+- Note timestamps for key moments to pause and discuss
+
+### During Class
+- Start with a 2-minute DIKSHA video as a "hook"
+- Pause for prediction/discussion
+- Continue with your regular teaching
+- End with a DIKSHA practice question projected on board
+
+### After Class
+- Share DIKSHA content link on parent WhatsApp group
+- Students can access at home for revision
+- Track which parents/students accessed (DIKSHA provides analytics)`,
+            practicalExample: {
+              title: "Using DIKSHA to Teach Class 6 Science — Light, Shadows and Reflections",
+              scenario: "You're teaching NCERT Class 6 Science Chapter 11. You have a projector and your smartphone.",
+              steps: [
+                "Night before: Open DIKSHA app → Search 'Class 6 Science Light Shadows' → Download top-rated video and interactive content",
+                "In class: Project the DIKSHA video (2 minutes) showing shadow formation",
+                "Pause video: 'On your slates, draw what you think the shadow will look like if I move the torch closer.' Students hold up slates.",
+                "Resume video to confirm/correct predictions",
+                "Activity: Using a torch from your phone and objects on your desk, demonstrate shadow formation live",
+                "Project DIKSHA practice questions — students solve in notebooks, then peer-check",
+                "Homework: Share DIKSHA QR code link on class WhatsApp — 'Watch this 3-minute video with your family and tell me one thing you learned tomorrow'"
+              ],
+              tips: [
+                "Download content on school WiFi before class — don't rely on mobile data",
+                "DIKSHA content is available in your state language — use it for Hindi/regional medium schools",
+                "The QR codes in physical NCERT textbooks are underused gold mines",
+                "Track parent engagement through WhatsApp read receipts"
+              ]
+            },
+            keyTakeaways: [
+              "DIKSHA provides free, curriculum-aligned content in 36 Indian languages",
+              "QR codes in NCERT textbooks are an underused resource",
+              "Government platforms are specifically designed for Indian classroom contexts",
+              "Even 2-3 minutes of projected digital content can transform a lesson"
             ]
           }
         ]
@@ -252,7 +356,7 @@ Each student becomes an expert on one slide/topic, then teaches their group.
     title: "Data-Driven Teaching",
     description: "Use student data ethically and effectively to personalize instruction, close achievement gaps, and demonstrate impact.",
     longDescription: "Transform from intuition-based to evidence-based teaching. Learn to collect meaningful student data, analyze it for actionable insights, use it to personalize learning paths, and communicate results to stakeholders. This course covers formative assessment data, standardized test analysis, and learning analytics — all while maintaining student privacy and ethical standards.",
-    category: "Assessment",
+    category: "General",
     duration: "3 weeks",
     students: 2890,
     rating: 4.8,
@@ -429,7 +533,7 @@ Create a spreadsheet with:
     title: "Inclusive Classroom Design",
     description: "Create learning environments that celebrate diversity, support ELL students, and ensure equitable access for every learner.",
     longDescription: "Build a classroom where every student feels seen, valued, and supported. This course covers culturally responsive teaching, English Language Learner (ELL) strategies, accessibility best practices, trauma-informed approaches, and equitable assessment design. Learn to dismantle hidden barriers and create truly inclusive spaces where diversity is a strength.",
-    category: "Inclusion",
+    category: "Wellbeing",
     duration: "4 weeks",
     students: 4150,
     rating: 4.9,
