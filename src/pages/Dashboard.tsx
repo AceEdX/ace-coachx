@@ -12,6 +12,7 @@ import GamificationWidget from '@/components/GamificationWidget';
 import CertificateModal from '@/components/CertificateModal';
 import FloatingHelp from '@/components/FloatingHelp';
 import { coursesData } from '@/data/courseData';
+import { useXPSystem } from '@/hooks/useXPSystem';
 
 interface Enrollment {
   id: string;
@@ -26,19 +27,44 @@ const Dashboard = () => {
   const [enrollments, setEnrollments] = useState<Enrollment[]>([]);
   const [loading, setLoading] = useState(true);
   const [certCourse, setCertCourse] = useState<string | null>(null);
+  const [stats, setStats] = useState<{ xp: number; level: number; streak: number; badges: string[]; lessonsCompleted: number } | null>(null);
+  const { checkStreak } = useXPSystem();
 
   useEffect(() => {
-    const fetchEnrollments = async () => {
+    const fetchData = async () => {
       if (!user) return;
+      
+      // Fetch enrollments
       const { data, error } = await supabase
         .from('enrollments')
         .select('*')
         .eq('user_id', user.id)
         .order('enrolled_at', { ascending: false });
       if (!error && data) setEnrollments(data);
+
+      // Fetch gamification stats
+      const { data: statsData } = await supabase
+        .from('leaderboard_stats')
+        .select('xp, level, streak, badges, lessons_completed')
+        .eq('user_id', user.id)
+        .single();
+      
+      if (statsData) {
+        setStats({
+          xp: statsData.xp,
+          level: statsData.level,
+          streak: statsData.streak,
+          badges: (statsData.badges as string[]) || [],
+          lessonsCompleted: statsData.lessons_completed,
+        });
+      }
+
       setLoading(false);
+      
+      // Check daily streak
+      checkStreak();
     };
-    fetchEnrollments();
+    fetchData();
   }, [user]);
 
   const getCourseTitle = (courseId: string) => {
@@ -154,11 +180,11 @@ const Dashboard = () => {
           {/* Gamification Sidebar */}
           <div className="lg:col-span-1">
             <GamificationWidget
-              streak={3}
-              xp={750}
-              level={2}
-              badges={enrollments.length > 0 ? ["First Enrollment", "Quick Learner"] : []}
-              lessonsCompleted={0}
+              streak={stats?.streak ?? 0}
+              xp={stats?.xp ?? 0}
+              level={stats?.level ?? 1}
+              badges={stats?.badges ?? []}
+              lessonsCompleted={stats?.lessonsCompleted ?? 0}
               totalLessons={enrollments.reduce((a, e) => a + getTotalLessons(e.course_id), 0)}
             />
           </div>

@@ -103,6 +103,56 @@ export type Database = {
           },
         ]
       }
+      leaderboard_stats: {
+        Row: {
+          badges: Json
+          courses_completed: number
+          id: string
+          last_activity_date: string | null
+          lessons_completed: number
+          level: number
+          quizzes_passed: number
+          streak: number
+          updated_at: string
+          user_id: string
+          xp: number
+        }
+        Insert: {
+          badges?: Json
+          courses_completed?: number
+          id?: string
+          last_activity_date?: string | null
+          lessons_completed?: number
+          level?: number
+          quizzes_passed?: number
+          streak?: number
+          updated_at?: string
+          user_id: string
+          xp?: number
+        }
+        Update: {
+          badges?: Json
+          courses_completed?: number
+          id?: string
+          last_activity_date?: string | null
+          lessons_completed?: number
+          level?: number
+          quizzes_passed?: number
+          streak?: number
+          updated_at?: string
+          user_id?: string
+          xp?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leaderboard_stats_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -153,6 +203,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      award_xp: {
+        Args: { _activity_type: string; _amount: number; _user_id: string }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

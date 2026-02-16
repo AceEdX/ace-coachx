@@ -29,6 +29,7 @@ import { toast } from "sonner";
 import CertificateModal from "@/components/CertificateModal";
 import LessonQuiz from "@/components/LessonQuiz";
 import { lessonQuizzes } from "@/data/quizData";
+import { useXPSystem } from "@/hooks/useXPSystem";
 
 const LessonDetail = () => {
   const { courseId, lessonId } = useParams();
@@ -41,6 +42,7 @@ const LessonDetail = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [noteText, setNoteText] = useState("");
   const [showNoteInput, setShowNoteInput] = useState(false);
+  const { awardXP } = useXPSystem();
 
   const lessonResult = useLessonById(courseId || '', lessonId || '');
   const { course } = useCourseById(courseId || '');
@@ -196,11 +198,15 @@ const LessonDetail = () => {
     }
 
     toast.success('Lesson marked as complete!');
+    
+    // Award XP for lesson completion
+    awardXP(50, "lesson");
 
-    // If this is the last lesson and all lessons are completed, show certificate
+    // If all lessons completed, award course XP
     const newCompleted2 = new Set(completedLessons);
     newCompleted2.add(lessonId!);
     if (newCompleted2.size >= allLessons.length) {
+      awardXP(500, "course");
       setTimeout(() => {
         setShowCertificate(true);
       }, 1000);
@@ -416,7 +422,15 @@ const LessonDetail = () => {
             {/* Quiz Section */}
             {lessonId && lessonQuizzes[lessonId] && (
               <div className="mb-8">
-                <LessonQuiz questions={lessonQuizzes[lessonId]} />
+                <LessonQuiz
+                  questions={lessonQuizzes[lessonId]}
+                  onComplete={(score, total) => {
+                    const pct = Math.round((score / total) * 100);
+                    if (pct >= 80) {
+                      awardXP(100, "quiz");
+                    }
+                  }}
+                />
               </div>
             )}
 

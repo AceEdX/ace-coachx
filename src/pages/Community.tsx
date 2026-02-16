@@ -3,8 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageSquare, Users, Calendar, Award } from "lucide-react";
+import { MessageSquare, Users, Calendar } from "lucide-react";
 import { toast } from "sonner";
+import Leaderboard from "@/components/Leaderboard";
 
 const Community = () => {
   return (
@@ -20,7 +21,12 @@ const Community = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        {/* Leaderboard Section */}
+        <div className="mb-12">
+          <Leaderboard />
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           <Card>
             <CardHeader>
               <MessageSquare className="w-10 h-10 text-primary mb-2" />
@@ -62,21 +68,6 @@ const Community = () => {
             <CardContent>
               <Button className="w-full" onClick={() => toast.info("Event calendar coming soon!")}>
                 View Calendar
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <Award className="w-10 h-10 text-primary mb-2" />
-              <CardTitle>Achievements</CardTitle>
-              <CardDescription>
-                Earn badges and recognition for your progress
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button className="w-full" onClick={() => toast.info("Leaderboard coming soon!")}>
-                View Leaderboard
               </Button>
             </CardContent>
           </Card>
