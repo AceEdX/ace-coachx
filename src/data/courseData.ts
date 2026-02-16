@@ -1658,7 +1658,8 @@ Students should understand:
 
 // Import and merge additional courses
 import { additionalCourses } from "./additionalCourses";
-coursesData.push(...additionalCourses);
+import { newIndianCourses } from "./newIndianCourses";
+coursesData.push(...additionalCourses, ...newIndianCourses);
 
 export const getCourseById = (id: string): Course | undefined => {
   return coursesData.find(course => course.id === id);
