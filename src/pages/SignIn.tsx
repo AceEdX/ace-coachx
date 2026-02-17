@@ -18,6 +18,7 @@ const signInSchema = z.object({
 
 const signUpSchema = signInSchema.extend({
   fullName: z.string().trim().min(2, { message: "Name must be at least 2 characters" }),
+  phone: z.string().trim().min(10, { message: "Phone number must be at least 10 digits" }).regex(/^[+\d][\d\s-]{8,}$/, { message: "Invalid phone number" }),
   confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
@@ -33,6 +34,7 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -74,17 +76,38 @@ const SignIn = () => {
     }
   };
 
+  const submitToGoogleForm = async (name: string, phoneNum: string, emailAddr: string) => {
+    try {
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc2ebP8_sW7d6LUH5n5gmjW66oHgdHfIfPvq4_EckJ27IZOjw/formResponse";
+      const formData = new URLSearchParams();
+      formData.append("entry.2005620554", name);
+      formData.append("entry.1166974658", phoneNum);
+      formData.append("entry.1045781291", emailAddr);
+
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString(),
+      });
+    } catch (err) {
+      console.error("Google Form submission failed:", err);
+    }
+  };
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     
     try {
-      signUpSchema.parse({ email, password, fullName, confirmPassword });
+      signUpSchema.parse({ email, password, fullName, phone, confirmPassword });
       setLoading(true);
       
       const { error } = await signUp(email, password, fullName);
       
       if (!error) {
+        // Submit to Google Form in background
+        submitToGoogleForm(fullName, phone, email);
         navigate(redirect);
       }
     } catch (error) {
@@ -186,21 +209,36 @@ const SignIn = () => {
                     {errors.fullName && (
                       <p className="text-sm text-destructive">{errors.fullName}</p>
                     )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-email">Email</Label>
-                    <Input
-                      id="signup-email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      disabled={loading}
-                      required
-                    />
-                    {errors.email && (
-                      <p className="text-sm text-destructive">{errors.email}</p>
-                    )}
+                   </div>
+                   <div className="space-y-2">
+                     <Label htmlFor="signup-phone">Phone Number</Label>
+                     <Input
+                       id="signup-phone"
+                       type="tel"
+                       placeholder="+91 9876543210"
+                       value={phone}
+                       onChange={(e) => setPhone(e.target.value)}
+                       disabled={loading}
+                       required
+                     />
+                     {errors.phone && (
+                       <p className="text-sm text-destructive">{errors.phone}</p>
+                     )}
+                   </div>
+                   <div className="space-y-2">
+                     <Label htmlFor="signup-email">Email</Label>
+                     <Input
+                       id="signup-email"
+                       type="email"
+                       placeholder="your.email@example.com"
+                       value={email}
+                       onChange={(e) => setEmail(e.target.value)}
+                       disabled={loading}
+                       required
+                     />
+                     {errors.email && (
+                       <p className="text-sm text-destructive">{errors.email}</p>
+                     )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="signup-password">Password</Label>
