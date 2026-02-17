@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         return { error };
       }
       
-      toast.success('Account created successfully!');
+      toast.success('Account created! Please check your email to verify your account.');
       return { error: null };
     } catch (error: any) {
       toast.error('An unexpected error occurred');

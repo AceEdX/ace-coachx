@@ -19,6 +19,8 @@ import AdminCourses from "./pages/AdminCourses";
 import Bookmarks from "./pages/Bookmarks";
 import MyNotes from "./pages/MyNotes";
 import Announcements from "./pages/Announcements";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ const App = () => (
             <Route path="/resources" element={<Resources />} />
             <Route path="/announcements" element={<Announcements />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route
               path="/dashboard"
               element={
