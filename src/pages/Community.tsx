@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageSquare, Users, Calendar } from "lucide-react";
+import { MessageSquare, Users, Calendar, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import Leaderboard from "@/components/Leaderboard";
 
@@ -24,6 +24,27 @@ const Community = () => {
         {/* Leaderboard Section */}
         <div className="mb-12">
           <Leaderboard />
+        </div>
+
+        {/* WhatsApp Banner */}
+        <div className="mb-10 rounded-xl bg-[hsl(142,71%,45%)] text-white p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <MessageCircle className="w-12 h-12 shrink-0" />
+            <div>
+              <h3 className="text-xl font-bold">Join the AceEdX Teachers WhatsApp Group</h3>
+              <p className="text-white/90 text-sm mt-1">Connect instantly with 1,000+ Indian educators — share ideas, ask questions, and grow together.</p>
+            </div>
+          </div>
+          <a
+            href="https://chat.whatsapp.com/L3WSlHzfc5wC62ZC6YioBd?mode=gi_c"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0"
+          >
+            <Button size="lg" className="bg-white text-[hsl(142,71%,35%)] hover:bg-white/90 font-bold">
+              Join WhatsApp Group
+            </Button>
+          </a>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
