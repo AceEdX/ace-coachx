@@ -1,4 +1,4 @@
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -32,6 +32,17 @@ const Footer = () => {
               <li><Link to="/community" className="hover:text-secondary transition-colors">Community</Link></li>
               <li><Link to="/resources" className="hover:text-secondary transition-colors">Resource Library</Link></li>
               <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+              <li>
+                <a
+                  href="https://chat.whatsapp.com/L3WSlHzfc5wC62ZC6YioBd?mode=gi_c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  Teachers WhatsApp Group
+                </a>
+              </li>
             </ul>
           </div>
 
