@@ -117,7 +117,7 @@ const Leaderboard = () => {
                             </AvatarFallback>
                           </Avatar>
                           <span className="text-sm truncate max-w-[120px]">
-                            {entry.full_name || "Anonymous Learner"}
+                            {entry.full_name ? entry.full_name.split(" ")[0] : "Anonymous"}
                           </span>
                         </div>
                       </TableCell>
