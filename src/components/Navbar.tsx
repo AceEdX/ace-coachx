@@ -41,7 +41,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <GraduationCap className="w-8 h-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">Ace CoachX</span>
+            <div className="flex flex-col leading-none">
+              <span className="text-xl font-bold text-foreground">Ace CoachX</span>
+              <a href="https://www.aceedx.com" target="_blank" rel="noopener noreferrer" className="text-[10px] text-primary hover:underline font-medium">aceedx.com</a>
+            </div>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">

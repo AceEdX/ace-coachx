@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -13,15 +13,34 @@ import { z } from "zod";
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" });
 
+const COOLDOWN_SECONDS = 60;
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = setInterval(() => {
+      setCooldown((prev) => {
+        if (prev <= 1) { clearInterval(timer); return 0; }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldown]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
+    if (cooldown > 0) {
+      toast.error(`Please wait ${cooldown}s before requesting another email.`);
+      return;
+    }
 
     try {
       emailSchema.parse(email);
@@ -37,9 +56,15 @@ const ForgotPassword = () => {
       });
 
       if (error) {
-        toast.error(error.message);
+        if (error.message?.toLowerCase().includes('rate limit') || error.status === 429) {
+          toast.error("Too many requests. Please wait a minute before trying again.");
+          setCooldown(COOLDOWN_SECONDS);
+        } else {
+          toast.error(error.message);
+        }
       } else {
         setSent(true);
+        setCooldown(COOLDOWN_SECONDS);
         toast.success("Password reset email sent!");
       }
     } catch {
@@ -94,8 +119,8 @@ const ForgotPassword = () => {
                   />
                   {error && <p className="text-sm text-destructive">{error}</p>}
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
-                  {loading ? "Sending..." : "Send Reset Link"}
+                <Button type="submit" className="w-full" disabled={loading || cooldown > 0}>
+                  {loading ? "Sending..." : cooldown > 0 ? `Resend in ${cooldown}s` : "Send Reset Link"}
                 </Button>
                 <Link to="/signin" className="block text-center text-sm text-primary hover:underline">
                   <ArrowLeft className="w-4 h-4 inline mr-1" />

@@ -4,6 +4,7 @@ import { Eye, EyeOff } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +17,9 @@ const signInSchema = z.object({
   password: z.string().min(8, { message: "Password must be at least 8 characters" }),
 });
 
-const signUpSchema = signInSchema.extend({
+const signUpSchema = z.object({
+  email: z.string().trim().email({ message: "Invalid email address" }),
+  password: z.string().min(8, { message: "Password must be at least 8 characters" }),
   fullName: z.string().trim().min(2, { message: "Name must be at least 2 characters" }),
   phone: z.string().trim().min(10, { message: "Phone number must be at least 10 digits" }).regex(/^[+\d][\d\s-]{8,}$/, { message: "Invalid phone number" }),
   confirmPassword: z.string(),
@@ -31,16 +34,22 @@ const SignIn = () => {
   const [searchParams] = useSearchParams();
   const redirect = searchParams.get('redirect') || '/courses';
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // Sign In state (separate from Sign Up to avoid pre-filled cross-tab issue)
+  const [signInEmail, setSignInEmail] = useState("");
+  const [signInPassword, setSignInPassword] = useState("");
+  const [showSignInPassword, setShowSignInPassword] = useState(false);
+
+  // Sign Up state
+  const [signUpEmail, setSignUpEmail] = useState("");
+  const [signUpPassword, setSignUpPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [showSignInPassword, setShowSignInPassword] = useState(false);
   const [showSignUpPassword, setShowSignUpPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     if (user) {
@@ -53,10 +62,10 @@ const SignIn = () => {
     setErrors({});
     
     try {
-      signInSchema.parse({ email, password });
+      signInSchema.parse({ email: signInEmail, password: signInPassword });
       setLoading(true);
       
-      const { error } = await signIn(email, password);
+      const { error } = await signIn(signInEmail, signInPassword);
       
       if (!error) {
         navigate(redirect);
@@ -78,7 +87,7 @@ const SignIn = () => {
 
   const submitToGoogleForm = async (name: string, phoneNum: string, emailAddr: string) => {
     try {
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc2ebP8_sW7d6LUH5n5gmjW66oHgdHfIfPvq4_EckJ27IZOjw/formResponse";
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdPlEDPFKbBQx8XCRHKIdF-D6Ke0f0F1VBxnSBfFm0O0tSA_w/formResponse";
       const formData = new URLSearchParams();
       formData.append("entry.2005620554", name);
       formData.append("entry.1166974658", phoneNum);
@@ -95,20 +104,30 @@ const SignIn = () => {
     }
   };
 
+  const savePhoneToProfile = async (userId: string, phoneNum: string) => {
+    try {
+      await supabase
+        .from('profiles')
+        .update({ phone_number: phoneNum })
+        .eq('id', userId);
+    } catch (err) {
+      console.error("Failed to save phone to profile:", err);
+    }
+  };
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     
     try {
-      signUpSchema.parse({ email, password, fullName, phone, confirmPassword });
+      signUpSchema.parse({ email: signUpEmail, password: signUpPassword, fullName, phone, confirmPassword });
       setLoading(true);
       
-      const { error } = await signUp(email, password, fullName);
+      const { error } = await signUp(signUpEmail, signUpPassword, fullName, phone);
       
       if (!error) {
         // Submit to Google Form in background
-        submitToGoogleForm(fullName, phone, email);
-        navigate(redirect);
+        submitToGoogleForm(fullName, phone, signUpEmail);
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -131,7 +150,7 @@ const SignIn = () => {
       <main className="container mx-auto px-4 py-12 flex items-center justify-center min-h-[calc(100vh-200px)]">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Welcome to Ace CoachX</CardTitle>
+            <CardTitle className="text-2xl">Welcome to AceEdX CoachX</CardTitle>
             <CardDescription>Sign in to access your courses and progress</CardDescription>
           </CardHeader>
           <CardContent>
@@ -141,16 +160,18 @@ const SignIn = () => {
                 <TabsTrigger value="signup">Sign Up</TabsTrigger>
               </TabsList>
               
+              {/* SIGN IN TAB */}
               <TabsContent value="signin">
-                <form onSubmit={handleSignIn} className="space-y-4">
+                <form onSubmit={handleSignIn} className="space-y-4" autoComplete="on">
                   <div className="space-y-2">
                     <Label htmlFor="signin-email">Email</Label>
                     <Input
                       id="signin-email"
                       type="email"
+                      autoComplete="email"
                       placeholder="your.email@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={signInEmail}
+                      onChange={(e) => setSignInEmail(e.target.value)}
                       disabled={loading}
                       required
                     />
@@ -164,8 +185,9 @@ const SignIn = () => {
                       <Input
                         id="signin-password"
                         type={showSignInPassword ? "text" : "password"}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        autoComplete="current-password"
+                        value={signInPassword}
+                        onChange={(e) => setSignInPassword(e.target.value)}
                         disabled={loading}
                         required
                         className="pr-10"
@@ -193,13 +215,15 @@ const SignIn = () => {
                 </form>
               </TabsContent>
               
+              {/* SIGN UP TAB */}
               <TabsContent value="signup">
-                <form onSubmit={handleSignUp} className="space-y-4">
+                <form onSubmit={handleSignUp} className="space-y-4" autoComplete="on">
                   <div className="space-y-2">
                     <Label htmlFor="signup-name">Full Name</Label>
                     <Input
                       id="signup-name"
                       type="text"
+                      autoComplete="name"
                       placeholder="Your Name"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
@@ -209,36 +233,38 @@ const SignIn = () => {
                     {errors.fullName && (
                       <p className="text-sm text-destructive">{errors.fullName}</p>
                     )}
-                   </div>
-                   <div className="space-y-2">
-                     <Label htmlFor="signup-phone">Phone Number</Label>
-                     <Input
-                       id="signup-phone"
-                       type="tel"
-                       placeholder="+91 9876543210"
-                       value={phone}
-                       onChange={(e) => setPhone(e.target.value)}
-                       disabled={loading}
-                       required
-                     />
-                     {errors.phone && (
-                       <p className="text-sm text-destructive">{errors.phone}</p>
-                     )}
-                   </div>
-                   <div className="space-y-2">
-                     <Label htmlFor="signup-email">Email</Label>
-                     <Input
-                       id="signup-email"
-                       type="email"
-                       placeholder="your.email@example.com"
-                       value={email}
-                       onChange={(e) => setEmail(e.target.value)}
-                       disabled={loading}
-                       required
-                     />
-                     {errors.email && (
-                       <p className="text-sm text-destructive">{errors.email}</p>
-                     )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-phone">Phone Number</Label>
+                    <Input
+                      id="signup-phone"
+                      type="tel"
+                      autoComplete="tel"
+                      placeholder="+91 9876543210"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      disabled={loading}
+                      required
+                    />
+                    {errors.phone && (
+                      <p className="text-sm text-destructive">{errors.phone}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-email">Email</Label>
+                    <Input
+                      id="signup-email"
+                      type="email"
+                      autoComplete="email"
+                      placeholder="your.email@example.com"
+                      value={signUpEmail}
+                      onChange={(e) => setSignUpEmail(e.target.value)}
+                      disabled={loading}
+                      required
+                    />
+                    {errors.email && (
+                      <p className="text-sm text-destructive">{errors.email}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="signup-password">Password</Label>
@@ -246,9 +272,10 @@ const SignIn = () => {
                       <Input
                         id="signup-password"
                         type={showSignUpPassword ? "text" : "password"}
+                        autoComplete="new-password"
                         placeholder="Min 8 characters"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={signUpPassword}
+                        onChange={(e) => setSignUpPassword(e.target.value)}
                         disabled={loading}
                         required
                         className="pr-10"
@@ -271,6 +298,7 @@ const SignIn = () => {
                       <Input
                         id="signup-confirm"
                         type={showConfirmPassword ? "text" : "password"}
+                        autoComplete="new-password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         disabled={loading}
