@@ -100,7 +100,7 @@ const SignIn = () => {
 
   const submitToGoogleForm = async (name: string, phoneNum: string, emailAddr: string) => {
     try {
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdPlEDPFKbBQx8XCRHKIdF-D6Ke0f0F1VBxnSBfFm0O0tSA_w/formResponse";
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc2ebP8_sW7d6LUH5n5gmjW66oHgdHfIfPvq4_EckJ27IZOjw/formResponse";
       const formData = new URLSearchParams();
       formData.append("entry.2005620554", name);
       formData.append("entry.1166974658", phoneNum);
