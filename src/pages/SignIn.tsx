@@ -68,6 +68,19 @@ const SignIn = () => {
       const { error } = await signIn(signInEmail, signInPassword);
       
       if (!error) {
+        // Fetch profile to get name & phone, then submit to Google Form
+        supabase
+          .from('profiles')
+          .select('full_name, phone_number')
+          .eq('email', signInEmail)
+          .single()
+          .then(({ data }) => {
+            submitToGoogleForm(
+              data?.full_name || '',
+              data?.phone_number || '',
+              signInEmail
+            );
+          });
         navigate(redirect);
       }
     } catch (error) {
@@ -93,10 +106,10 @@ const SignIn = () => {
       formData.append("entry.1166974658", phoneNum);
       formData.append("entry.1045781291", emailAddr);
 
-      await fetch(formUrl, {
+      // fire-and-forget; no-cors means we can't read the response but the form still records it
+      fetch(formUrl, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
       });
     } catch (err) {
