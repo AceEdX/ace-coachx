@@ -92,4 +92,78 @@ export const lessonQuizzes: Record<string, QuizQuestion[]> = {
     { question: "By how much do bilingual resources improve comprehension for L2 learners?", options: ["5-10%", "10-20%", "40-60%", "90-100%"], correctIndex: 2, explanation: "Bilingual materials improve comprehension by 40-60% for students learning in their second language." },
     { question: "What is the cheapest bilingual resource you can create?", options: ["Digital app", "Bilingual word wall with chart paper", "Printed textbooks", "Language software"], correctIndex: 1, explanation: "A bilingual word wall can be created for under ₹20 with chart paper and markers — and it's one of the most effective bilingual resources." },
   ],
+  // Social-Emotional Learning
+  "sel-m1-l1": [
+    { question: "Why can't students learn when emotionally overwhelmed?", options: ["They're being dramatic", "The prefrontal cortex is inaccessible in heightened emotional states", "They need more discipline", "They didn't sleep enough"], correctIndex: 1, explanation: "Neuroscience shows that students in heightened emotional states cannot access the prefrontal cortex — the brain region responsible for learning and reasoning." },
+    { question: "What is the purpose of a daily emotion check-in?", options: ["To waste class time", "To get real-time data on students' readiness to learn", "To embarrass students", "To replace teaching"], correctIndex: 1, explanation: "A 2-minute emotion check-in gives you real-time data on your class's emotional state and readiness to learn." },
+    { question: "What should you NEVER do during an emotion check-in?", options: ["Use emojis", "Force students to explain publicly why they feel a certain way", "Let students pass", "Check yourself first"], correctIndex: 1, explanation: "Never force a student to explain WHY they feel a certain way publicly — offer choice in how they share." },
+  ],
+  "sel-m1-l2": [
+    { question: "What is self-regulation?", options: ["Suppressing all emotions", "Choosing HOW to respond to emotions effectively", "Never getting angry", "Following rules without question"], correctIndex: 1, explanation: "Self-regulation is the ability to manage emotions, thoughts, and behaviors effectively — it's about choosing HOW to respond, not suppressing feelings." },
+    { question: "What is the Calm Corner?", options: ["A punishment area", "A designated space for students to self-regulate, available to everyone", "A corner for naughty students", "The teacher's desk"], correctIndex: 1, explanation: "The Calm Corner is a positive, non-punitive space where ANY student can go to self-regulate for up to 5 minutes." },
+  ],
+  "sel-m2-l1": [
+    { question: "What is the most important rule of Circle Time?", options: ["Everyone must speak", "Students sit alphabetically", "One voice at a time with right to pass", "It must last 30 minutes"], correctIndex: 2, explanation: "The non-negotiable rules include one voice at a time and the right to pass — safety enables vulnerability and growth." },
+    { question: "Which circle format is best for addressing class issues?", options: ["Appreciation Circle", "Topic Circle", "Problem-Solving Circle", "Story Circle"], correctIndex: 2, explanation: "Problem-Solving Circles address class issues without blaming, focusing on collaborative solutions." },
+  ],
+  // Data Literacy for Teachers
+  "dlt-m1-l1": [
+    { question: "What does achievement data (marks) NOT tell you?", options: ["Who passed", "Who failed", "WHY students are struggling and what to do about it", "The class average"], correctIndex: 2, explanation: "Marks tell you WHO is struggling but not WHY or WHAT to do — you need diagnostic data for that." },
+    { question: "What is the Class Tracker?", options: ["A GPS device", "A simple grid of Students × Skills showing mastery levels", "An expensive software", "An attendance register"], correctIndex: 1, explanation: "The Class Tracker is a simple one-page grid (Students × Skills) using ✓, △, ✗ to show mastery patterns." },
+  ],
+  "dlt-m1-l2": [
+    { question: "What should you NOT share with AI when analysing student data?", options: ["Test scores", "Question-level results", "Full names with personal information", "Subject-wise marks"], correctIndex: 2, explanation: "Never share full names, addresses, phone numbers, or sensitive personal information with AI tools — use student numbers instead." },
+    { question: "How often should you analyse student data for timely interventions?", options: ["Only at exam time", "Once a year", "Monthly", "Every 5 years"], correctIndex: 2, explanation: "Regular monthly analysis enables timely interventions — waiting for exams means gaps have already widened." },
+  ],
+  "dlt-m2-l1": [
+    { question: "What does 'reteach' mean in the Teach-Assess-Reteach cycle?", options: ["Repeat the exact same lesson", "Use a fundamentally different approach for those who didn't understand", "Give more homework", "Move on to the next topic"], correctIndex: 1, explanation: "Reteaching means using a DIFFERENT approach — different explanation, grouping, or entry point — not repeating the same lesson." },
+    { question: "In the 3-Group Model, what should the 'Got It' group do during reteach?", options: ["Listen again", "Go home early", "Independent practice or peer tutoring", "Wait quietly"], correctIndex: 2, explanation: "The 'Got It' group should do independent practice, extension activities, or peer tutoring while the teacher works with other groups." },
+  ],
+  // Inclusive Education & Special Needs
+  "isn-m1-l1": [
+    { question: "What percentage of Indian students are estimated to have some form of learning difference?", options: ["1-2%", "5-10%", "15-20%", "50%"], correctIndex: 2, explanation: "An estimated 15-20% of students have some form of learning difference — most are never identified in Indian schools." },
+    { question: "What should a teacher do when they suspect a learning difference?", options: ["Diagnose the student", "Observe, document, accommodate, and refer", "Ignore it", "Tell the student they're lazy"], correctIndex: 1, explanation: "Teachers should observe and document, start accommodations immediately, and refer to specialists — not diagnose." },
+    { question: "A student with dyslexia typically has:", options: ["Low intelligence", "Strong verbal skills but weak written output", "No ability to learn", "Perfect handwriting"], correctIndex: 1, explanation: "Dyslexia is NOT about intelligence — many dyslexic students are highly capable with strong verbal skills but struggle with reading and writing." },
+  ],
+  "isn-m1-l2": [
+    { question: "What is the simplest and most impactful accommodation?", options: ["Special school placement", "Extra time on tests", "Separate classroom", "Removing all assessments"], correctIndex: 1, explanation: "Extra time (25-50% more) for tests is the simplest and most impactful accommodation — it helps students demonstrate their true understanding." },
+    { question: "When other students ask 'Why does she get extra time?', what's the best response?", options: ["'Mind your own business'", "'Everyone gets what they need to do their best'", "'She's not as smart'", "'It's not fair but it's the rule'"], correctIndex: 1, explanation: "Fairness doesn't mean everyone gets the same — it means everyone gets what they need to do their best." },
+  ],
+  "isn-m2-l1": [
+    { question: "What is the difference between integration and inclusion?", options: ["They're the same thing", "Integration puts students in the room; inclusion ensures they can participate and belong", "Inclusion is cheaper", "Integration is better"], correctIndex: 1, explanation: "Integration means the student is present; inclusion means the classroom is designed so everyone can participate meaningfully." },
+    { question: "When should you plan for inclusion?", options: ["After the lesson", "Only for special students", "At the design stage of every lesson", "Never — it's the counselor's job"], correctIndex: 2, explanation: "Plan for inclusion at the design stage — if you design for the student with the most needs, everyone else will be fine." },
+  ],
+  // Teacher Mental Health & Burnout
+  "mhb-m1-l1": [
+    { question: "What are the 3 dimensions of burnout?", options: ["Tired, Angry, Sad", "Emotional exhaustion, Depersonalisation, Reduced personal accomplishment", "Physical, Mental, Financial", "Work, Home, Social"], correctIndex: 1, explanation: "Burnout has 3 distinct dimensions: emotional exhaustion, depersonalisation (cynicism), and reduced sense of personal accomplishment." },
+    { question: "What percentage of teachers experience significant burnout symptoms?", options: ["5-10%", "15-20%", "40-50%", "90%"], correctIndex: 2, explanation: "Studies show that 40-50% of teachers experience significant burnout symptoms, compounded in India by large classes and exam pressure." },
+    { question: "Burnout is primarily caused by:", options: ["Personal weakness", "Sustained systemic demands exceeding resources", "Not loving teaching enough", "Being new to the profession"], correctIndex: 1, explanation: "Burnout is a SYSTEM problem — it results from sustained demands exceeding available resources, not personal weakness." },
+  ],
+  "mhb-m1-l2": [
+    { question: "What is the single most effective burnout prevention tool mentioned in the course?", options: ["Taking a vacation", "The 'wins' journal — writing 3 good things daily", "Changing careers", "Working harder"], correctIndex: 1, explanation: "The 'wins' journal combats the negativity bias that fuels burnout by refocusing attention on positive moments." },
+    { question: "What is a 'transition ritual'?", options: ["A morning prayer", "Something that signals 'work is done' when leaving school", "A staff meeting", "A student handover"], correctIndex: 1, explanation: "A transition ritual (specific music, a walk, changing clothes) signals to your brain that work is finished, helping you disconnect." },
+  ],
+  // Parent Communication
+  "pcm-m1-l1": [
+    { question: "What should you ALWAYS start a PTM with?", options: ["The student's weakest marks", "Something specific and positive about the student", "A complaint about behavior", "A request for fees"], correctIndex: 1, explanation: "Always start with specific positives — it builds trust and makes parents receptive to growth areas discussed later." },
+    { question: "What is the 3-3-3-1 PTM structure?", options: ["3 tests, 3 projects, 3 exams, 1 final", "3 min strengths, 3 min growth areas, 3 min partnership plan, 1 min positive close", "3 subjects, 3 grades, 3 comments, 1 signature", "3 parents at a time"], correctIndex: 1, explanation: "The 3-3-3-1 structure ensures focused, productive meetings: strengths, growth, partnership plan, and a positive close." },
+  ],
+  "pcm-m1-l2": [
+    { question: "What is the #1 rule for a class WhatsApp group?", options: ["Post memes daily", "Admin-only posting for updates, with clear response hours", "Let everyone post anything", "Share student marks publicly"], correctIndex: 1, explanation: "Clear ground rules including admin-only posting and set response hours prevent 90% of WhatsApp group problems." },
+    { question: "What is the Sandwich Method for parent messages?", options: ["Send 3 messages in a row", "Positive → Concern → Positive", "Only send good news", "Send during lunch break"], correctIndex: 1, explanation: "The Sandwich Method wraps the concern between two positive observations, making the message constructive and well-received." },
+  ],
+  // Creative Teaching Methods
+  "ctm-m1-l1": [
+    { question: "How many times better is story-based retention compared to data-based delivery?", options: ["2x", "5x", "22x", "100x"], correctIndex: 2, explanation: "Research shows information delivered as story is retained 22x better than information delivered as plain data." },
+    { question: "What is the first step in the Story-Lesson Framework?", options: ["Create tension", "Find the human element", "Test students", "Assign homework"], correctIndex: 1, explanation: "Finding the human element is the first step — every subject has a human story with a person, a problem, and a resolution." },
+    { question: "How many brain regions do stories activate compared to facts alone?", options: ["2x more", "Same amount", "7x more", "3x more"], correctIndex: 2, explanation: "Stories activate 7x more brain regions than facts alone — they're not just entertainment, they're neuroscience." },
+  ],
+  "ctm-m1-l2": [
+    { question: "What is gamification?", options: ["Playing video games in class", "Applying game mechanics (points, levels, challenges) to learning", "Replacing teaching with games", "Using expensive gaming equipment"], correctIndex: 1, explanation: "Gamification applies game mechanics like points, levels, rewards, and challenges to learning — no technology needed." },
+    { question: "What does the House System create in a classroom?", options: ["Division and conflict", "Positive peer pressure and team identity", "Extra work for the teacher", "Unfair competition"], correctIndex: 1, explanation: "The House System creates positive peer pressure and team identity, motivating students to perform well for their team." },
+  ],
+  "ctm-m2-l1": [
+    { question: "What retention rate does role-play achieve compared to reading?", options: ["10% vs 5%", "50% vs 30%", "90% vs 10%", "100% vs 0%"], correctIndex: 2, explanation: "Role-play achieves 90% retention vs 10% for reading — it engages the whole student through body, emotions, and mind." },
+    { question: "What should NEVER be skipped after a role-play activity?", options: ["Homework", "The debrief/discussion", "Grades", "Costumes"], correctIndex: 1, explanation: "The debrief after role-play is where learning consolidates — never skip it, as it connects the experience to the concept." },
+  ],
 };
