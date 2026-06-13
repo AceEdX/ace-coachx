@@ -1661,7 +1661,8 @@ import { additionalCourses } from "./additionalCourses";
 import { newIndianCourses } from "./newIndianCourses";
 import { moreIndianCourses } from "./moreIndianCourses";
 import { modernTeacherCourses } from "./modernTeacherCourses";
-coursesData.push(...additionalCourses, ...newIndianCourses, ...moreIndianCourses, ...modernTeacherCourses);
+import { provenTeacherCourses } from "./provenTeacherCourses";
+coursesData.push(...additionalCourses, ...newIndianCourses, ...moreIndianCourses, ...modernTeacherCourses, ...provenTeacherCourses);
 
 export const getCourseById = (id: string): Course | undefined => {
   return coursesData.find(course => course.id === id);
