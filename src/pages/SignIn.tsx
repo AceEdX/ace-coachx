@@ -72,23 +72,21 @@ const SignIn = () => {
         navigate(redirect);
 
         // Fire-and-forget profile lookup + Google Form sync
-        setTimeout(() => {
-          supabase
-            .from('profiles')
-            .select('full_name, phone_number')
-            .eq('email', signInEmail)
-            .maybeSingle()
-            .then(({ data }) => {
-              submitToGoogleForm(
-                data?.full_name || '',
-                data?.phone_number || '',
-                signInEmail
-              );
-            })
-            .catch(() => {
-              // never block sign-in on form sync
-              submitToGoogleForm('', '', signInEmail);
-            });
+        setTimeout(async () => {
+          try {
+            const { data } = await supabase
+              .from('profiles')
+              .select('full_name, phone_number')
+              .eq('email', signInEmail)
+              .maybeSingle();
+            submitToGoogleForm(
+              data?.full_name || '',
+              data?.phone_number || '',
+              signInEmail
+            );
+          } catch {
+            submitToGoogleForm('', '', signInEmail);
+          }
         }, 0);
       }
     } catch (error) {
