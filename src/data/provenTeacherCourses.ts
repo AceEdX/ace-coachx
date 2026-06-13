@@ -442,7 +442,7 @@ export const provenTeacherCourses: Course[] = [
               ],
               tips: [
                 "Don't try 8 structures at once — master 2-3 first.",
-                "Time-box every structure — give a clear "1 minute remaining" warning.",
+                'Time-box every structure — give a clear "1 minute remaining" warning.',
                 "Practise the structure FIRST with low-stakes content before using for assessment."
               ]
             },
