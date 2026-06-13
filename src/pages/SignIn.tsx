@@ -60,28 +60,34 @@ const SignIn = () => {
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
-    
+
     try {
       signInSchema.parse({ email: signInEmail, password: signInPassword });
       setLoading(true);
-      
+
       const { error } = await signIn(signInEmail, signInPassword);
-      
+
       if (!error) {
-        // Fetch profile to get name & phone, then submit to Google Form
-        supabase
-          .from('profiles')
-          .select('full_name, phone_number')
-          .eq('email', signInEmail)
-          .single()
-          .then(({ data }) => {
+        // Navigate immediately — don't block on Google Form
+        navigate(redirect);
+
+        // Fire-and-forget profile lookup + Google Form sync
+        setTimeout(async () => {
+          try {
+            const { data } = await supabase
+              .from('profiles')
+              .select('full_name, phone_number')
+              .eq('email', signInEmail)
+              .maybeSingle();
             submitToGoogleForm(
               data?.full_name || '',
               data?.phone_number || '',
               signInEmail
             );
-          });
-        navigate(redirect);
+          } catch {
+            submitToGoogleForm('', '', signInEmail);
+          }
+        }, 0);
       }
     } catch (error) {
       if (error instanceof z.ZodError) {

@@ -166,4 +166,116 @@ export const lessonQuizzes: Record<string, QuizQuestion[]> = {
     { question: "What retention rate does role-play achieve compared to reading?", options: ["10% vs 5%", "50% vs 30%", "90% vs 10%", "100% vs 0%"], correctIndex: 2, explanation: "Role-play achieves 90% retention vs 10% for reading — it engages the whole student through body, emotions, and mind." },
     { question: "What should NEVER be skipped after a role-play activity?", options: ["Homework", "The debrief/discussion", "Grades", "Costumes"], correctIndex: 1, explanation: "The debrief after role-play is where learning consolidates — never skip it, as it connects the experience to the concept." },
   ],
+
+  // ===== PROVEN TEACHER COURSES =====
+  // Classroom Management Mastery
+  "cmm-m1-l1": [
+    { question: "According to Marzano, well-taught routines reduce off-task behaviour by approximately:", options: ["5%", "28%", "50%", "80%"], correctIndex: 1, explanation: "Marzano's research shows well-taught routines reduce off-task behaviour by 28%." },
+    { question: "What is the purpose of a Do Now?", options: ["Busywork to keep students quiet", "Engage students in meaningful work immediately so the teacher can manage logistics", "Grade students daily", "Replace the lesson"], correctIndex: 1, explanation: "A Do Now engages students productively while the teacher takes attendance, checks materials, and prepares." },
+    { question: "How long should it take to teach a routine to mastery?", options: ["One day", "3-5 repetitions over the first week", "A full term", "It can't be taught"], correctIndex: 1, explanation: "Routines typically need 3-5 repetitions over the first week to become automatic." },
+  ],
+  "cmm-m2-l1": [
+    { question: "What is the FIRST step on the intervention ladder?", options: ["Consequence", "Non-verbal cue", "Public correction", "Lecture"], correctIndex: 1, explanation: "Non-verbal interventions (eye contact, gesture, proximity) come first — they don't interrupt learning." },
+    { question: "Why are public lectures during correction discouraged?", options: ["They take too long", "They humiliate students and escalate behaviour", "They're not allowed", "They're hard to remember"], correctIndex: 1, explanation: "Public lectures humiliate students and almost always escalate the situation; private corrections work far better." },
+    { question: "What is the most important step AFTER a correction?", options: ["Punishment", "The recovery conversation to preserve relationship", "Sending the student to the principal", "Forgetting about it"], correctIndex: 1, explanation: "The recovery conversation rebuilds relationship — the #1 predictor of long-term behaviour change." },
+  ],
+
+  // Differentiated Instruction & UDL
+  "diu-m1-l1": [
+    { question: "What are the 3 levers of differentiation (Tomlinson)?", options: ["Easy, medium, hard", "Content, Process, Product", "Read, Write, Speak", "Test, Quiz, Exam"], correctIndex: 1, explanation: "Tomlinson's framework: differentiate Content (what), Process (how engage), or Product (how demonstrate)." },
+    { question: "How many levers should you typically differentiate in a single lesson?", options: ["All three", "One", "Two", "Zero"], correctIndex: 1, explanation: "Sustainable differentiation focuses on ONE lever per lesson — not all three." },
+    { question: "What should tiered tasks be called instead of 'easy/medium/hard'?", options: ["A/B/C", "Foundation/Core/Extension", "Slow/Fast", "Bronze/Silver/Gold"], correctIndex: 1, explanation: "Foundation/Core/Extension avoids stigma and focuses on the kind of thinking, not student ability." },
+  ],
+  "diu-m2-l1": [
+    { question: "How does UDL differ from differentiation?", options: ["They're the same", "UDL is proactive design; differentiation is reactive adjustment", "UDL is only for special education", "Differentiation is more effective"], correctIndex: 1, explanation: "UDL designs lessons proactively for all learners; differentiation adjusts reactively after problems appear." },
+    { question: "What are the 3 UDL principles?", options: ["Read, Write, Speak", "Engagement, Representation, Expression", "Test, Practice, Assess", "Plan, Teach, Reflect"], correctIndex: 1, explanation: "UDL provides multiple means of Engagement (the why), Representation (the what), and Expression (the how)." },
+  ],
+
+  // Backward Design
+  "bdp-m1-l1": [
+    { question: "What is the correct order in backward design?", options: ["Activities → Assessment → Outcomes", "Outcomes → Assessment → Activities", "Assessment → Activities → Outcomes", "Outcomes → Activities → Assessment"], correctIndex: 1, explanation: "Backward design plans Outcomes first, then Assessment, then Activities — destination before the journey." },
+    { question: "An essential question should be:", options: ["Closed with one right answer", "Open, debatable, and recurring", "Easy to grade", "From the textbook"], correctIndex: 1, explanation: "Essential questions are open, debatable, and recur throughout a unit — driving deep inquiry." },
+    { question: "What distinguishes a performance task from a regular test?", options: ["It's harder", "It requires students to transfer learning, not just recall", "It takes longer", "It's optional"], correctIndex: 1, explanation: "Performance tasks demand transfer of learning to real-world contexts — beyond simple recall." },
+  ],
+  "bdp-m2-l1": [
+    { question: "What does the 'R' in WHERETO stand for?", options: ["Read", "Rethink & Revise", "Repeat", "Recall"], correctIndex: 1, explanation: "R = Rethink & Revise — building checkpoints where students reconsider and revise their thinking." },
+    { question: "Self-assessment by students has an effect size of approximately:", options: ["0.1", "0.4", "1.44", "3.0"], correctIndex: 2, explanation: "Hattie's research puts self-assessment at an effect size of 1.44 — among the largest in education." },
+  ],
+
+  // Bloom's Taxonomy
+  "bta-m1-l1": [
+    { question: "What percentage of classroom questions typically sit at the lowest 2 levels (Remember/Understand)?", options: ["10-20%", "30-40%", "70-80%", "Less than 5%"], correctIndex: 2, explanation: "Research shows 70-80% of teacher questions sit at Remember/Understand — limiting higher-order development." },
+    { question: "Which is a Bloom's Create-level question?", options: ["Define photosynthesis", "Explain photosynthesis", "Design an experiment to test if plants need sunlight", "List parts of a plant"], correctIndex: 2, explanation: "'Design an experiment' is Create — producing new work using understanding." },
+    { question: "What is the recommended minimum wait time after a higher-order question?", options: ["1 second", "5-7 seconds", "30 seconds", "No wait time needed"], correctIndex: 1, explanation: "5-7 seconds of silent wait time is needed for students to construct higher-order responses." },
+  ],
+  "bta-m2-l1": [
+    { question: "The recommended distribution for a balanced test is:", options: ["100% Remember", "30% Remember/Understand, 40% Apply/Analyse, 30% Evaluate/Create", "All Create", "50% Apply, 50% Recall"], correctIndex: 1, explanation: "The 30-40-30 distribution balances foundational knowledge with higher-order thinking." },
+    { question: "Open-ended higher-order questions should be assessed with:", options: ["Single answer keys", "Rubrics that evaluate reasoning and evidence", "No assessment", "Multiple choice only"], correctIndex: 1, explanation: "Open-ended work needs rubrics assessing reasoning, evidence, and communication — not single answer keys." },
+  ],
+
+  // Cooperative Learning
+  "cls-m1-l1": [
+    { question: "What does PIES stand for in cooperative learning?", options: ["Plan, Implement, Evaluate, Share", "Positive interdependence, Individual accountability, Equal participation, Simultaneous interaction", "Practice, Interact, Engage, Solve", "Problem, Idea, Evidence, Solution"], correctIndex: 1, explanation: "PIES is Kagan's framework: Positive interdependence, Individual accountability, Equal participation, Simultaneous interaction." },
+    { question: "Why is individual accountability essential?", options: ["So teachers can punish", "So one student doesn't do all the work while others coast", "To rank students", "It's not essential"], correctIndex: 1, explanation: "Without individual accountability, group work devolves into one student doing all the work." },
+    { question: "What is the recommended group size for cooperative learning?", options: ["2", "4", "6-8", "Whole class"], correctIndex: 1, explanation: "Groups of 4 maximise per-student interaction and balance perspectives without becoming unwieldy." },
+  ],
+  "cls-m2-l1": [
+    { question: "Which structure is best for teaching new content where students become experts?", options: ["Think-Pair-Share", "Jigsaw", "Round Table", "Quick Quiz"], correctIndex: 1, explanation: "Jigsaw makes every student both teacher and learner — ideal for new content acquisition." },
+    { question: "What should follow every higher-order question?", options: ["A test", "Think-Pair-Share", "Homework", "Silence forever"], correctIndex: 1, explanation: "Think-Pair-Share gives every student time to think and articulate before whole-class discussion." },
+  ],
+
+  // Literacy Across Curriculum
+  "lac-m1-l1": [
+    { question: "Which tier of vocabulary should teachers focus on most heavily?", options: ["Tier 1 (everyday)", "Tier 2 (academic, cross-subject)", "Tier 3 (domain-specific only)", "None — students learn naturally"], correctIndex: 1, explanation: "Tier 2 academic words (analyse, evident, justify) appear across subjects and unlock comprehension everywhere." },
+    { question: "How many words per week should be taught deeply for retention?", options: ["30+", "5", "10", "1"], correctIndex: 1, explanation: "Teaching 5 words deeply produces better retention than 30 superficially — depth beats volume." },
+    { question: "Vocabulary mastery requires approximately how many meaningful exposures?", options: ["1", "2-3", "6-10", "100+"], correctIndex: 2, explanation: "Research shows 6-10 meaningful exposures over time are needed for true vocabulary ownership." },
+  ],
+  "lac-m2-l1": [
+    { question: "When should students activate prior knowledge?", options: ["After reading", "Before reading", "During the test", "Never"], correctIndex: 1, explanation: "Activating prior knowledge BEFORE reading is the strongest predictor of comprehension success." },
+    { question: "What is a 'think-aloud' in reading instruction?", options: ["Reading loudly", "The teacher verbalising their thinking process while reading", "Group discussion", "Silent reading"], correctIndex: 1, explanation: "Think-alouds make invisible comprehension strategies visible by verbalising the reader's mental process." },
+  ],
+
+  // Numeracy
+  "nmf-m1-l1": [
+    { question: "What does CPA stand for in maths instruction?", options: ["Calculate, Practise, Assess", "Concrete, Pictorial, Abstract", "Count, Plus, Add", "Compute, Plan, Analyse"], correctIndex: 1, explanation: "CPA is the Singapore-Maths sequence: Concrete manipulation → Pictorial representation → Abstract notation." },
+    { question: "What's the most common mistake in maths teaching?", options: ["Too much practice", "Skipping Concrete and Pictorial, going straight to Abstract", "Too many manipulatives", "Too slow pacing"], correctIndex: 1, explanation: "Most teachers skip C and P and go straight to abstract procedures — leading to memorisation without understanding." },
+    { question: "When a student is stuck on an abstract problem, you should:", options: ["Re-explain abstractly", "Go back to pictorial or concrete", "Give the answer", "Move on"], correctIndex: 1, explanation: "Returning to pictorial or concrete representations rebuilds the conceptual foundation — re-explaining abstractly rarely helps." },
+  ],
+  "nmf-m2-l1": [
+    { question: "What is the main purpose of a Number Talk?", options: ["Get the right answer fast", "Share and discuss multiple mental strategies", "Replace written maths", "Test memorisation"], correctIndex: 1, explanation: "Number Talks build flexibility by surfacing and discussing multiple mental strategies — not just the answer." },
+    { question: "Why use thumb signals instead of raised hands?", options: ["It's faster", "It protects slow thinkers from being dominated by fast hands", "Less noisy", "Tradition"], correctIndex: 1, explanation: "Thumb signals preserve silent think time for all students, regardless of processing speed." },
+  ],
+
+  // Formative Assessment
+  "fal-m1-l1": [
+    { question: "What is a 'hinge question'?", options: ["The first question of class", "A diagnostic multi-choice question where wrong answers reveal specific misconceptions", "A question that doors hinge on", "The last question on a test"], correctIndex: 1, explanation: "Hinge questions are designed so each wrong answer reveals a different misconception — allowing targeted re-teaching." },
+    { question: "What is the highest-leverage low-tech tool for checking understanding?", options: ["Verbal questioning", "Mini whiteboards", "Homework", "Final exam"], correctIndex: 1, explanation: "Mini whiteboards let you see every student's response simultaneously in seconds." },
+    { question: "Exit tickets are only useful if:", options: ["Graded heavily", "Reviewed BEFORE the next lesson and used to plan it", "Stored in a folder", "Sent to parents"], correctIndex: 1, explanation: "Exit tickets only impact learning when used to inform the next lesson — otherwise they're busywork." },
+  ],
+  "fal-m2-l1": [
+    { question: "What 3 questions should good feedback answer?", options: ["Who, what, where", "Where am I going? How am I going? Where to next?", "Right, wrong, why", "Good, bad, ugly"], correctIndex: 1, explanation: "Hattie's feedback model: Where am I going? (criteria), How am I going? (current state), Where to next? (action)." },
+    { question: "Feedback only works if:", options: ["It's long", "Students are required to act on it", "It includes a grade", "Parents see it"], correctIndex: 1, explanation: "Unactioned feedback has no impact — students must have time and requirement to use it." },
+  ],
+
+  // Questioning
+  "pq-m1-l1": [
+    { question: "What is the average teacher's wait time after asking a question?", options: ["0.9 seconds", "5 seconds", "15 seconds", "30 seconds"], correctIndex: 0, explanation: "Mary Budd Rowe's research found teachers wait only 0.9 seconds on average — far too short for thinking." },
+    { question: "When wait time increases to 3+ seconds, student response length:", options: ["Stays the same", "Drops", "Triples", "Doubles"], correctIndex: 2, explanation: "Length of student responses triples when wait time increases to 3+ seconds." },
+    { question: "What does 'probing' a student answer mean?", options: ["Interrogating them", "Pushing past surface answers with follow-up questions to deepen thinking", "Punishing wrong answers", "Calling on someone else"], correctIndex: 1, explanation: "Probing uses follow-up questions (clarify, justify, extend) to deepen first surface responses." },
+  ],
+  "pq-m2-l1": [
+    { question: "In a Socratic seminar, who does most of the talking?", options: ["The teacher", "Students, with each other", "The principal", "Parents"], correctIndex: 1, explanation: "In Socratic seminars, students dialogue with each other; the teacher facilitates from the side." },
+    { question: "What is the inner-outer circle setup for?", options: ["Discipline", "Managing participation in larger classes — inner discusses, outer observes, then swap", "Decoration", "Seating chart"], correctIndex: 1, explanation: "Inner-outer circles let larger classes engage in Socratic discussion in manageable rotating groups." },
+  ],
+
+  // Active Learning
+  "ale-m1-l1": [
+    { question: "After how many minutes does student attention during lectures typically drop sharply?", options: ["1 minute", "10 minutes", "45 minutes", "Never"], correctIndex: 1, explanation: "Bunce's research shows attention peaks at 5-10 minutes then drops sharply during passive lectures." },
+    { question: "What does the 10-minute rule require?", options: ["Lessons should be 10 min long", "Every 8-10 minutes of input must be followed by 2-3 minutes of active processing", "Take a 10-minute break", "Quiz every 10 minutes"], correctIndex: 1, explanation: "The 10-minute rule structures active processing breaks after every 8-10 minutes of input." },
+    { question: "In the 5E model, what comes BEFORE Explain?", options: ["Evaluate", "Explore", "Elaborate", "Engage and Explore"], correctIndex: 3, explanation: "5E: Engage → Explore → Explain → Elaborate → Evaluate. Students explore BEFORE the teacher explains." },
+  ],
+  "ale-m2-l1": [
+    { question: "What's the recommended approach to building active learning into your practice?", options: ["Try all 20 techniques at once", "Pick 5 to master, then add more", "Wait for a workshop", "Don't bother"], correctIndex: 1, explanation: "Sustainable change comes from mastering 5 techniques deeply before adding more." },
+    { question: "Freeman et al.'s 2014 meta-analysis showed active learning reduces failure rates from 34% to:", options: ["50%", "22%", "5%", "0%"], correctIndex: 1, explanation: "Active learning cut failure rates from 34% to 22% across 225 studies." },
+  ],
 };
