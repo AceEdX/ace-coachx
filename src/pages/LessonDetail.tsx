@@ -26,6 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Lesson, Module, Course } from "@/data/courseData";
 import { useLessonById, useCourseById } from "@/hooks/useDynamicCourses";
 import { toast } from "sonner";
+import DOMPurify from "dompurify";
 import CertificateModal from "@/components/CertificateModal";
 import LessonQuiz from "@/components/LessonQuiz";
 import { lessonQuizzes } from "@/data/quizData";
