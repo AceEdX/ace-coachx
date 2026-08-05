@@ -42,15 +42,28 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signIn = async (email: string, password: string) => {
     try {
       const { error } = await supabase.auth.signInWithPassword({
-        email,
+        email: email.trim().toLowerCase(),
         password,
       });
-      
+
       if (error) {
-        toast.error(error.message);
+        const msg = error.message?.toLowerCase() || '';
+        if (msg.includes('email not confirmed')) {
+          // Legacy accounts created before verification was turned off
+          await supabase.auth.resend({
+            type: 'signup',
+            email: email.trim().toLowerCase(),
+            options: { emailRedirectTo: `${window.location.origin}/` },
+          });
+          toast.error('Your account needs confirming. We just sent you a new link — click it, then sign in again.');
+        } else if (msg.includes('invalid login credentials')) {
+          toast.error('Incorrect email or password. If you never set a password, use "Forgot password".');
+        } else {
+          toast.error(error.message);
+        }
         return { error };
       }
-      
+
       toast.success('Welcome back!');
       return { error: null };
     } catch (error: any) {
@@ -62,9 +75,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signUp = async (email: string, password: string, fullName?: string, phone?: string) => {
     try {
       const redirectUrl = `${window.location.origin}/`;
-      
-      const { error } = await supabase.auth.signUp({
-        email,
+      const cleanEmail = email.trim().toLowerCase();
+
+      const { data, error } = await supabase.auth.signUp({
+        email: cleanEmail,
         password,
         options: {
           emailRedirectTo: redirectUrl,
@@ -74,13 +88,29 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           }
         }
       });
-      
+
       if (error) {
         toast.error(error.message);
         return { error };
       }
-      
-      toast.success('Account created! Please check your email to verify your account.');
+
+      if (data.session) {
+        toast.success('Account created! You are signed in.');
+        return { error: null };
+      }
+
+      // No session returned: fall back to an immediate password sign-in
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: cleanEmail,
+        password,
+      });
+
+      if (signInError) {
+        toast.success('Account created! Please check your email to verify your account.');
+      } else {
+        toast.success('Account created! You are signed in.');
+      }
+
       return { error: null };
     } catch (error: any) {
       toast.error('An unexpected error occurred');
