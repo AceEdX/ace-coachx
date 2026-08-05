@@ -127,8 +127,10 @@ const SignIn = () => {
       const { error } = await signUp(signUpEmail, signUpPassword, fullName, phone);
       
       if (!error) {
-        // Submit to Google Form in background
-        submitToGoogleForm(fullName, phone, signUpEmail);
+        // Only share details with the external registration form if the user consented
+        if (shareConsent) {
+          submitToGoogleForm(fullName, phone, signUpEmail);
+        }
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
