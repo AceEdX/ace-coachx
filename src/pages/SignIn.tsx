@@ -320,6 +320,21 @@ const SignIn = () => {
                       <p className="text-sm text-destructive">{errors.confirmPassword}</p>
                     )}
                   </div>
+                  <div className="flex items-start gap-2 rounded-md border p-3">
+                    <input
+                      id="share-consent"
+                      type="checkbox"
+                      className="mt-1 h-4 w-4 accent-primary"
+                      checked={shareConsent}
+                      onChange={(e) => setShareConsent(e.target.checked)}
+                      disabled={loading}
+                    />
+                    <Label htmlFor="share-consent" className="text-xs font-normal leading-snug text-muted-foreground">
+                      Optional: I agree that my name, phone number and email may also be shared with
+                      Ace Coach X's external registration form (Google Forms) for programme
+                      communications. Your account works exactly the same if you leave this unchecked.
+                    </Label>
+                  </div>
                   <Button type="submit" className="w-full" disabled={loading}>
                     {loading ? 'Creating Account...' : 'Create Account'}
                   </Button>
