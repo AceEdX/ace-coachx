@@ -290,12 +290,20 @@ const LessonDetail = () => {
         flushList();
       } else {
         flushList();
-        const processedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        const escaped = trimmedLine
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+        const processedLine = escaped.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        const safeLine = DOMPurify.sanitize(processedLine, {
+          ALLOWED_TAGS: ["strong", "em"],
+          ALLOWED_ATTR: [],
+        });
         elements.push(
           <p 
             key={index} 
             className="text-muted-foreground mb-3 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: processedLine }}
+            dangerouslySetInnerHTML={{ __html: safeLine }}
           />
         );
       }
