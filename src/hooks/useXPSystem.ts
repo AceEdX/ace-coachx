@@ -20,7 +20,6 @@ export const useXPSystem = () => {
 
       try {
         const { data, error } = await supabase.rpc("award_xp", {
-          _user_id: user.id,
           _amount: amount,
           _activity_type: activityType,
         });

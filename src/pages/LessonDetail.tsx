@@ -26,6 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Lesson, Module, Course } from "@/data/courseData";
 import { useLessonById, useCourseById } from "@/hooks/useDynamicCourses";
 import { toast } from "sonner";
+import DOMPurify from "dompurify";
 import CertificateModal from "@/components/CertificateModal";
 import LessonQuiz from "@/components/LessonQuiz";
 import { lessonQuizzes } from "@/data/quizData";
@@ -289,12 +290,20 @@ const LessonDetail = () => {
         flushList();
       } else {
         flushList();
-        const processedLine = trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        const escaped = trimmedLine
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+        const processedLine = escaped.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        const safeLine = DOMPurify.sanitize(processedLine, {
+          ALLOWED_TAGS: ["strong", "em"],
+          ALLOWED_ATTR: [],
+        });
         elements.push(
           <p 
             key={index} 
             className="text-muted-foreground mb-3 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: processedLine }}
+            dangerouslySetInnerHTML={{ __html: safeLine }}
           />
         );
       }
