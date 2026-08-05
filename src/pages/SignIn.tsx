@@ -47,6 +47,7 @@ const SignIn = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showSignUpPassword, setShowSignUpPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [shareConsent, setShareConsent] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -68,26 +69,7 @@ const SignIn = () => {
       const { error } = await signIn(signInEmail, signInPassword);
 
       if (!error) {
-        // Navigate immediately — don't block on Google Form
         navigate(redirect);
-
-        // Fire-and-forget profile lookup + Google Form sync
-        setTimeout(async () => {
-          try {
-            const { data } = await supabase
-              .from('profiles')
-              .select('full_name, phone_number')
-              .eq('email', signInEmail)
-              .maybeSingle();
-            submitToGoogleForm(
-              data?.full_name || '',
-              data?.phone_number || '',
-              signInEmail
-            );
-          } catch {
-            submitToGoogleForm('', '', signInEmail);
-          }
-        }, 0);
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
