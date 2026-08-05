@@ -207,7 +207,7 @@ export type Database = {
     }
     Functions: {
       award_xp: {
-        Args: { _activity_type: string; _amount: number; _user_id: string }
+        Args: { _activity_type: string; _amount: number }
         Returns: Json
       }
       has_role: {
