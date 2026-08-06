@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -23,6 +23,14 @@ const LessonQuiz = ({ questions, onComplete }: LessonQuizProps) => {
   const [answered, setAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    setCurrentQ(0);
+    setSelected("");
+    setAnswered(false);
+    setScore(0);
+    setFinished(false);
+  }, [questions]);
 
   const q = questions[currentQ];
   const isCorrect = answered && selected === String(q.correctIndex);

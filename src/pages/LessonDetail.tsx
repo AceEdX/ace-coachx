@@ -432,6 +432,7 @@ const LessonDetail = () => {
             {lessonId && lessonQuizzes[lessonId] && (
               <div className="mb-8">
                 <LessonQuiz
+                  key={lessonId}
                   questions={lessonQuizzes[lessonId]}
                   onComplete={(score, total) => {
                     const pct = Math.round((score / total) * 100);
