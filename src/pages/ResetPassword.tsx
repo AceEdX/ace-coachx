@@ -30,28 +30,79 @@ const ResetPassword = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isValidSession, setIsValidSession] = useState(false);
   const [checking, setChecking] = useState(true);
+  const [linkError, setLinkError] = useState("");
 
   useEffect(() => {
-    // Check if user arrived via recovery link
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        setIsValidSession(true);
-      }
+    let cancelled = false;
+
+    const finish = (ok: boolean, message = "") => {
+      if (cancelled) return;
+      setIsValidSession(ok);
+      if (message) setLinkError(message);
       setChecking(false);
     };
 
+    const establishSession = async () => {
+      const url = new URL(window.location.href);
+      const query = url.searchParams;
+      const hash = new URLSearchParams(url.hash.replace(/^#/, ""));
+
+      const errDesc = query.get("error_description") || hash.get("error_description");
+      if (errDesc) {
+        finish(false, errDesc);
+        return;
+      }
+
+      // 1) Already have a session (e.g. supabase auto-detected the link)
+      const { data: { session: existing } } = await supabase.auth.getSession();
+      if (existing) return finish(true);
+
+      // 2) Hash tokens: #access_token=...&refresh_token=...
+      const accessToken = hash.get("access_token");
+      const refreshToken = hash.get("refresh_token");
+      if (accessToken && refreshToken) {
+        const { error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        });
+        window.history.replaceState({}, "", url.pathname);
+        return finish(!error, error?.message);
+      }
+
+      // 3) PKCE: ?code=...
+      const code = query.get("code");
+      if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code);
+        window.history.replaceState({}, "", url.pathname);
+        return finish(!error, error?.message);
+      }
+
+      // 4) Token hash: ?token_hash=...&type=recovery (or ?token=...)
+      const tokenHash = query.get("token_hash") || query.get("token");
+      const type = (query.get("type") || "recovery") as "recovery" | "email";
+      if (tokenHash) {
+        const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
+        window.history.replaceState({}, "", url.pathname);
+        return finish(!error, error?.message);
+      }
+
+      finish(false);
+    };
+
     // Listen for PASSWORD_RECOVERY event
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-      if (event === "PASSWORD_RECOVERY") {
-        setIsValidSession(true);
-        setChecking(false);
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && session)) {
+        finish(true);
       }
     });
 
-    checkSession();
-    return () => subscription.unsubscribe();
+    establishSession();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,8 +162,9 @@ const ResetPassword = () => {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Invalid or Expired Link</CardTitle>
               <CardDescription>
-                This password reset link is invalid or has expired. Please request a new one.
+                {linkError || "This password reset link is invalid or has expired. Please request a new one."}
               </CardDescription>
+
             </CardHeader>
             <CardContent>
               <Button className="w-full" onClick={() => navigate("/forgot-password")}>
