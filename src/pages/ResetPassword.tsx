@@ -162,8 +162,9 @@ const ResetPassword = () => {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Invalid or Expired Link</CardTitle>
               <CardDescription>
-                This password reset link is invalid or has expired. Please request a new one.
+                {linkError || "This password reset link is invalid or has expired. Please request a new one."}
               </CardDescription>
+
             </CardHeader>
             <CardContent>
               <Button className="w-full" onClick={() => navigate("/forgot-password")}>
