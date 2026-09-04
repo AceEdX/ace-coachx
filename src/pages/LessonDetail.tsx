@@ -199,20 +199,27 @@ const LessonDetail = () => {
     }
 
     toast.success('Lesson marked as complete!');
-    
-    // Award XP for lesson completion
-    awardXP(50, "lesson");
 
-    // If all lessons completed, award course XP
-    const newCompleted2 = new Set(completedLessons);
-    newCompleted2.add(lessonId!);
-    if (newCompleted2.size >= allLessons.length) {
-      awardXP(500, "course");
+    // Award XP for lesson completion (once per lesson)
+    const lessonXpKey = user ? `lesson_xp_${user.id}_${lessonId}` : null;
+    if (!lessonXpKey || !localStorage.getItem(lessonXpKey)) {
+      awardXP(50, "lesson");
+      if (lessonXpKey) localStorage.setItem(lessonXpKey, "1");
+    }
+
+    // If all lessons completed, award course XP once and issue the certificate
+    if (newCompleted.size >= allLessons.length) {
+      const courseXpKey = user ? `course_xp_${user.id}_${courseId}` : null;
+      if (!courseXpKey || !localStorage.getItem(courseXpKey)) {
+        awardXP(500, "course");
+        if (courseXpKey) localStorage.setItem(courseXpKey, "1");
+      }
       setTimeout(() => {
         setShowCertificate(true);
       }, 1000);
     }
   };
+
 
   const handleEnroll = async () => {
     if (!user) {
@@ -436,10 +443,13 @@ const LessonDetail = () => {
                   questions={lessonQuizzes[lessonId]}
                   onComplete={(score, total) => {
                     const pct = Math.round((score / total) * 100);
-                    if (pct >= 80) {
+                    const quizXpKey = user ? `quiz_xp_${user.id}_${lessonId}` : null;
+                    if (pct >= 80 && (!quizXpKey || !localStorage.getItem(quizXpKey))) {
                       awardXP(100, "quiz");
+                      if (quizXpKey) localStorage.setItem(quizXpKey, "1");
                     }
                   }}
+
                 />
               </div>
             )}
@@ -470,11 +480,22 @@ const LessonDetail = () => {
               ) : (
                 <Button
                   onClick={() => {
+                    if (!user) {
+                      navigate(`/signin?redirect=/course/${courseId}/lesson/${lessonId}`);
+                      return;
+                    }
                     if (!lessonCompleted) {
                       handleMarkComplete();
-                    } else {
-                      setShowCertificate(true);
+                      return;
                     }
+                    const remaining = allLessons.length - completedLessons.size;
+                    if (remaining > 0) {
+                      toast.info(
+                        `Complete ${remaining} more ${remaining === 1 ? "lesson" : "lessons"} to unlock your certificate.`
+                      );
+                      return;
+                    }
+                    setShowCertificate(true);
                   }}
                   className="flex items-center gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 >
@@ -482,6 +503,7 @@ const LessonDetail = () => {
                   <CheckCircle2 className="w-4 h-4" />
                 </Button>
               )}
+
             </div>
           </div>
 

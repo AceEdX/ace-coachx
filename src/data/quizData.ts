@@ -278,4 +278,80 @@ export const lessonQuizzes: Record<string, QuizQuestion[]> = {
     { question: "What's the recommended approach to building active learning into your practice?", options: ["Try all 20 techniques at once", "Pick 5 to master, then add more", "Wait for a workshop", "Don't bother"], correctIndex: 1, explanation: "Sustainable change comes from mastering 5 techniques deeply before adding more." },
     { question: "Freeman et al.'s 2014 meta-analysis showed active learning reduces failure rates from 34% to:", options: ["50%", "22%", "5%", "0%"], correctIndex: 1, explanation: "Active learning cut failure rates from 34% to 22% across 225 studies." },
   ],
+  // Cyber Safety & Digital Citizenship
+  "csdc-m1-l1": [
+    { question: "What is the first step of the RCDS response to cyberbullying?", options: ["Punish the bully", "Receive — listen without judgement", "Confiscate phones", "Call the police"], correctIndex: 1, explanation: "Start by listening without judgement; blame silences the student." },
+    { question: "Why should evidence be captured immediately?", options: ["To share in the staff room", "Messages are often deleted", "To post online", "It is not needed"], correctIndex: 1, explanation: "Screenshots preserve evidence before the sender deletes it." },
+    { question: "Which prevention strategy works best?", options: ["Posters only", "Rehearsing upstander responses", "Banning all phones", "Ignoring it"], correctIndex: 1, explanation: "Bystanders who intervene change outcomes more than punishment does." },
+  ],
+  "csdc-m1-l2": [
+    { question: "The three rules of a digital footprint are permanent, searchable and:", options: ["Private", "Copyable", "Temporary", "Encrypted"], correctIndex: 1, explanation: "Screenshots make even 'disappearing' content copyable." },
+    { question: "What is the Grandparent Test?", options: ["Asking grandparents for permission", "Would my grandparent, principal and future employer be fine seeing this?", "A privacy app", "A school rule"], correctIndex: 1, explanation: "It is a 3-second filter before posting anything online." },
+    { question: "What is the 3-2-1 screen habit?", options: ["3 apps, 2 hours, 1 phone", "No screens 1 hour before sleep, phone 2 metres from bed, 3 device-free meals weekly", "3 hours of study", "A password rule"], correctIndex: 1, explanation: "It builds healthier sleep and mealtime boundaries around devices." },
+  ],
+  "csdc-m2-l1": [
+    { question: "What does the S in SIFT stand for?", options: ["Share", "Stop", "Search", "Save"], correctIndex: 1, explanation: "Stop — strong emotion is the signal of manipulation." },
+    { question: "Why is 'provenance beats pixel-hunting' now the advice on deepfakes?", options: ["Pixels are expensive", "Visual tells are disappearing as AI improves", "Cameras are better", "Nobody makes deepfakes"], correctIndex: 1, explanation: "Tracing the original source is more reliable than spotting glitches." },
+    { question: "What should students do before forwarding an emotional message?", options: ["Forward faster", "Run the SIFT routine", "Add a comment", "Delete their account"], correctIndex: 1, explanation: "SIFT gives a two-minute verification habit." },
+  ],
+  // Financial & Career Literacy
+  "fcl-m1-l1": [
+    { question: "In the 50-30-20 rule, what does the 20 represent?", options: ["Wants", "Savings", "Taxes", "Needs"], correctIndex: 1, explanation: "20% goes to savings." },
+    { question: "Why start budgeting lessons with pocket money?", options: ["It is easier to grade", "Students engage with money they actually handle", "It is required by law", "It avoids maths"], correctIndex: 1, explanation: "Relevance drives engagement far more than hypothetical salaries." },
+    { question: "What concept explains that every ₹20 snack is ₹20 not saved?", options: ["Inflation", "Opportunity cost", "Compound interest", "Liquidity"], correctIndex: 1, explanation: "Opportunity cost is the value of the alternative given up." },
+  ],
+  "fcl-m1-l2": [
+    { question: "When do you need to enter a UPI PIN?", options: ["To receive money", "Only to send money", "For every notification", "To check balance"], correctIndex: 1, explanation: "A PIN is never required to receive money — that request is always a scam." },
+    { question: "Scanning a QR code always...", options: ["Receives money", "Sends money", "Nothing", "Adds a contact"], correctIndex: 1, explanation: "Scanning initiates a payment out of your account." },
+    { question: "Which number is India's cyber-fraud helpline?", options: ["100", "1930", "108", "112"], correctIndex: 1, explanation: "Report financial cyber fraud on 1930 or cybercrime.gov.in within the golden hour." },
+  ],
+  "fcl-m2-l1": [
+    { question: "What question opens career exploration better than 'what do you want to become?'", options: ["What marks do you want?", "What problems do you enjoy solving?", "What does your father do?", "Which college?"], correctIndex: 1, explanation: "Problem preference maps to whole skill clusters rather than a single job title." },
+    { question: "What is the purpose of the three-question career interview?", options: ["Homework points", "Reveal the daily reality and entry route of a real job", "Practice English", "Find a job"], correctIndex: 1, explanation: "Real interviews expose the everyday reality that brochures hide." },
+    { question: "Why display careers on a classroom Career Wall?", options: ["Decoration", "It expands the shared career vocabulary of the whole class", "To rank students", "For inspection"], correctIndex: 1, explanation: "Collective exposure widens what every student and parent believes is possible." },
+  ],
+  // Climate & Sustainability Education
+  "cse-m1-l1": [
+    { question: "In the two-jar demo, the cling film represents:", options: ["The ozone layer", "Greenhouse gases trapping heat", "Clouds", "Pollution particles"], correctIndex: 1, explanation: "The sealed jar warms faster, modelling heat trapped by greenhouse gases." },
+    { question: "How should every climate lesson end?", options: ["With a warning", "With an achievable action", "With a test", "With statistics"], correctIndex: 1, explanation: "Agency prevents eco-anxiety and disengagement." },
+    { question: "Why use local weather data?", options: ["It is cheaper", "It makes global change concrete and real", "It is more accurate", "It is required"], correctIndex: 1, explanation: "Local data connects abstract global trends to students' lived experience." },
+  ],
+  "cse-m2-l1": [
+    { question: "What is the audit cycle?", options: ["Plan, poster, prize", "Baseline, intervene, re-measure", "Collect, discard, forget", "Survey only"], correctIndex: 1, explanation: "Measuring before and after proves the intervention worked." },
+    { question: "Why do audits beat poster competitions?", options: ["They are cheaper", "They produce measurable change and real data skills", "They take less time", "They need no teacher"], correctIndex: 1, explanation: "Audits generate numbers, recommendations and verified savings." },
+    { question: "What unlocks school budget support for a student project?", options: ["Enthusiasm", "Quantified rupee savings", "Longer reports", "More posters"], correctIndex: 1, explanation: "Management responds to measurable financial impact." },
+  ],
+  // Voice, Presence & Public Speaking
+  "vpt-m1-l1": [
+    { question: "Projection comes from:", options: ["Shouting louder", "Breath support and resonance", "Raising pitch", "Speaking faster"], correctIndex: 1, explanation: "Force strains the vocal folds; breath support carries the sound." },
+    { question: "What should you do instead of clearing your throat forcefully?", options: ["Cough hard", "Sip water or swallow", "Whisper", "Stop speaking for a day"], correctIndex: 1, explanation: "Forceful throat clearing slams the vocal folds together." },
+    { question: "Which is the most effective alternative to raising your voice?", options: ["Banging the table", "Pause, stand still, and move closer to the noise", "Shouting once loudly", "Leaving the room"], correctIndex: 1, explanation: "Silence and proximity control a class better than volume." },
+  ],
+  "vpt-m2-l1": [
+    { question: "What does the R in SOAR stand for?", options: ["Repeat", "Request", "Review", "Reflect"], correctIndex: 1, explanation: "Close with a specific requested action, not a thank-you." },
+    { question: "What should you decide before writing a talk?", options: ["The slide theme", "The single sentence the audience must remember", "The dress code", "The length"], correctIndex: 1, explanation: "One sentence anchors and shapes every other part of the talk." },
+    { question: "How should a parent meeting open?", options: ["With the problem", "With something specific and positive about the child", "With marks only", "With school rules"], correctIndex: 1, explanation: "A specific positive opening builds the trust needed for the growth conversation." },
+  ],
+  // Computational Thinking Unplugged
+  "ctu-m1-l1": [
+    { question: "Which is NOT one of the four pillars of computational thinking?", options: ["Decomposition", "Memorisation", "Abstraction", "Algorithms"], correctIndex: 1, explanation: "The four pillars are decomposition, pattern recognition, abstraction and algorithms." },
+    { question: "In the Human Robot activity, what causes most failures?", options: ["Slow students", "Imprecise instructions", "Small grids", "Lack of computers"], correctIndex: 1, explanation: "Ambiguity in the instructions teaches the need for precision." },
+    { question: "How should teachers frame bugs?", options: ["As student failure", "As mistakes in the instructions to be found and fixed", "As reasons to stop", "As cheating"], correctIndex: 1, explanation: "A bug is in the code, never in the child." },
+  ],
+  "ctu-m2-l1": [
+    { question: "What is the recommended learning sequence?", options: ["Python first", "Unplugged, then blocks, then text code", "Blocks only", "Theory then exam"], correctIndex: 1, explanation: "Skipping stages produces syntax panic and disengagement." },
+    { question: "With one device per group, what keeps everyone coding?", options: ["Letting the fastest type", "Rotating Driver, Navigator, Tester, Recorder roles", "Watching a video", "Copying notes"], correctIndex: 1, explanation: "Rotating roles ensure every student types and thinks." },
+    { question: "Why ask students to predict output before running code?", options: ["To save electricity", "Prediction turns each run into an experiment and exposes misconceptions", "To finish faster", "To avoid errors"], correctIndex: 1, explanation: "Prediction before execution is where the conceptual learning happens." },
+  ],
+  // Professional Growth: Portfolio & Research
+  "tpg-m1-l1": [
+    { question: "Which statement shows impact rather than activity?", options: ["Conducted 12 remedial classes", "Remedial group mean rose from 34% to 58%", "Attended a workshop", "Made a wall chart"], correctIndex: 1, explanation: "Appraisals reward measured change in student learning." },
+    { question: "What is the five-minute weekly habit?", options: ["Writing a diary", "Dropping one dated artefact into a portfolio folder", "Cleaning the desk", "Emailing parents"], correctIndex: 1, explanation: "Small weekly curation removes appraisal-week panic." },
+    { question: "Before using student photographs you must:", options: ["Post them online", "Obtain consent and anonymise data", "Print them large", "Nothing"], correctIndex: 1, explanation: "Consent and anonymisation are non-negotiable in a professional portfolio." },
+  ],
+  "tpg-m2-l1": [
+    { question: "Which is a strong action-research question?", options: ["How can I teach better?", "Does a 2-minute retrieval quiz improve Class 8 unit-test scores versus the previous unit?", "Are students happy?", "Is school good?"], correctIndex: 1, explanation: "A strong question names the class, the change and the measure." },
+    { question: "Why run the cycle for about six weeks?", options: ["School rules", "To outlast the novelty effect", "To fill time", "Exams demand it"], correctIndex: 1, explanation: "Anything new works for two weeks; six weeks reveals real effects." },
+    { question: "What makes evidence trustworthy?", options: ["One source", "Triangulating at least two sources against a baseline", "Teacher memory", "Student opinion only"], correctIndex: 1, explanation: "A baseline plus multiple evidence sources guards against fooling yourself." },
+  ],
 };

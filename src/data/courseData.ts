@@ -1662,7 +1662,8 @@ import { newIndianCourses } from "./newIndianCourses";
 import { moreIndianCourses } from "./moreIndianCourses";
 import { modernTeacherCourses } from "./modernTeacherCourses";
 import { provenTeacherCourses } from "./provenTeacherCourses";
-coursesData.push(...additionalCourses, ...newIndianCourses, ...moreIndianCourses, ...modernTeacherCourses, ...provenTeacherCourses);
+import { futureSkillsCourses } from "./futureSkillsCourses";
+coursesData.push(...additionalCourses, ...newIndianCourses, ...moreIndianCourses, ...modernTeacherCourses, ...provenTeacherCourses, ...futureSkillsCourses);
 
 export const getCourseById = (id: string): Course | undefined => {
   return coursesData.find(course => course.id === id);
