@@ -480,11 +480,22 @@ const LessonDetail = () => {
               ) : (
                 <Button
                   onClick={() => {
+                    if (!user) {
+                      navigate(`/signin?redirect=/course/${courseId}/lesson/${lessonId}`);
+                      return;
+                    }
                     if (!lessonCompleted) {
                       handleMarkComplete();
-                    } else {
-                      setShowCertificate(true);
+                      return;
                     }
+                    const remaining = allLessons.length - completedLessons.size;
+                    if (remaining > 0) {
+                      toast.info(
+                        `Complete ${remaining} more ${remaining === 1 ? "lesson" : "lessons"} to unlock your certificate.`
+                      );
+                      return;
+                    }
+                    setShowCertificate(true);
                   }}
                   className="flex items-center gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 >
@@ -492,6 +503,7 @@ const LessonDetail = () => {
                   <CheckCircle2 className="w-4 h-4" />
                 </Button>
               )}
+
             </div>
           </div>
 
