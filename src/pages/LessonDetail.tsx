@@ -443,10 +443,13 @@ const LessonDetail = () => {
                   questions={lessonQuizzes[lessonId]}
                   onComplete={(score, total) => {
                     const pct = Math.round((score / total) * 100);
-                    if (pct >= 80) {
+                    const quizXpKey = user ? `quiz_xp_${user.id}_${lessonId}` : null;
+                    if (pct >= 80 && (!quizXpKey || !localStorage.getItem(quizXpKey))) {
                       awardXP(100, "quiz");
+                      if (quizXpKey) localStorage.setItem(quizXpKey, "1");
                     }
                   }}
+
                 />
               </div>
             )}
