@@ -199,20 +199,27 @@ const LessonDetail = () => {
     }
 
     toast.success('Lesson marked as complete!');
-    
-    // Award XP for lesson completion
-    awardXP(50, "lesson");
 
-    // If all lessons completed, award course XP
-    const newCompleted2 = new Set(completedLessons);
-    newCompleted2.add(lessonId!);
-    if (newCompleted2.size >= allLessons.length) {
-      awardXP(500, "course");
+    // Award XP for lesson completion (once per lesson)
+    const lessonXpKey = user ? `lesson_xp_${user.id}_${lessonId}` : null;
+    if (!lessonXpKey || !localStorage.getItem(lessonXpKey)) {
+      awardXP(50, "lesson");
+      if (lessonXpKey) localStorage.setItem(lessonXpKey, "1");
+    }
+
+    // If all lessons completed, award course XP once and issue the certificate
+    if (newCompleted.size >= allLessons.length) {
+      const courseXpKey = user ? `course_xp_${user.id}_${courseId}` : null;
+      if (!courseXpKey || !localStorage.getItem(courseXpKey)) {
+        awardXP(500, "course");
+        if (courseXpKey) localStorage.setItem(courseXpKey, "1");
+      }
       setTimeout(() => {
         setShowCertificate(true);
       }, 1000);
     }
   };
+
 
   const handleEnroll = async () => {
     if (!user) {
